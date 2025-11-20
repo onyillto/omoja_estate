@@ -63,7 +63,7 @@ const Footer = () => {
               <li className="flex items-start gap-3 text-slate-400 text-sm">
                 <MapPin className="w-5 h-5 text-red-500 flex-shrink-0" />
                 <span>
-                  123 Iron Roots Ave, Agricultural District,
+                  Iron Roots Farms, Kuje,
                   <br /> Abuja, Nigeria
                 </span>
               </li>

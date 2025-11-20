@@ -41,7 +41,7 @@ export default function SmartDevelopment() {
           </h2>
 
           <p className="text-gray-300 leading-relaxed mb-10">
-            We design estates to be resource-efficient and resilient. On-farm
+            We design realestates to be resource-efficient and resilient. On-farm
             infrastructure is integrated into project planning, and for
             residential sites, phased infrastructure handovers and clear
             development guidance help owners build responsibly.

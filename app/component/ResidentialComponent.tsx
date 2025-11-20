@@ -64,7 +64,7 @@ const ResidentialProjectsSection = () => {
 
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
               <p>
-                Our Residential Estates are designed as secure, serene, and
+                Our Residential RealEstates are designed as secure, serene, and
                 modern communities, created for discerning homeowners seeking
                 quality of life and long-term value. We focus on crafting{" "}
                 <span className="text-gray-900 font-medium">

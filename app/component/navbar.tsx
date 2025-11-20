@@ -18,7 +18,7 @@ const SimpleNavbar = () => {
 
   const navItems: NavItem[] = [
     { name: "Home", route: "/" },
-    { name: "Why Iron Root Farm", route: "/farm-solution" },
+    { name: "Why Iron Roots Farms", route: "/farm-solution" },
     { name: "Residential Estate", route: "/residential" },
     { name: "Farm Estates", route: "/farm-estates" },
     {

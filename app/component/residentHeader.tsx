@@ -29,7 +29,7 @@ const PortfolioHero = () => {
 
         {/* Main Heading */}
         <h1 className="text-white text-[48px] md:text-[40px] sm:text-[32px] font-bold mb-6 text-center animate-fadeInUp">
-          Residential Estates
+          Residential RealEstates
         </h1>
 
         {/* Description */}

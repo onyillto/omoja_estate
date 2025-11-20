@@ -66,7 +66,7 @@ const CommitmentSection = () => {
             </p>
             <p>
               We integrate rigorous due diligence to deliver secure Agricultural
-              and Residential Estates that exceed regulatory standards, ensuring
+              and Residential RealEstates that exceed regulatory standards, ensuring
               every project enhances both economic productivity and ecological
               balance.
             </p>
@@ -88,7 +88,7 @@ const CommitmentSection = () => {
               </div>
 
               <p className="text-gray-600 leading-relaxed mb-6">
-                Our agricultural estates and farming communities are
+                Our agricultural realestates and farming communities are
                 meticulously designed to support commercial farming on small,
                 medium, and large scales. Whether for crop cultivation or animal
                 husbandry, each unit features defined layouts and infrastructure

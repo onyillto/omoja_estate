@@ -27,7 +27,7 @@ const MethodologySection = () => {
             Sustainability at Moja Real Estate Ltd is practical and verifiable.
             Every site undergoes comprehensive evaluation before it becomes a
             listing, reducing risk for buyers while preserving ecosystem
-            function. We design estates to be resource-efficient and resilient.
+            function. We design realestates to be resource-efficient and resilient.
             On-farm infrastructure is integrated into project planning, and for
             residential sites, phased infrastructure handovers and clear
             development guidance help owners build responsibly.
@@ -84,7 +84,7 @@ const MethodologySection = () => {
               Water & Soil Analysis
             </h4>
             <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-              For agricultural estates: soil fertility and water availability
+              For agricultural realestates: soil fertility and water availability
               testing
             </p>
           </div>

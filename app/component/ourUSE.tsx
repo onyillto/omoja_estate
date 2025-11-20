@@ -21,7 +21,7 @@ const WhatSetsUsApart = () => {
       ),
       title: "SDG Integration",
       description:
-        "At Moja Realestate Ltd, sustainability is more than a goal, it's the way we build. Guided by the Sustainable Development Goals, we design communities that embody resilience and inclusivity. Our commitment to SDG 11 (Sustainable Cities and Communities) is reflected in how we plan, build and manage our estates, through green infrastructure and people-focused design.",
+        "At Moja Realestate Ltd, sustainability is more than a goal, it's the way we build. Guided by the Sustainable Development Goals, we design communities that embody resilience and inclusivity. Our commitment to SDG 11 (Sustainable Cities and Communities) is reflected in how we plan, build and manage our realestates, through green infrastructure and people-focused design.",
     },
     {
       icon: (

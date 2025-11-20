@@ -14,10 +14,10 @@ const ProjectSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Outlook of the Estates",
+      title: "Outlook of the RealEstates",
       name: "NAME AVAILABLE SOON!!",
       description:
-        "Luxury residential estates with modern amenities and world-class infrastructure",
+        "Luxury residential realestates with modern amenities and world-class infrastructure",
       image:
         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
       icon: <Home className="w-6 h-6" />,
@@ -30,13 +30,13 @@ const ProjectSection = () => {
       title: "Outlook of the Farmland",
       name: "IRON ROOTS FARMS",
       description:
-        "Sustainable agricultural estates with fertile land and modern farming facilities",
+        "Sustainable agricultural realestates with fertile land and modern farming facilities",
       image:
         "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",
       icon: <Sprout className="w-6 h-6" />,
       status: "Available",
       accent: "from-emerald-500 to-green-600",
-      stats: { units: "50 Plots", area: "1000 Acres" },
+      stats: { units: "120 Plots", area: "25 Acres" },
     },
     {
       id: 3,

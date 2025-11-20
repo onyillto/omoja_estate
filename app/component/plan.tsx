@@ -1,11 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import {
-  Check,
-  Calendar,
-  ArrowRight,
-  ShieldCheck,
-} from "lucide-react";
+import { Check, Calendar, ArrowRight, ShieldCheck } from "lucide-react";
 
 const PaymentStructure = () => {
   const [activePlan, setActivePlan] = useState("outright");
@@ -131,20 +126,20 @@ const PaymentStructure = () => {
                   <div className="relative pl-4 border-l-2 border-red-100 space-y-8">
                     <TimelineItem
                       title="Initial Deposit"
-                      desc="Secure your slot and lock the price."
+                      desc="40% - Secure your slot and lock the price."
                       active
                     />
                     <TimelineItem
                       title="2nd Installment"
-                      desc="Due after 3 months (Development Commences)."
+                      desc="20% - Due after 1 month."
                     />
                     <TimelineItem
                       title="3rd Installment"
-                      desc="Due after 6 months."
+                      desc="20% - Due after 2 months."
                     />
                     <TimelineItem
-                      title="4th & Final Payment"
-                      desc="Completion & Allocation of Documents."
+                      title="4th Installment"
+                      desc="20% - Due after 3 months. Completion & Allocation."
                       isLast
                     />
                   </div>
@@ -164,7 +159,7 @@ const PaymentStructure = () => {
                 <p className="text-[#800517] text-sm font-medium mb-8">
                   {activePlan === "outright"
                     ? "Includes 5% Discount applied"
-                    : "Spread over 12 months"}
+                    : "Spread over 4 months"}
                 </p>
 
                 <button className="w-full group relative py-4 px-6 rounded-xl bg-[#800517] text-white font-semibold shadow-lg shadow-red-200 hover:bg-[#6a0413] hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 overflow-hidden">

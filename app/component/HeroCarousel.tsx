@@ -38,7 +38,7 @@ const SimpleHero = () => {
           {/* Subtitle/Description */}
           <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
             Discover exceptional properties tailored to your lifestyle. From
-            luxury estates to cozy apartments.
+            luxury realestates to cozy apartments.
           </p>
 
           {/* CTA Button */}

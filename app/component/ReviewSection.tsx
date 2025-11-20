@@ -16,7 +16,7 @@ const ReviewsSection = () => {
       id: 2,
       quote:
         "An unforgettable stay! The staff made us feel like royalty from the moment we arrived. The floating breakfast was a highlight, and the private chef experience was divine. Can't wait to return.",
-      author: "Mr. John Doe",
+      author: "Mr. Emeka Okafor",
       role: "Tech Entrepreneur",
       rating: 5,
     },
@@ -24,7 +24,7 @@ const ReviewsSection = () => {
       id: 3,
       quote:
         "Luxury redefined. Every detail was perfect, from the poolside dining to the impeccable service. This place feels like a dream you'll never want to wake from.",
-      author: "Mrs. Emily Carter",
+      author: "Mrs. Yetunde Adebayo",
       role: "Marketing Director",
       rating: 4,
     },

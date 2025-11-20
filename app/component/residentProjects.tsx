@@ -4,12 +4,10 @@ import Image from "next/image";
 
 const ProjectDetails = () => {
   const projectImages = [
-    "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80",
-    "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
-    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-    "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80",
-    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
-    "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
+    "/admin-1.jpg",
+    "/admin-2.jpg",
+    "/admin-3.jpg",
+    "/admin-2.jpg",
   ];
 
   const amenities = [
@@ -32,7 +30,7 @@ const ProjectDetails = () => {
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="flex-1">
               <h1 className="text-[#800517] text-[36px] md:text-[32px] sm:text-[28px] font-bold mb-4">
-                Moja Gardens Estate
+                Moja RealEstate Admin Block
               </h1>
               <div className="flex items-center gap-2 text-[#800517] mb-6">
                 <svg
@@ -54,7 +52,7 @@ const ProjectDetails = () => {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span className="text-[15px]">Karen, Nairobi</span>
+                <span className="text-[15px]">Abuja, Nigeria</span>
               </div>
               <p className="text-gray-700 text-[15px] leading-[26px] max-w-[600px]">
                 A premium gated community located in the serene Karen area. Moja

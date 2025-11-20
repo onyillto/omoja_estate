@@ -5,12 +5,12 @@ import Link from "next/link";
 
 const ProjectTwo = () => {
   const projectImages = [
-    "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=80", // Infinity pool with city view
-    "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80", // Aerial suburban view
-    "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80", // Modern house exterior
-    "https://images.unsplash.com/photo-1598228723793-52759bba239c?w=800&q=80", // Old building
-    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80", // Interior wood design
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80", // Aerial parking lot
+    "/self.jpg", // Large Image (Index 0)
+    "/gate.jpg", // Top Right Image (Index 1)
+    "/suparmaaket.jpg", // Bottom Right Image (Index 2)
+    "/hall.jpg", // Bottom Left Image (Index 3)
+    "/gate-2.jpg", // Bottom Middle Image (Index 4)
+    "/self-2.jpg", // Bottom Right Image (Index 5)
   ];
 
   const amenities = [
@@ -31,12 +31,12 @@ const ProjectTwo = () => {
         {/* Project Header */}
         <div className="mb-16 md:mb-12">
           <span className="text-[#2d7a6e] text-[13px] uppercase tracking-[3px] font-medium mb-8 block">
-            Project 02
+            Iron Roots Farms
           </span>
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
             <div className="flex-1">
               <h2 className="text-white text-[36px] md:text-[32px] sm:text-[28px] font-bold mb-4">
-                Green Valley Residences
+                Iron Roots Farms
               </h2>
               <div className="flex items-center gap-2 text-[#2d7a6e] mb-6">
                 <svg
@@ -58,14 +58,14 @@ const ProjectTwo = () => {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span className="text-[15px]">Kitengela, Kajiado</span>
+                <span className="text-[15px]">Kuje, Abuja, Nigeria</span>
               </div>
               <p className="text-gray-400 text-[15px] leading-[26px] max-w-[600px]">
-                An affordable yet modern estate strategically positioned along
-                Namanga Road, Kitengela. Green Valley Residences provides
-                excellent value with high ROI potential. The area is rapidly
-                growing with new infrastructure developments and easy access to
-                SGR and Nairobi.
+                Iron Roots Farms is an innovative mixed-use agricultural estate
+                in Kuje, Abuja, a region zoned for farming under the Abuja
+                Master Plan. It features curated layouts for crop cultivation
+                and animal husbandry, ensuring operational efficiency and
+                sustainable practices.
               </p>
             </div>
 
@@ -76,28 +76,28 @@ const ProjectTwo = () => {
                   Land Area
                 </span>
                 <span className="text-white text-[24px] font-bold">
-                  40 Acres
+                  25 Acres
                 </span>
               </div>
               <div className="bg-[#1a1a1a] border border-gray-800 rounded-lg p-5">
                 <span className="text-[#2d7a6e] text-[13px] uppercase tracking-[2px] block mb-2">
                   Total Plots
                 </span>
-                <span className="text-white text-[24px] font-bold">200</span>
+                <span className="text-white text-[24px] font-bold">120</span>
               </div>
               <div className="bg-[#1a1a1a] border border-gray-800 rounded-lg p-5">
                 <span className="text-[#2d7a6e] text-[13px] uppercase tracking-[2px] block mb-2">
                   Available
                 </span>
                 <span className="text-white text-[24px] font-bold">
-                  45 Plots
+                  87 Plots
                 </span>
               </div>
               <div className="bg-[#1a1a1a] border border-gray-800 rounded-lg p-5">
                 <span className="text-[#2d7a6e] text-[13px] uppercase tracking-[2px] block mb-2">
                   Completion
                 </span>
-                <span className="text-white text-[24px] font-bold">2023</span>
+                <span className="text-white text-[24px] font-bold">2024</span>
               </div>
             </div>
           </div>
@@ -106,11 +106,11 @@ const ProjectTwo = () => {
         {/* Image Gallery */}
         <div className="mb-16 md:mb-12">
           <div className="grid grid-cols-12 gap-4">
-            {/* Large Image - Pool */}
+            {/* Large Image - uses projectImages[0] */}
             <div className="col-span-12 lg:col-span-7 relative h-[500px] md:h-[400px] rounded-2xl overflow-hidden group">
               <Image
                 src={projectImages[0]}
-                alt="Infinity pool with city view"
+                alt="Estate View 1"
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
@@ -121,7 +121,7 @@ const ProjectTwo = () => {
               <div className="relative h-[240px] lg:h-full rounded-2xl overflow-hidden group">
                 <Image
                   src={projectImages[1]}
-                  alt="Aerial suburban view"
+                  alt="Estate View 2"
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
@@ -129,7 +129,7 @@ const ProjectTwo = () => {
               <div className="relative h-[240px] lg:h-full rounded-2xl overflow-hidden group">
                 <Image
                   src={projectImages[2]}
-                  alt="Modern house exterior"
+                  alt="Estate View 3"
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
@@ -138,6 +138,7 @@ const ProjectTwo = () => {
 
             {/* Bottom Three Images */}
             <div className="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+              {/* Uses the remaining images from the array (Index 3, 4, 5) */}
               {projectImages.slice(3).map((img, index) => (
                 <div
                   key={index}
@@ -163,9 +164,7 @@ const ProjectTwo = () => {
               <h3 className="text-white text-[18px] font-semibold mb-6">
                 Plot Sizes
               </h3>
-              <p className="text-gray-400 text-[15px]">
-                50x100 ft, 100x100 ft, 1/4 Acre
-              </p>
+              <p className="text-gray-400 text-[15px]">700sqm, 1000sqm</p>
             </div>
 
             <div className="bg-[#1a1a1a] border border-gray-800 rounded-2xl p-8 md:p-6">
@@ -173,7 +172,7 @@ const ProjectTwo = () => {
                 Price Range
               </h3>
               <p className="text-[#2d7a6e] text-[24px] font-bold">
-                KES 1.8M - 6.5M
+                ₦5.5M - ₦6.0M
               </p>
             </div>
           </div>
@@ -197,7 +196,7 @@ const ProjectTwo = () => {
         {/* CTA Button */}
         <div className="flex justify-center">
           <Link
-            href="/projects/green-valley-residences"
+            href="/farm-estates"
             className="group inline-flex items-center gap-3 bg-[#2d7a6e] hover:bg-[#236d61] text-white px-8 py-4 rounded-lg text-[15px] font-medium transition-all duration-300"
           >
             View Project Details

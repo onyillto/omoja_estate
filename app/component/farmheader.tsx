@@ -23,23 +23,18 @@ const PortfolioHero = () => {
         {/* Portfolio Tag */}
         <div className="mb-8 animate-fadeIn">
           <span className="text-[#2d7a6e] text-[14px] md:text-[13px] uppercase tracking-[3px] font-medium">
-            Residential Estate
+           Farm RealEstate
           </span>
         </div>
 
         {/* Main Heading */}
         <h1 className="text-white text-[48px] md:text-[40px] sm:text-[32px] font-bold mb-6 text-center animate-fadeInUp">
-          Moja Real Estate
+          Moja Real Estate 
         </h1>
 
         {/* Description */}
         <p className="text-white text-[18px] md:text-[16px] sm:text-[14px] leading-[32px] md:leading-[28px] text-center max-w-[850px] mx-auto mb-16 animate-fadeInUp delay-200">
-          Moja Realestate Ltd — we are a realestate agency operating in
-          Abuja.... We are a company committed to delivering modern, functional,
-          and high-value property solutions. Our portfolio spans residential and
-          agricultural developments, property sales, and real estate advisory
-          services.
-        </p>
+          Come Experience the realest form of Agriculture </p>
 
         {/* Scroll CTA */}
         <div className="flex flex-col items-center gap-3 animate-fadeInUp delay-400">

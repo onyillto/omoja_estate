@@ -85,7 +85,7 @@ const ContactSection = () => {
         </svg>
       ),
       title: "Address",
-      info: "Lagos, Nigeria",
+      info: "Abuja, Nigeria",
     },
   ];
 

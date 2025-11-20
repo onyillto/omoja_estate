@@ -8,7 +8,7 @@ const ContactHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80"
+          src="/self.jpg"
           alt="Contact Us"
           fill
           className="object-cover"

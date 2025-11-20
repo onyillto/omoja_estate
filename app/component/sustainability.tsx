@@ -18,11 +18,12 @@ const SustainabilitySection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
       </div>
 
-      {/* Content */}
+      {/* Content - This is the main container that uses flex and items-center to center content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 md:px-10 sm:px-5">
         {/* Our Commitment Tag with Lines and Leaf Icons */}
-        <div className="flex items-center gap-4 mb-12 md:mb-10">
+        <div className="flex items-center gap-4 mb-12 md:mb-10 mt-7">
           <div className="w-20 md:w-16 h-[2px] bg-[#2d7a6e]"></div>
+          {/* Leaf Icon 1 */}
           <svg
             className="w-6 h-6 md:w-5 md:h-5 text-[#2d7a6e]"
             fill="none"
@@ -39,6 +40,7 @@ const SustainabilitySection = () => {
           <span className="text-[#2d7a6e] text-[14px] md:text-[13px] uppercase tracking-[3px] font-semibold">
             Our Commitment
           </span>
+          {/* Leaf Icon 2 */}
           <svg
             className="w-6 h-6 md:w-5 md:h-5 text-[#2d7a6e]"
             fill="none"
@@ -55,23 +57,24 @@ const SustainabilitySection = () => {
           <div className="w-20 md:w-16 h-[2px] bg-[#2d7a6e]"></div>
         </div>
 
-        {/* Sustainability Heading */}
+        {/* Sustainability Heading - Uses text-center */}
         <h1 className="text-white text-[48px] md:text-[40px] sm:text-[32px] font-bold mb-10 md:mb-8 text-center">
           Sustainability
         </h1>
 
-        {/* Description */}
+        {/* Description - Uses text-center */}
         <p className="text-white text-[20px] md:text-[18px] sm:text-[16px] leading-[38px] md:leading-[32px] sm:leading-[28px] text-center max-w-[1100px] mx-auto mb-20 md:mb-16">
-          At Moja Real Estate Ltd, sustainability is not an afterthought; it&apos;s
-          the framework for every parcel we acquire, every service we provide,
-          and every community partnership we enter.
+          At Moja Real Estate Ltd, sustainability is not an afterthought;
+          it&apos;s the framework for every parcel we acquire, every service we
+          provide, and every community partnership we enter.
         </p>
 
-        {/* Discover Our Approach */}
+        {/* Discover Our Approach Scroll Indicator */}
         <div className="flex flex-col items-center gap-4 mt-auto mb-12">
           <span className="text-white/80 text-[13px] uppercase tracking-[2px] font-medium">
             Discover Our Approach
           </span>
+          {/* Bouncing Down Arrow */}
           <div className="animate-bounce">
             <svg
               className="w-6 h-6 text-white/80"

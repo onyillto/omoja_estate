@@ -132,7 +132,7 @@ const CommitmentSection = () => {
             {/* Main Image Container */}
             <div className="relative h-[400px] md:h-[550px] w-full rounded-2xl overflow-hidden shadow-2xl z-10">
               <Image
-                src="/agric.jpeg" // Ensure this path is correct in your public folder
+                src="/gate-3.jpg" // Ensure this path is correct in your public folder
                 alt="Sustainable Agricultural Estate"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700"

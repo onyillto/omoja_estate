@@ -9,7 +9,7 @@ const SimpleHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80"
+          src="/MILL-PLANT.jpg"
           alt="Luxury Real Estate"
           fill
           style={{ objectFit: "cover" }}
@@ -43,7 +43,7 @@ const SimpleHero = () => {
 
           {/* CTA Button */}
           <Link
-            href="/properties"
+            href="/company/projects"
             className="inline-block px-10 py-4 bg-white text-[#800517] hover:bg-gray-100 rounded-md text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
           >
             See Details

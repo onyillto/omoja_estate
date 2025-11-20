@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 const StatsHero = () => {
   const stats = [
@@ -25,10 +26,12 @@ const StatsHero = () => {
     <section className="relative py-20 flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80"
           alt="Property background"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/60"></div>
       </div>

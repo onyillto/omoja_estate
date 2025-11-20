@@ -31,7 +31,7 @@ const ContactHero = () => {
 
         {/* Main Heading */}
         <h1 className="text-white text-[48px] md:text-[40px] sm:text-[32px] font-bold mb-8 text-center leading-tight">
-          Let's Start a Conversation
+          Let&apos;s Start a Conversation
         </h1>
 
         {/* Description */}

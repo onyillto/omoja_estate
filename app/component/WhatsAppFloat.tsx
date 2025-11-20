@@ -12,7 +12,7 @@ const WhatsAppFloat = () => {
   const defaultGreeting =
     "Hello! 👋 How can we help you with your property search today?";
 
-  const handleSendMessage = (e) => {
+  const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
     if (!userMessage.trim()) return;
 

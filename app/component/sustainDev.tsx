@@ -101,7 +101,7 @@ const SmartDevelopmentEnhanced = () => {
       setActiveFeature((prev) => (prev + 1) % features.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [features.length]);
 
   return (
     <section className="relative bg-white overflow-hidden">

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { X, MessageCircle, Check, BedSingle } from "lucide-react";
+import { X, Check, BedSingle } from "lucide-react";
 
 type Amenity = {
   icon: React.ReactNode;
@@ -236,14 +236,14 @@ const PropertyModal = () => {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#800517]/90 via-black/50 to-transparent group-hover:from-[#800517]/95 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-[#800517]/90 via-black/50 to-transparent group-hover:from-[#800517]/95 transition-all duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center px-6 w-full max-w-md transform transition-transform duration-300 group-hover:scale-105">
-                    <div className="w-full h-[1px] bg-white/50 mb-4"></div>
+                    <div className="w-full h-px bg-white/50 mb-4"></div>
                     <h3 className="text-white text-xl lg:text-2xl font-light tracking-[0.25em] leading-tight">
                       {property.title}
                     </h3>
-                    <div className="w-full h-[1px] bg-white/50 mt-4"></div>
+                    <div className="w-full h-px bg-white/50 mt-4"></div>
                     <p className="text-white/80 text-sm mt-3 tracking-wider">
                       Click to view details
                     </p>
@@ -269,14 +269,14 @@ const PropertyModal = () => {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#800517]/90 via-black/50 to-transparent group-hover:from-[#800517]/95 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-[#800517]/90 via-black/50 to-transparent group-hover:from-[#800517]/95 transition-all duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center px-4 w-full max-w-xs transform transition-transform duration-300 group-hover:scale-105">
-                    <div className="w-full h-[1px] bg-white/50 mb-4"></div>
+                    <div className="w-full h-px bg-white/50 mb-4"></div>
                     <h3 className="text-white text-lg lg:text-xl font-light tracking-[0.2em] leading-tight">
                       {property.title}
                     </h3>
-                    <div className="w-full h-[1px] bg-white/50 mt-4"></div>
+                    <div className="w-full h-px bg-white/50 mt-4"></div>
                     <p className="text-white/80 text-xs mt-3 tracking-wider">
                       Click to view details
                     </p>
@@ -414,7 +414,7 @@ const PropertyModal = () => {
                 </h4>
                 {selectedProperty.amenities.map((amenity, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <span className="flex-shrink-0 mt-0.5">{amenity.icon}</span>
+                    <span className="shrink-0 mt-0.5">{amenity.icon}</span>
                     <p className="text-sm text-gray-700 leading-relaxed flex-1">
                       {amenity.text}
                     </p>
@@ -424,7 +424,7 @@ const PropertyModal = () => {
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#800517]">
-                <button className="flex-1 bg-gradient-to-r from-[#800517] to-[#880000] hover:from-[#6a0413] hover:to-[#700000] text-white py-3 px-4 rounded font-medium tracking-wider uppercase transition-all text-sm sm:text-base">
+                <button className="flex-1 bg-linear-to-r from-[#800517] to-[#880000] hover:from-[#6a0413] hover:to-[#700000] text-white py-3 px-4 rounded font-medium tracking-wider uppercase transition-all text-sm sm:text-base">
                   BOOK NOW
                 </button>
                 <button className="flex-1 bg-white hover:bg-red-50 text-[#800517] py-3 px-4 rounded font-medium tracking-wider uppercase transition-colors border-2 border-[#800517] text-sm sm:text-base">

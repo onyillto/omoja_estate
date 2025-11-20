@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Plus, Minus, HelpCircle, ShieldCheck, Mail } from "lucide-react";
+import { Plus, Minus, HelpCircle, ShieldCheck } from "lucide-react";
 
 const FAQSection = () => {
   // State to track which accordion item is open

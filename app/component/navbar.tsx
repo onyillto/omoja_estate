@@ -14,7 +14,6 @@ type NavItem = {
 const SimpleNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   const navItems: NavItem[] = [
@@ -178,7 +177,7 @@ const SimpleNavbar = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className="block w-full py-3 px-6 bg-[#800517] hover:bg-[#6a0413] text-white rounded-md text-sm font-medium text-center transition-colors"
               >
-               Contact Us
+                Contact Us
               </Link>
             </div>
           </div>

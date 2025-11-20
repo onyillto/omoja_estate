@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 const MojaOverview = () => {
   return (
@@ -8,10 +9,11 @@ const MojaOverview = () => {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Image Side */}
           <div className="relative h-[350px] sm:h-[450px] lg:h-[600px] order-2 lg:order-1">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
               alt="Moja Real Estate Properties"
-              className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              fill
+              className="object-cover rounded-2xl shadow-2xl"
             />
             {/* Decorative Element */}
             <div className="absolute -bottom-4 -right-4 w-32 h-32 md:w-40 md:h-40 bg-[#800517] rounded-2xl -z-10 hidden sm:block"></div>
@@ -51,9 +53,9 @@ const MojaOverview = () => {
             <div className="space-y-4 md:space-y-5 text-gray-600 text-base md:text-lg leading-relaxed">
               <p>
                 Moja Real Estate Ltd is a premier real estate agency operating
-                in Abuja, Nigeria&apos;s capital city. We are a company committed to
-                delivering modern, functional, and high-value property solutions
-                that meet the evolving needs of our clients.
+                in Abuja, Nigeria&apos;s capital city. We are a company
+                committed to delivering modern, functional, and high-value
+                property solutions that meet the evolving needs of our clients.
               </p>
 
               <p>

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import {
   Check,
   Calendar,
-  CreditCard,
   ArrowRight,
   ShieldCheck,
 } from "lucide-react";

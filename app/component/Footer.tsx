@@ -22,8 +22,8 @@ const Footer = () => {
   ];
 
   return (
-    // 1. Reduced vertical padding (pt-20 -> pt-12, pb-10 -> pb-6)
-    <footer className="bg-gray-900 text-white pt-12 pb-6 border-t border-gray-800">
+    // Changed to a red and white theme
+    <footer className="bg-[#800517] text-white pt-12 pb-6 border-t border-red-900">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Top Section */}
         {/* 2. Reduced bottom margin (mb-16 -> mb-10) */}
@@ -35,16 +35,16 @@ const Footer = () => {
             {/* Logo Placeholder */}
             <Link href="/" className="flex items-center gap-2">
               {/* Reduced logo size from w-8/h-8 to w-7/h-7 */}
-              <div className="w-7 h-7 bg-[#800517] rounded-lg flex items-center justify-center">
-                <span className="font-bold text-white text-base">M</span>
+              <div className="w-7 h-7 bg-white rounded-lg flex items-center justify-center">
+                <span className="font-bold text-[#800517] text-base">M</span>
               </div>
               <span className="text-xl font-bold text-white tracking-tight">
                 {" "}
                 {/* Reduced text-2xl to text-xl */}
-                Moja<span className="text-red-500">RealEstate</span>.
+                Moja<span className="text-gray-300">RealEstate</span>.
               </span>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
+            <p className="text-gray-200 text-sm leading-relaxed max-w-sm">
               Building sustainable agricultural and residential communities for
               the future. Join us in redefining modern living.
             </p>
@@ -52,7 +52,7 @@ const Footer = () => {
 
           {/* Column 2: Contact Info & Socials (Span 3 cols) */}
           <div className="lg:col-span-3">
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-5">
+            <h3 className="text-sm font-bold text-gray-200 uppercase tracking-wider mb-5">
               {" "}
               {/* Reduced mb-6 to mb-5 */}
               Contact & Connect
@@ -60,24 +60,24 @@ const Footer = () => {
             <ul className="space-y-3">
               {" "}
               {/* Adjusted space-y-4 to space-y-3 */}
-              <li className="flex items-start gap-3 text-slate-400 text-sm">
-                <MapPin className="w-5 h-5 text-red-500 flex-shrink-0" />
+              <li className="flex items-start gap-3 text-gray-200 text-sm">
+                <MapPin className="w-5 h-5 text-white flex-shrink-0" />
                 <span>
                   Iron Roots Farms, Kuje,
                   <br /> Abuja, Nigeria
                 </span>
               </li>
-              <li className="flex items-center gap-3 text-slate-400 text-sm">
-                <Phone className="w-5 h-5 text-red-500 flex-shrink-0" />
+              <li className="flex items-center gap-3 text-gray-200 text-sm">
+                <Phone className="w-5 h-5 text-white flex-shrink-0" />
                 <Link
                   href="tel:+2348001234567"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-gray-300 transition-colors"
                 >
                   +234 800 123 4567
                 </Link>
               </li>
-              <li className="flex items-center gap-3 text-slate-400 text-sm">
-                <Mail className="w-5 h-5 text-red-500 flex-shrink-0" />
+              <li className="flex items-center gap-3 text-gray-200 text-sm">
+                <Mail className="w-5 h-5 text-white flex-shrink-0" />
                 <Link
                   href="mailto:hello@mojaestate.com"
                   className="hover:text-white transition-colors"
@@ -96,7 +96,7 @@ const Footer = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-slate-400 hover:bg-[#800517] hover:text-white transition-all duration-300"
+                      className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-200 hover:bg-white hover:text-[#800517] transition-all duration-300"
                       aria-label={`Follow us on ${
                         ["Facebook", "Instagram", "Twitter", "LinkedIn"][index]
                       }`}
@@ -112,8 +112,8 @@ const Footer = () => {
 
         {/* Bottom Section: Divider & Copyright */}
         {/* Reduced padding (pt-8 -> pt-6) */}
-        <div className="pt-6 border-t border-gray-800 flex justify-center">
-          <p className="text-slate-500 text-sm text-center">
+        <div className="pt-6 border-t border-red-900 flex justify-center">
+          <p className="text-gray-300 text-sm text-center">
             © {currentYear} Moja Real Estate, Inc. All rights reserved.
           </p>
         </div>

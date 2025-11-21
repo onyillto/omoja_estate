@@ -26,7 +26,7 @@ const SimpleHero = () => {
           {/* Badge */}
 
           {/* Main Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-serif">
+          <h1 className="text-2xl sm:text-5xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight font-serif">
             Come Experience the realest form of Agriculture
           </h1>
 
@@ -38,7 +38,7 @@ const SimpleHero = () => {
           {/* CTA Button */}
           <Link
             href="/contact"
-            className="inline-block px-10 py-4 bg-white text-[#800517] hover:bg-gray-100 rounded-md text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            className="inline-block px-10 py-4 bg-[#800517] text-[#ffff] hover:bg-gray-100 rounded-md text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
           >
             Schedule an inspection
           </Link>

@@ -4,10 +4,11 @@ import Image from "next/image";
 
 const ProjectDetails = () => {
   const projectImages = [
-    "/admin-1.jpg",
-    "/admin-2.jpg",
-    "/admin-3.jpg",
-    "/admin-2.jpg",
+    "https://i.pinimg.com/736x/65/c0/ea/65c0eae07f7b52021a41e0de9bc0831f.jpg",
+    "https://i.pinimg.com/736x/95/bb/1b/95bb1ba4bc02563f8274bdd5a9ff6e77.jpg",
+    // "https://i.pinimg.com/736x/d6/eb/d7/d6ebd78fb6fb7ddc2c6148974fa6952f.jpg",
+    "https://i.pinimg.com/736x/95/bb/1b/95bb1ba4bc02563f8274bdd5a9ff6e77.jpg",
+    "https://i.pinimg.com/736x/c6/46/61/c64661eb423cc6e83a4d90ccb2be6fc4.jpg",
   ];
 
   const amenities = [

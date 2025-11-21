@@ -51,14 +51,14 @@ const PaymentStructure = () => {
             <div
               className={`absolute top-1.5 bottom-1.5 rounded-full bg-[#800517] transition-all duration-300 ease-out ${
                 activePlan === "outright"
-                  ? "left-1.5 w-[140px]"
-                  : "left-[146px] w-[160px]"
+                  ? "left-1.5 w-[calc(50%-0.375rem)]"
+                  : "left-[calc(50%+0.125rem)] w-[calc(50%-0.375rem)]"
               }`}
             ></div>
 
             <button
-              onClick={() => setActivePlan("outright")}
-              className={`relative px-8 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 z-10 ${
+              onClick={() => setActivePlan("outright")} // w-1/2
+              className={`relative px-6 sm:px-8 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 z-10 w-1/2 text-center ${
                 activePlan === "outright"
                   ? "text-white"
                   : "text-gray-600 hover:text-gray-900"
@@ -67,8 +67,8 @@ const PaymentStructure = () => {
               Outright Payment
             </button>
             <button
-              onClick={() => setActivePlan("installment")}
-              className={`relative px-8 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 z-10 ${
+              onClick={() => setActivePlan("installment")} // w-1/2
+              className={`relative px-6 sm:px-8 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 z-10 w-1/2 text-center ${
                 activePlan === "installment"
                   ? "text-white"
                   : "text-gray-600 hover:text-gray-900"

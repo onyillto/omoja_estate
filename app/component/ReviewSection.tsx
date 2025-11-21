@@ -7,7 +7,7 @@ const ReviewsSection = () => {
     {
       id: 1,
       quote:
-        "The process of acquiring our plot of land with moja Estate was seamless from start to finish. Their team was professional, transparent, and guided us every step of the way. We're thrilled to start building our dream home!",
+        "From our first inquiry to securing our plot, the Moja team made the entire process seamless and easy to navigate. They explained every document, walked us through the layout of the estate, and kept us updated without us having to chase anyone. The environment feels well planned and secure, and their after-sales support has been genuinely helpful. We’re excited to begin building in a place that already feels like home.",
       author: "The Adebayo Family",
       role: "Homeowners",
       rating: 5,
@@ -15,7 +15,7 @@ const ReviewsSection = () => {
     {
       id: 2,
       quote:
-        "We were looking for more than just a house; we wanted a community. moja Estate delivered exactly that. The attention to detail in their residential prototype and the vision for the community is outstanding. It's the perfect place for our family to grow.",
+        "Working with Moja for our farmland project has been a refreshing experience. They carried out proper soil checks, water access assessments, and provided clear information on the estate’s agricultural layout. The land is well-structured and the team handled everything with transparency and professionalism. Their understanding of sustainable farming practices made the process smooth for us, and we’ve already started preparing the land confidently.",
       author: "Mr. & Mrs. Okoro",
       role: "Property Investors",
       rating: 5,
@@ -23,7 +23,7 @@ const ReviewsSection = () => {
     {
       id: 3,
       quote:
-        "Investing in farmland with moja Estate has been a wise decision. Their commitment to sustainable development and agriculture is impressive. The entire process was handled with utmost integrity. A truly trustworthy real estate partner.",
+        "Securing farmland through Moja Realestate was straightforward from the start. They took the time to show me around, explain the terrain, and share practical details about access roads, drainage, and future expansion plans. What stood out most was how honest and responsive the team was throughout. The farmland has solid potential for long-term agricultural development, and I appreciate how the Moja staff supported me even after documentation was completed.",
       author: "Dr. Fatima Bello",
       role: "Agri-Investor",
       rating: 5,

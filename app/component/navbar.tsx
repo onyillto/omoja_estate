@@ -25,7 +25,7 @@ const SimpleNavbar = () => {
       name: "Company",
       route: "/company",
       children: [
-        { name: "Why Choose Moja", route: "/farm-solution" },
+        { name: "Why Choose Iron Farm", route: "/company/why-iron-farm" },
         { name: "Projects", route: "/company/projects" },
         { name: "Sustainability", route: "/company/sustainability" },
       ],

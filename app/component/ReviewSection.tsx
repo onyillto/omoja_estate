@@ -7,26 +7,26 @@ const ReviewsSection = () => {
     {
       id: 1,
       quote:
-        "My first time having a private chef at my beck & call. We even dined while being made delicious meals. My favorite part was the floating breakfast at the swimming pool. Omo, I would love to stay there permanently. Every experience here felt like my first time.",
-      author: "Miss Rachel Obasek",
-      role: "Beauty Consultant",
+        "The process of acquiring our plot of land with Omoja Estate was seamless from start to finish. Their team was professional, transparent, and guided us every step of the way. We're thrilled to start building our dream home!",
+      author: "The Adebayo Family",
+      role: "Homeowners",
       rating: 5,
     },
     {
       id: 2,
       quote:
-        "An unforgettable stay! The staff made us feel like royalty from the moment we arrived. The floating breakfast was a highlight, and the private chef experience was divine. Can't wait to return.",
-      author: "Mr. Emeka Okafor",
-      role: "Tech Entrepreneur",
+        "We were looking for more than just a house; we wanted a community. Omoja Estate delivered exactly that. The attention to detail in their residential prototype and the vision for the community is outstanding. It's the perfect place for our family to grow.",
+      author: "Mr. & Mrs. Okoro",
+      role: "Property Investors",
       rating: 5,
     },
     {
       id: 3,
       quote:
-        "Luxury redefined. Every detail was perfect, from the poolside dining to the impeccable service. This place feels like a dream you'll never want to wake from.",
-      author: "Mrs. Yetunde Adebayo",
-      role: "Marketing Director",
-      rating: 4,
+        "Investing in farmland with Omoja Estate has been a wise decision. Their commitment to sustainable development and agriculture is impressive. The entire process was handled with utmost integrity. A truly trustworthy real estate partner.",
+      author: "Dr. Fatima Bello",
+      role: "Agri-Investor",
+      rating: 5,
     },
   ];
 

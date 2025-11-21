@@ -9,7 +9,7 @@ const projectHeader = () => {
       <div className="absolute inset-0">
         <Image
           src="/block.jpg"
-          alt="Iroko Farm Estate"
+          alt="Iron Root Farm"
           fill
           className="object-cover"
           priority

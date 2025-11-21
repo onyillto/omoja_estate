@@ -9,7 +9,7 @@ const PortfolioHero = () => {
       <div className="absolute inset-0">
         <Image
           src="/admin-1.jpg"
-          alt="Iroko Farm Estate"
+          alt="Iron Root Farm"
           fill
           className="object-cover"
           priority
@@ -23,13 +23,13 @@ const PortfolioHero = () => {
         {/* Portfolio Tag */}
         <div className="mb-8 animate-fadeIn">
           <span className="text-[#2d7a6e] text-[14px] md:text-[13px] uppercase tracking-[3px] font-medium">
-            Iroko Farm Estate
+            Iron Root Farm
           </span>
         </div>
 
         {/* Main Heading */}
         <h1 className="text-white text-[48px] md:text-[40px] sm:text-[32px] font-bold mb-6 text-center animate-fadeInUp">
-          Iroko Farm Estate
+          Iron Root Farm
         </h1>
 
         {/* Description */}

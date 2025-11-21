@@ -9,7 +9,7 @@ const PortfolioHero = () => {
       <div className="absolute inset-0">
         <Image
           src="/admin-1.jpg"
-          alt="Iroko Farm Estate"
+          alt="Iron Root Farm"
           fill
           className="object-cover"
           priority

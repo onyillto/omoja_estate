@@ -26,7 +26,8 @@ const SmartDevelopmentEnhanced = () => {
       title: "Water Infrastructure",
       description:
         "Boreholes for reliable water access and engineered drainage to manage runoff effectively",
-      image: "/block.jpg",
+      image:
+        "https://i.pinimg.com/1200x/0f/b1/a7/0fb1a786bc80327b8c90789ee35b6930.jpg",
       stats: { value: "10,000L", label: "Daily Capacity" },
       benefits: [
         "Self-sufficient water supply",
@@ -39,7 +40,8 @@ const SmartDevelopmentEnhanced = () => {
       title: "Secure Fencing",
       description:
         "Protection for both people and habitat with carefully planned boundary systems",
-      image: "/block.jpg",
+      image:
+        "https://i.pinimg.com/1200x/56/94/3a/56943ae85b39b9a615e8eb20c29e51bd.jpg",
       stats: { value: "24/7", label: "Security Monitoring" },
       benefits: [
         "Perimeter security",
@@ -52,7 +54,8 @@ const SmartDevelopmentEnhanced = () => {
       title: "Resource Efficiency",
       description:
         "Plots ready for sustainable use from day one with integrated infrastructure",
-      image: "/block.jpg",
+      image:
+        "https://i.pinimg.com/1200x/5a/dd/52/5add52c003e75c00775a8a47d107abcf.jpg",
       stats: { value: "90%", label: "Energy Efficient" },
       benefits: [
         "Solar power ready",
@@ -65,7 +68,8 @@ const SmartDevelopmentEnhanced = () => {
       title: "Phased Development",
       description:
         "Clear development guidance to help owners build responsibly without degrading resources",
-      image: "/block.jpg",
+      image:
+        "https://i.pinimg.com/736x/7e/5e/ec/7e5eec83f6488b35f865e0b91b776b69.jpg",
       stats: { value: "5 Years", label: "Development Plan" },
       benefits: [
         "Structured growth",

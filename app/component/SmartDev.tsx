@@ -41,8 +41,8 @@ export default function SmartDevelopment() {
           </h2>
 
           <p className="text-gray-300 leading-relaxed mb-10">
-            We design realestates to be resource-efficient and resilient. On-farm
-            infrastructure is integrated into project planning, and for
+            We design realestates to be resource-efficient and resilient.
+            On-farm infrastructure is integrated into project planning, and for
             residential sites, phased infrastructure handovers and clear
             development guidance help owners build responsibly.
           </p>
@@ -69,7 +69,7 @@ export default function SmartDevelopment() {
         {/* RIGHT IMAGE */}
         <div className="rounded-xl overflow-hidden">
           <Image
-            src="/block.jpg" // replace with your real image path
+            src="https://images.unsplash.com/photo-1565402170291-8491f14678db?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8fDA%3D" // replace with your real image path
             alt="Smart Development"
             width={800}
             height={600}

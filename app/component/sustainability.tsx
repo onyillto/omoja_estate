@@ -8,7 +8,7 @@ const SustainabilitySection = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1920&q=80"
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Sustainability - Wind turbines and landscape"
           fill
           className="object-cover"
@@ -22,10 +22,10 @@ const SustainabilitySection = () => {
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 md:px-10 sm:px-5">
         {/* Our Commitment Tag with Lines and Leaf Icons */}
         <div className="flex items-center gap-4 mb-12 md:mb-10 mt-7">
-          <div className="w-20 md:w-16 h-[2px] bg-[#2d7a6e]"></div>
+          <div className="w-20 md:w-16 h-[2px] bg-[#8d1a06]"></div>
           {/* Leaf Icon 1 */}
           <svg
-            className="w-6 h-6 md:w-5 md:h-5 text-[#2d7a6e]"
+            className="w-6 h-6 md:w-5 md:h-5 text-[#8d1a06]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -37,12 +37,12 @@ const SustainabilitySection = () => {
               d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
             />
           </svg>
-          <span className="text-[#2d7a6e] text-[14px] md:text-[13px] uppercase tracking-[3px] font-semibold">
+          <span className="text-[#8d1a06] text-[14px] md:text-[13px] uppercase tracking-[3px] font-semibold">
             Our Commitment
           </span>
           {/* Leaf Icon 2 */}
           <svg
-            className="w-6 h-6 md:w-5 md:h-5 text-[#2d7a6e]"
+            className="w-6 h-6 md:w-5 md:h-5 text-[#8d1a06]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -54,7 +54,7 @@ const SustainabilitySection = () => {
               d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
             />
           </svg>
-          <div className="w-20 md:w-16 h-[2px] bg-[#2d7a6e]"></div>
+          <div className="w-20 md:w-16 h-[2px] bg-[#8d1a06]"></div>
         </div>
 
         {/* Sustainability Heading - Uses text-center */}

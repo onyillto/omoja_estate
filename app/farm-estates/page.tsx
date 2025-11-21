@@ -11,8 +11,9 @@ const residentialPage = () => {
       {/* Add padding-top to account for the fixed navbar height */}
       <main className="pt-20">
         <ResidentHeader />
-        <ResidentialProjectsSection />
+
         <ProjectTwo />
+        <ResidentialProjectsSection />
       </main>
     </div>
   );

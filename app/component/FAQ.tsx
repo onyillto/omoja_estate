@@ -95,7 +95,7 @@ const FAQSection = () => {
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gray-50 rounded-tr-full"></div>
       </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 md:px-8">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-5 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center w-12 h-12 bg-red-100 rounded-full text-[#800517] mb-4">
@@ -111,7 +111,7 @@ const FAQSection = () => {
         </div>
 
         {/* Accordion Container */}
-        <div className="space-y-4">
+        <div className="max-w-4xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}

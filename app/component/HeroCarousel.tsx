@@ -24,15 +24,14 @@ const SimpleHero = () => {
       <div className="relative h-full flex items-center justify-center px-4">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
-          
 
           {/* Main Title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight font-serif">
             Come Experience the realest form of Agriculture
           </h1>
 
           {/* Subtitle/Description */}
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed font-serif">
             developing residential homes that meets SDG11 goal
           </p>
 

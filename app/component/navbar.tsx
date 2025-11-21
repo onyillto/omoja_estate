@@ -114,7 +114,7 @@ const SimpleNavbar = () => {
               href="/contact"
               className="px-6 py-2.5 bg-[#800517] hover:bg-[#6a0413] text-white rounded-md text-sm font-medium transition-all shadow-sm hover:shadow-md"
             >
-              Get Started
+              Contact Us
             </Link>
           </div>
 

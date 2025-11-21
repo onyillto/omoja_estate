@@ -85,7 +85,7 @@ const ContactSection = () => {
         </svg>
       ),
       title: "Address",
-      info: "Lagos, Nigeria",
+      info: "Abuja, Nigeria",
     },
   ];
 
@@ -125,7 +125,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="relative w-full bg-[#0a0a0a] py-20 md:py-16">
+    <section className="relative w-full bg-[#800517] py-20 md:py-16">
       <div className="max-w-[1400px] mx-auto px-10 md:px-10 sm:px-5">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-12">
           {/* Left Column - Contact Information */}
@@ -133,15 +133,15 @@ const ContactSection = () => {
             {/* Header */}
             <div className="mb-12">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-[2px] bg-[#2d7a6e]"></div>
-                <span className="text-[#2d7a6e] text-[14px] uppercase tracking-[3px] font-semibold">
+                <div className="w-12 h-0.5 bg-red-400"></div>
+                <span className="text-red-400 text-[14px] uppercase tracking-[3px] font-semibold">
                   Get in Touch
                 </span>
               </div>
               <h2 className="text-white text-[36px] md:text-[32px] font-bold mb-4">
                 Contact Information
               </h2>
-              <p className="text-gray-400 text-[16px] leading-7">
+              <p className="text-gray-100 text-[16px] leading-7">
                 We&apos;re here to answer your questions and help you find the
                 perfect property. Reach out to us through any of the channels
                 below.
@@ -153,16 +153,16 @@ const ContactSection = () => {
               {contactInfo.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-5 bg-[#1a1a1a] border border-gray-800 rounded-xl p-6 hover:border-[#2d7a6e] transition-colors"
+                  className="flex items-center gap-5 bg-white/5 border border-white/10 rounded-xl p-6 hover:border-red-400 transition-colors"
                 >
-                  <div className="w-14 h-14 bg-[#2d7a6e]/20 rounded-lg flex items-center justify-center text-[#2d7a6e] flex-shrink-0">
+                  <div className="w-14 h-14 bg-red-400/10 rounded-lg flex items-center justify-center text-red-400 flex-shrink-0">
                     {item.icon}
                   </div>
                   <div>
                     <h3 className="text-white font-medium text-[16px] mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-gray-400 text-[15px]">{item.info}</p>
+                    <p className="text-gray-100 text-[15px]">{item.info}</p>
                   </div>
                 </div>
               ))}
@@ -178,7 +178,7 @@ const ContactSection = () => {
                   <a
                     key={index}
                     href="#"
-                    className="w-12 h-12 bg-[#1a1a1a] border border-gray-800 hover:border-[#2d7a6e] rounded-lg flex items-center justify-center text-gray-400 hover:text-[#2d7a6e] transition-all"
+                    className="w-12 h-12 bg-white/5 border border-white/10 hover:border-red-400 rounded-lg flex items-center justify-center text-gray-100 hover:text-red-400 transition-all"
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -189,11 +189,11 @@ const ContactSection = () => {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="bg-[#1a1a1a] border border-gray-800 rounded-xl p-8 md:p-6">
+          <div className="bg-white/5 border border-white/10 rounded-xl p-8 md:p-6">
             <h2 className="text-white text-[28px] md:text-[24px] font-bold mb-2">
               Send us a Message
             </h2>
-            <p className="text-gray-400 text-[15px] mb-8">
+            <p className="text-gray-100 text-[15px] mb-8">
               Fill out the form below and we&apos;ll get back to you as soon as
               possible.
             </p>
@@ -203,7 +203,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="firstName"
-                  className="block text-white font-medium text-[14px] mb-2"
+                  className="block text-gray-300 font-medium text-[14px] mb-2"
                 >
                   First Name
                 </label>
@@ -214,7 +214,7 @@ const ContactSection = () => {
                   value={formData.firstName}
                   onChange={handleChange}
                   placeholder="Enter your first name"
-                  className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] border border-gray-800 focus:border-[#2d7a6e] outline-none text-white text-[15px] placeholder-gray-600 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
                 />
               </div>
 
@@ -222,7 +222,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-white font-medium text-[14px] mb-2"
+                  className="block text-gray-300 font-medium text-[14px] mb-2"
                 >
                   Email Address
                 </label>
@@ -233,7 +233,7 @@ const ContactSection = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Enter your email"
-                  className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] border border-gray-800 focus:border-[#2d7a6e] outline-none text-white text-[15px] placeholder-gray-600 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
                 />
               </div>
 
@@ -241,7 +241,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="phone"
-                  className="block text-white font-medium text-[14px] mb-2"
+                  className="block text-gray-300 font-medium text-[14px] mb-2"
                 >
                   Phone Number
                 </label>
@@ -252,7 +252,7 @@ const ContactSection = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Enter your phone number"
-                  className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] border border-gray-800 focus:border-[#2d7a6e] outline-none text-white text-[15px] placeholder-gray-600 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
                 />
               </div>
 
@@ -260,7 +260,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-white font-medium text-[14px] mb-2"
+                  className="block text-gray-300 font-medium text-[14px] mb-2"
                 >
                   Message
                 </label>
@@ -271,14 +271,14 @@ const ContactSection = () => {
                   onChange={handleChange}
                   placeholder="Enter your message"
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-[#0a0a0a] border border-gray-800 focus:border-[#2d7a6e] outline-none text-white text-[15px] placeholder-gray-600 transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors resize-none"
                 ></textarea>
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#2d7a6e] hover:bg-[#236d61] text-white px-8 py-4 rounded-lg text-[16px] font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
+                className="w-full bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg text-[16px] font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
               >
                 <svg
                   className="w-5 h-5"

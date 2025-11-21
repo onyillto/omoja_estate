@@ -201,12 +201,12 @@ const PropertyModal = () => {
       <div className="text-center py-12 md:py-16 lg:py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <h5 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#800517] mb-4 tracking-tight">
-            Important Estate Features
+            Available Properties
           </h5>
           <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-[#800517] to-[#880000] mx-auto mb-6"></div>
-          <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
+          {/* <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
             Discover our premium properties with world-class amenities
-          </p>
+          </p> */}
         </div>
       </div>
 

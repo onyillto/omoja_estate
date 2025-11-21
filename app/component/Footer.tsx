@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Facebook,
   Instagram,
@@ -31,18 +32,13 @@ const Footer = () => {
           {/* Column 1: Brand and Description (Span 4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             {" "}
-            {/* Adjusted space-y-6 to space-y-4 */}
-            {/* Logo Placeholder */}
             <Link href="/" className="flex items-center gap-2">
-              {/* Reduced logo size from w-8/h-8 to w-7/h-7 */}
-              <div className="w-7 h-7 bg-white rounded-lg flex items-center justify-center">
-                <span className="font-bold text-[#800517] text-base">M</span>
-              </div>
-              <span className="text-xl font-bold text-white tracking-tight">
-                {" "}
-                {/* Reduced text-2xl to text-xl */}
-                Moja<span className="text-gray-300">RealEstate</span>.
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Moja RealEstate Logo"
+                width={180}
+                height={40}
+              />
             </Link>
             <p className="text-gray-200 text-sm leading-relaxed max-w-sm">
               Building sustainable agricultural and residential communities for
@@ -63,7 +59,7 @@ const Footer = () => {
               <li className="flex items-start gap-3 text-gray-200 text-sm">
                 <MapPin className="w-5 h-5 text-white flex-shrink-0" />
                 <span>
-                  Iron Roots Farms, Kuje,
+                  Moja Realestate, Kuje,
                   <br /> Abuja, Nigeria
                 </span>
               </li>

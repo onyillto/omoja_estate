@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,12 @@ const ContactSection = () => {
     phone: "",
     message: "",
   });
+
+  // New state to control visibility of all contact info/form
+  const [showContactInfo, setShowContactInfo] = useState(false);
+
+  // Existing state for the form dropdown itself, kept for smooth form animation
+  const [showForm, setShowForm] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,6 +28,20 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
+    // Add form submission logic here
+  };
+
+  // Helper function to toggle both states when "Send Email" is clicked
+  const handleSendEmailClick = () => {
+    // If contact info is hidden, show it and show the form dropdown immediately
+    if (!showContactInfo) {
+      setShowContactInfo(true);
+      setShowForm(true);
+    } else {
+      // If contact info is visible, hide it and hide the form dropdown
+      setShowContactInfo(false);
+      setShowForm(false);
+    }
   };
 
   const contactInfo = [
@@ -62,31 +83,6 @@ const ContactSection = () => {
       title: "Phone",
       info: "+234 XXX XXX XXXX",
     },
-    {
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-          />
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-          />
-        </svg>
-      ),
-      title: "Address",
-      info: "Abuja, Nigeria",
-    },
   ];
 
   const socialLinks = [
@@ -127,177 +123,229 @@ const ContactSection = () => {
   return (
     <section className="relative w-full bg-[#800517] py-20 md:py-16">
       <div className="max-w-[1400px] mx-auto px-10 md:px-10 sm:px-5">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-12">
-          {/* Left Column - Contact Information */}
-          <div>
-            {/* Header */}
-            <div className="mb-12">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-0.5 bg-red-400"></div>
-                <span className="text-red-400 text-[14px] uppercase tracking-[3px] font-semibold">
-                  Get in Touch
-                </span>
-              </div>
-              <h2 className="text-white text-[36px] md:text-[32px] font-bold mb-4">
-                Contact Information
-              </h2>
-              <p className="text-gray-100 text-[16px] leading-7">
-                We&apos;re here to answer your questions and help you find the
-                perfect property. Reach out to us through any of the channels
-                below.
-              </p>
-            </div>
+        {/* Action Buttons - Always Visible */}
+        <div className="flex justify-center gap-4 mb-8">
+          <button
+            // Use the new handler to control all visibility
+            onClick={handleSendEmailClick}
+            className="flex-1 bg-white text-[#800517] hover:bg-gray-100 px-8 py-4 rounded-lg text-[16px] font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl max-w-[200px]"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+            Send Email
+          </button>
+          <Link
+            href="/company/projects"
+            className="flex-1 bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg text-[16px] font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl max-w-[200px]"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            See Offers
+          </Link>
+        </div>
 
-            {/* Contact Cards */}
-            <div className="space-y-6 mb-12">
-              {contactInfo.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-5 bg-white/5 border border-white/10 rounded-xl p-6 hover:border-red-400 transition-colors"
-                >
-                  <div className="w-14 h-14 bg-red-400/10 rounded-lg flex items-center justify-center text-red-400 flex-shrink-0">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-white font-medium text-[16px] mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-100 text-[15px]">{item.info}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Social Links */}
+        {/* Conditional Content Wrapper: Only shows up after "Send Email" is clicked */}
+        {showContactInfo && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-12">
+            {/* Left Column - Contact Information */}
             <div>
-              <h3 className="text-white font-semibold text-[18px] mb-4">
-                Follow Us
-              </h3>
-              <div className="flex items-center gap-4">
-                {socialLinks.map((social, index) => (
-                  <a
+              {/* Header */}
+              <div className="mb-12">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-0.5 bg-red-400"></div>
+                  <span className="text-red-400 text-[14px] uppercase tracking-[3px] font-semibold">
+                    Get in Touch
+                  </span>
+                </div>
+                <h2 className="text-white text-[36px] md:text-[32px] font-bold mb-4">
+                  Contact Information
+                </h2>
+                <p className="text-gray-100 text-[16px] leading-7">
+                  We&apos;re here to answer your questions and help you find the
+                  perfect property. Reach out to us through any of the channels
+                  below.
+                </p>
+              </div>
+
+              {/* Contact Cards */}
+              <div className="space-y-6 mb-12">
+                {contactInfo.map((item, index) => (
+                  <div
                     key={index}
-                    href="#"
-                    className="w-12 h-12 bg-white/5 border border-white/10 hover:border-red-400 rounded-lg flex items-center justify-center text-gray-100 hover:text-red-400 transition-all"
-                    aria-label={social.name}
+                    className="flex items-center gap-5 bg-white/5 border border-white/10 rounded-xl p-6 hover:border-red-400 transition-colors"
                   >
-                    {social.icon}
-                  </a>
+                    <div className="w-14 h-14 bg-red-400/10 rounded-lg flex items-center justify-center text-red-400 flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-white font-medium text-[16px] mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-100 text-[15px]">{item.info}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
+
+              {/* Social Links */}
+              <div>
+                <h3 className="text-white font-semibold text-[18px] mb-4">
+                  Follow Us
+                </h3>
+                <div className="flex items-center gap-4">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href="#"
+                      className="w-12 h-12 bg-white/5 border border-white/10 hover:border-red-400 rounded-lg flex items-center justify-center text-gray-100 hover:text-red-400 transition-all"
+                      aria-label={social.name}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Form (Now controlled by showForm for smooth animation) */}
+            <div>
+              {/* Contact Form - Dropdown */}
+              <div
+                className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                  showForm ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="bg-white/5 border border-white/10 rounded-xl p-8 md:p-6">
+                  <h2 className="text-white text-[28px] md:text-[24px] font-bold mb-2">
+                    Send us a Message
+                  </h2>
+                  <p className="text-gray-100 text-[15px] mb-8">
+                    Fill out the form below and we&apos;ll get back to you as
+                    soon as possible.
+                  </p>
+
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Form Inputs */}
+                    <div>
+                      <label
+                        htmlFor="firstName"
+                        className="block text-gray-300 font-medium text-[14px] mb-2"
+                      >
+                        First Name
+                      </label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        placeholder="Enter your first name"
+                        className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block text-gray-300 font-medium text-[14px] mb-2"
+                      >
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Enter your email"
+                        className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="phone"
+                        className="block text-gray-300 font-medium text-[14px] mb-2"
+                      >
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Enter your phone number"
+                        className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="message"
+                        className="block text-gray-300 font-medium text-[14px] mb-2"
+                      >
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder="Enter your message"
+                        rows={5}
+                        className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors resize-none"
+                      ></textarea>
+                    </div>
+
+                    {/* Submit Button */}
+                    <button
+                      type="submit"
+                      className="w-full bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg text-[16px] font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
+                    >
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                        />
+                      </svg>
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* Right Column - Contact Form */}
-          <div className="bg-white/5 border border-white/10 rounded-xl p-8 md:p-6">
-            <h2 className="text-white text-[28px] md:text-[24px] font-bold mb-2">
-              Send us a Message
-            </h2>
-            <p className="text-gray-100 text-[15px] mb-8">
-              Fill out the form below and we&apos;ll get back to you as soon as
-              possible.
-            </p>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* First Name */}
-              <div>
-                <label
-                  htmlFor="firstName"
-                  className="block text-gray-300 font-medium text-[14px] mb-2"
-                >
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  placeholder="Enter your first name"
-                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-gray-300 font-medium text-[14px] mb-2"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Enter your email"
-                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
-                />
-              </div>
-
-              {/* Phone */}
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-gray-300 font-medium text-[14px] mb-2"
-                >
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="Enter your phone number"
-                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-gray-300 font-medium text-[14px] mb-2"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Enter your message"
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors resize-none"
-                ></textarea>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg text-[16px] font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                  />
-                </svg>
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
+        )}
       </div>
     </section>
   );

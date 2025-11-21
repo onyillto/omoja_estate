@@ -22,7 +22,7 @@ const PortfolioHero = () => {
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 md:px-10 sm:px-5">
         {/* Portfolio Tag */}
         <div className="mb-8 animate-fadeIn">
-          <span className="text-[#2d7a6e] text-[14px] md:text-[13px] uppercase tracking-[3px] font-medium">
+          <span className="text-[#800517] text-[14px] md:text-[13px] uppercase tracking-[3px] font-medium">
             Residential RealEstate
           </span>
         </div>

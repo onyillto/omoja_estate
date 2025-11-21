@@ -59,7 +59,7 @@ const Footer = () => {
               <li className="flex items-start gap-3 text-gray-200 text-sm">
                 <MapPin className="w-5 h-5 text-white flex-shrink-0" />
                 <span>
-                  Moja Realestate, Kuje,
+                   Kuje,
                   <br /> Abuja, Nigeria
                 </span>
               </li>

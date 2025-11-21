@@ -19,7 +19,7 @@ const projects = [
     location: "Abuja, Nigeria",
     description:
       "A premium gated community located in the serene Karen area. Moja Gardens Estate offers modern living with excellent connectivity to the CBD. The estate features well-planned plots with ready titles and is ideal for families seeking a peaceful suburban lifestyle.",
-    price: "KES 4.5M - 12M",
+    price: "NGA 4.5M - 12M",
     stats: {
       area: "25 Acres",
       plots: "120 Units",
@@ -41,7 +41,7 @@ const projects = [
     location: "Kiambu, Nairobi",
     description:
       "Nestled in the lush greenery of Kiambu, Highland Springs is designed for those who appreciate nature without compromising on luxury. This project features larger plot sizes perfect for country homes and agricultural hobbies.",
-    price: "KES 6.5M - 18M",
+    price: "NGA 6.5M - 18M",
     stats: {
       area: "50 Acres",
       plots: "80 Units",
@@ -67,7 +67,7 @@ const projects = [
     location: "Kilimani, Nairobi",
     description:
       "A high-density residential development offering smart-plots for vertical construction. Perfect for developers looking to build apartments or mixed-use commercial centers in the heart of the city.",
-    price: "KES 25M - 40M",
+    price: "NGA 25M - 40M",
     stats: {
       area: "5 Acres",
       plots: "20 Units",

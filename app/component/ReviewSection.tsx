@@ -7,7 +7,7 @@ const ReviewsSection = () => {
     {
       id: 1,
       quote:
-        "The process of acquiring our plot of land with Omoja Estate was seamless from start to finish. Their team was professional, transparent, and guided us every step of the way. We're thrilled to start building our dream home!",
+        "The process of acquiring our plot of land with moja Estate was seamless from start to finish. Their team was professional, transparent, and guided us every step of the way. We're thrilled to start building our dream home!",
       author: "The Adebayo Family",
       role: "Homeowners",
       rating: 5,
@@ -15,7 +15,7 @@ const ReviewsSection = () => {
     {
       id: 2,
       quote:
-        "We were looking for more than just a house; we wanted a community. Omoja Estate delivered exactly that. The attention to detail in their residential prototype and the vision for the community is outstanding. It's the perfect place for our family to grow.",
+        "We were looking for more than just a house; we wanted a community. moja Estate delivered exactly that. The attention to detail in their residential prototype and the vision for the community is outstanding. It's the perfect place for our family to grow.",
       author: "Mr. & Mrs. Okoro",
       role: "Property Investors",
       rating: 5,
@@ -23,7 +23,7 @@ const ReviewsSection = () => {
     {
       id: 3,
       quote:
-        "Investing in farmland with Omoja Estate has been a wise decision. Their commitment to sustainable development and agriculture is impressive. The entire process was handled with utmost integrity. A truly trustworthy real estate partner.",
+        "Investing in farmland with moja Estate has been a wise decision. Their commitment to sustainable development and agriculture is impressive. The entire process was handled with utmost integrity. A truly trustworthy real estate partner.",
       author: "Dr. Fatima Bello",
       role: "Agri-Investor",
       rating: 5,

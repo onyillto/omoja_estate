@@ -91,20 +91,20 @@ const ProjectsIndex = () => {
 
   // --- Reusable Project Card Component ---
   const ProjectCard: React.FC<{ project: ProjectData }> = ({ project }) => (
-    <div className="bg-[#1a1a1a] p-8 md:p-6 rounded-3xl border border-gray-800 shadow-xl mb-16">
+    <div className="bg-white p-8 md:p-6 rounded-3xl border border-gray-200 shadow-xl mb-16">
       {/* Project Header */}
-      <div className="mb-12 border-red-800">
+      <div className="mb-12">
         <span className="text-red-500 text-[13px] uppercase tracking-[3px] font-medium mb-8 block">
           {project.tag}
         </span>
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
           <div className="flex-1">
-            <h2 className="text-white text-[36px] md:text-[32px] sm:text-[28px] font-bold mb-4">
+            <h2 className="text-gray-900 text-[36px] md:text-[32px] sm:text-[28px] font-bold mb-4">
               {project.name}
             </h2>
             <div className="flex items-center gap-2 text-red-500 mb-6">
               <svg
-                className="w-5 h-5"
+                className="w-5 h-5 text-red-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -124,42 +124,42 @@ const ProjectsIndex = () => {
               </svg>
               <span className="text-[15px]">{project.location}</span>
             </div>
-            <p className="text-gray-400 text-[15px] leading-[26px] max-w-[600px]">
+            <p className="text-gray-600 text-[15px] leading-[26px] max-w-[600px]">
               {project.description}
             </p>
           </div>
 
           {/* Info Cards */}
           <div className="grid grid-cols-2 gap-4 w-full lg:w-auto">
-            <div className="bg-[#0a0a0a] border border-red-700 rounded-lg p-5">
+            <div className="bg-gray-50 border border-red-200 rounded-lg p-5">
               <span className="text-red-500 text-[13px] uppercase tracking-[2px] block mb-2">
                 Land Area
               </span>
-              <span className="text-white text-[24px] font-bold">
+              <span className="text-gray-900 text-[24px] font-bold">
                 {project.landArea}
               </span>
             </div>
-            <div className="bg-[#0a0a0a] border border-red-700 rounded-lg p-5">
+            <div className="bg-gray-50 border border-red-200 rounded-lg p-5">
               <span className="text-red-500 text-[13px] uppercase tracking-[2px] block mb-2">
                 Total Plots
               </span>
-              <span className="text-white text-[24px] font-bold">
+              <span className="text-gray-900 text-[24px] font-bold">
                 {project.totalPlots}
               </span>
             </div>
-            <div className="bg-[#0a0a0a] border border-red-700 rounded-lg p-5">
+            <div className="bg-gray-50 border border-red-200 rounded-lg p-5">
               <span className="text-red-500 text-[13px] uppercase tracking-[2px] block mb-2">
                 Available
               </span>
-              <span className="text-white text-[24px] font-bold">
+              <span className="text-gray-900 text-[24px] font-bold">
                 {project.availablePlots} Plots
               </span>
             </div>
-            <div className="bg-[#0a0a0a] border border-red-700 rounded-lg p-5">
+            <div className="bg-gray-50 border border-red-200 rounded-lg p-5">
               <span className="text-red-500 text-[13px] uppercase tracking-[2px] block mb-2">
                 Completion
               </span>
-              <span className="text-white text-[24px] font-bold">
+              <span className="text-gray-900 text-[24px] font-bold">
                 {project.completion}
               </span>
             </div>
@@ -222,16 +222,16 @@ const ProjectsIndex = () => {
       {/* Details Section */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
         {/* Left Column - Plot Sizes & Price */}
-        <div className="lg:col-span-5 space-y-6 border-red-700">
-          <div className="bg-[#0a0a0a] border border-red-700 rounded-2xl p-8 md:p-6">
-            <h3 className="text-white text-[18px] font-semibold mb-6">
+        <div className="lg:col-span-5 space-y-6">
+          <div className="bg-gray-50 border border-red-200 rounded-2xl p-8 md:p-6">
+            <h3 className="text-gray-900 text-[18px] font-semibold mb-6">
               Plot Sizes
             </h3>
-            <p className="text-gray-400 text-[15px]">{project.plotSizes}</p>
+            <p className="text-gray-600 text-[15px]">{project.plotSizes}</p>
           </div>
 
-          <div className="bg-[#0a0a0a] border border-red-700 rounded-2xl p-8 md:p-6">
-            <h3 className="text-white text-[18px] font-semibold mb-4">
+          <div className="bg-red-50 border border-red-200 rounded-2xl p-8 md:p-6">
+            <h3 className="text-gray-900 text-[18px] font-semibold mb-4">
               Price Range
             </h3>
             <p className="text-red-500 text-[24px] font-bold">
@@ -241,15 +241,15 @@ const ProjectsIndex = () => {
         </div>
 
         {/* Right Column - Amenities */}
-        <div className="lg:col-span-7 bg-[#0a0a0a] border border-red-700 rounded-2xl p-8 md:p-6">
-          <h3 className="text-white text-[18px] font-semibold mb-6">
+        <div className="lg:col-span-7 bg-gray-50 border border-red-200 rounded-2xl p-8 md:p-6">
+          <h3 className="text-gray-900 text-[18px] font-semibold mb-6">
             Estate Amenities & Features
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
             {project.amenities.map((amenity, index) => (
               <div key={index} className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-red-500 mt-2 flex-shrink-0"></div>
-                <span className="text-gray-400 text-[15px]">{amenity}</span>
+                <span className="text-gray-600 text-[15px]">{amenity}</span>
               </div>
             ))}
           </div>
@@ -282,10 +282,10 @@ const ProjectsIndex = () => {
   );
 
   return (
-    <section className="relative w-full bg-[#0a0a0a] py-20 md:py-16">
+    <section className="relative w-full bg-white py-20 md:py-16">
       <div className="max-w-[1400px] mx-auto px-10 md:px-10 sm:px-5">
         {/* Main Section Title */}
-        <h1 className="text-white text-5xl font-extrabold text-center mb-16 md:mb-12">
+        <h1 className="text-gray-900 text-5xl font-extrabold text-center mb-16 md:mb-12">
           Featured Projects
         </h1>
 
@@ -294,7 +294,7 @@ const ProjectsIndex = () => {
           <React.Fragment key={index}>
             <ProjectCard project={project} />
             {index < projects.length - 1 && (
-              <hr className="border-t border-red-800 my-16 max-w-4xl mx-auto" />
+              <hr className="border-t border-red-200 my-16 max-w-4xl mx-auto" />
             )}
           </React.Fragment>
         ))}

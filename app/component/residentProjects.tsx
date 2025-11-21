@@ -30,7 +30,7 @@ const ProjectDetails = () => {
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="flex-1">
               <h1 className="text-[#800517] text-[36px] md:text-[32px] sm:text-[28px] font-bold mb-4">
-                THE CLOUDS Maisonettes
+                Royal Protein Farms
               </h1>
               <div className="flex items-center gap-2 text-[#800517] mb-6">
                 <svg

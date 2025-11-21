@@ -66,9 +66,9 @@ const CommitmentSection = () => {
             </p>
             <p>
               We integrate rigorous due diligence to deliver secure Agricultural
-              and Residential RealEstates that exceed regulatory standards, ensuring
-              every project enhances both economic productivity and ecological
-              balance.
+              and Residential RealEstates that exceed regulatory standards,
+              ensuring every project enhances both economic productivity and
+              ecological balance.
             </p>
           </div>
         </div>
@@ -132,7 +132,7 @@ const CommitmentSection = () => {
             {/* Main Image Container */}
             <div className="relative h-[400px] md:h-[550px] w-full rounded-2xl overflow-hidden shadow-2xl z-10">
               <Image
-                src="/gate-3.jpg" // Ensure this path is correct in your public folder
+                src="https://i.pinimg.com/1200x/d2/31/3b/d2313bf47264e5aad16515bc9070ef32.jpg" // Ensure this path is correct in your public folder
                 alt="Sustainable Agricultural Estate"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700"

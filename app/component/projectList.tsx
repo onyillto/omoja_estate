@@ -15,7 +15,7 @@ const projects = [
   {
     id: 1,
     subtitle: "Project 01",
-    title: "Moja Gate House",
+    title: "THE CLOUDS Maisonettes",
     location: "Abuja, Nigeria",
     description:
       "A premium gated community located in the serene Karen area. Moja Gardens Estate offers modern living with excellent connectivity to the CBD. The estate features well-planned plots with ready titles and is ideal for families seeking a peaceful suburban lifestyle.",
@@ -37,8 +37,8 @@ const projects = [
   {
     id: 2,
     subtitle: "Project 02",
-    title: "Self Con Residency",
-    location: "Kiambu Road, Nairobi",
+    title: "Royal Protein Farms",
+    location: "Kiambu, Nairobi",
     description:
       "Nestled in the lush greenery of Kiambu, Highland Springs is designed for those who appreciate nature without compromising on luxury. This project features larger plot sizes perfect for country homes and agricultural hobbies.",
     price: "KES 6.5M - 18M",

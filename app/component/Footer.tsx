@@ -110,7 +110,7 @@ const Footer = () => {
               {/* MapPin - Aligned Start for multi-line text */}
               <li className="flex items-start gap-3 text-gray-200 text-sm">
                 <MapPin className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
-                <span className="leading-relaxed">Kuje, Abuja, Nigeria</span>
+                <span className="leading-relaxed">Birgi Plaza, Wuye, Abuja Nigeria</span>
               </li>
               {/* Phone */}
               <li className="flex items-center gap-3 text-gray-200 text-sm">

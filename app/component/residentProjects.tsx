@@ -184,7 +184,7 @@ const ProjectDetails = () => {
                 Price Range
               </h3>
               <p className="text-[#2d7a6e] text-[24px] font-bold">
-                KES 4.5M - 12M
+                NGA 4.5M - 12M
               </p>
             </div>
           </div>

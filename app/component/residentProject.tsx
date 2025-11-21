@@ -56,37 +56,37 @@ const ProjectsIndex = () => {
       ],
       link: "/royal-protein-farms",
     },
-    {
-      name: "Iron Roots Estates", // New Project Name
-      tag: "Residential & Commercial",
-      location: "Phase III, FCT, Nigeria",
-      description:
-        "Iron Roots Estates is a premium residential and commercial development offering modern living spaces and strategic business plots. Located in the fast-developing Phase III of the FCT, it provides easy access to key city infrastructure.",
-      landArea: "15 Acres",
-      totalPlots: 80,
-      availablePlots: 45,
-      completion: "2025",
-      plotSizes: "500sqm, 750sqm",
-      priceRange: "₦8.0M - ₦12.5M",
-      images: [
-        "/self.jpg", // Use placeholder images; replace with actual paths
-        "/gate.jpg",
-        "/suparmaaket.jpg",
-        "/hall.jpg",
-        "/gate-2.jpg",
-        "/self-2.jpg",
-      ],
-      amenities: [
-        "24/7 Security",
-        "Tarred Internal Roads",
-        "Treated Water Supply",
-        "Recreational Park",
-        "Underground Drainage",
-        "Fibre Optics Internet",
-        "Gym & Spa (planned)",
-      ],
-      link: "/iron-roots-estates",
-    },
+    // {
+    //   name: "Iron Roots Estates", // New Project Name
+    //   tag: "Residential & Commercial",
+    //   location: "Phase III, FCT, Nigeria",
+    //   description:
+    //     "Iron Roots Estates is a premium residential and commercial development offering modern living spaces and strategic business plots. Located in the fast-developing Phase III of the FCT, it provides easy access to key city infrastructure.",
+    //   landArea: "15 Acres",
+    //   totalPlots: 80,
+    //   availablePlots: 45,
+    //   completion: "2025",
+    //   plotSizes: "500sqm, 750sqm",
+    //   priceRange: "₦8.0M - ₦12.5M",
+    //   images: [
+    //     "/self.jpg", // Use placeholder images; replace with actual paths
+    //     "/gate.jpg",
+    //     "/suparmaaket.jpg",
+    //     "/hall.jpg",
+    //     "/gate-2.jpg",
+    //     "/self-2.jpg",
+    //   ],
+    //   amenities: [
+    //     "24/7 Security",
+    //     "Tarred Internal Roads",
+    //     "Treated Water Supply",
+    //     "Recreational Park",
+    //     "Underground Drainage",
+    //     "Fibre Optics Internet",
+    //     "Gym & Spa (planned)",
+    //   ],
+    //   link: "/iron-roots-estates",
+    // },
   ];
 
   // --- Reusable Project Card Component ---

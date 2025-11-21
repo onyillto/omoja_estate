@@ -23,13 +23,13 @@ const PortfolioHero = () => {
         {/* Portfolio Tag */}
         <div className="mb-8 animate-fadeIn">
           <span className="text-[#2d7a6e] text-[14px] md:text-[13px] uppercase tracking-[3px] font-medium">
-            Residential RealEstate
+            Iroko Farm Estate
           </span>
         </div>
 
         {/* Main Heading */}
         <h1 className="text-white text-[48px] md:text-[40px] sm:text-[32px] font-bold mb-6 text-center animate-fadeInUp">
-          Residential RealEstate
+          Iroko Farm Estate
         </h1>
 
         {/* Description */}

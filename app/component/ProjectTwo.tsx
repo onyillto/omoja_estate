@@ -194,7 +194,7 @@ const ProjectTwo = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <Link
             href="/farm-estates"
             className="group inline-flex items-center gap-3 bg-[#2d7a6e] hover:bg-[#236d61] text-white px-8 py-4 rounded-lg text-[15px] font-medium transition-all duration-300"
@@ -214,7 +214,7 @@ const ProjectTwo = () => {
               />
             </svg>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

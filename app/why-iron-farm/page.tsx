@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import CTA from "../component/PremiumCTASection"
+import Plan from "../component/plan"
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
@@ -330,9 +331,9 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-
+      <Plan />
       {/* Section 3: Call to Action with Background Images (Image 3) */}
-<CTA/>
+      <CTA />
     </div>
   );
 };

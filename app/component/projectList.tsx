@@ -10,84 +10,6 @@ import {
   Calendar,
 } from "lucide-react";
 
-// --- MOCK DATA: Easily add more projects here ---
-const projects = [
-  {
-    id: 1,
-    subtitle: "Project 01",
-    title: "THE CLOUDS Maisonettes",
-    location: "Abuja, Nigeria",
-    description:
-      "A premium gated community located in the serene Karen area. Moja Gardens Estate offers modern living with excellent connectivity to the CBD. The estate features well-planned plots with ready titles and is ideal for families seeking a peaceful suburban lifestyle.",
-    price: "₦ 4.5M - 12M",
-    stats: {
-      area: "25 Acres",
-      plots: "120 Units",
-      available: "87 Plots",
-      completion: "2024",
-    },
-    amenities: [
-      "24/7 Security & CCTV",
-      "Tarmac Roads",
-      "Central Water Supply",
-      "Underground Power",
-    ],
-    images: ["/gate.jpg", "/gate-2.jpg", "/gate-3.jpg"],
-  },
-  {
-    id: 2,
-    subtitle: "Project 02",
-    title: "Royal Protein Farms",
-    location: "Kiambu, Nairobi",
-    description:
-      "Nestled in the lush greenery of Kiambu, Highland Springs is designed for those who appreciate nature without compromising on luxury. This project features larger plot sizes perfect for country homes and agricultural hobbies.",
-    price: "₦ 6.5M - 18M",
-    stats: {
-      area: "50 Acres",
-      plots: "80 Units",
-      available: "12 Plots",
-      completion: "2025",
-    },
-    amenities: [
-      "Clubhouse & Gym",
-      "Jogging Tracks",
-      "Organic Farm Zones",
-      "Fiber Internet",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600596542815-e32cb518753e?w=800&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-    ],
-  },
-  {
-    id: 3,
-    subtitle: "Project 03",
-    title: "The Onyx Residency",
-    location: "Kilimani, Nairobi",
-    description:
-      "A high-density residential development offering smart-plots for vertical construction. Perfect for developers looking to build apartments or mixed-use commercial centers in the heart of the city.",
-    price: "₦ 25M - 40M",
-    stats: {
-      area: "5 Acres",
-      plots: "20 Units",
-      available: "3 Plots",
-      completion: "Ready",
-    },
-    amenities: [
-      "Commercial Zoning",
-      "Sewer Line Connected",
-      "Street Lighting",
-      "Dual Carriage Access",
-    ],
-    images: [
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80",
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80",
-    ],
-  },
-];
-
 // --- Define a type for our project structure for better type safety ---
 type ProjectType = {
   id: number;
@@ -105,6 +27,81 @@ type ProjectType = {
   amenities: string[];
   images: string[];
 };
+
+// --- MOCK DATA: Updated to match project names and Nigerian location/context ---
+const projects: ProjectType[] = [
+  {
+    id: 1,
+    subtitle: "Project 01: Residential",
+    title: "THE CLOUDS Maisonettes",
+    location: "Lugbe, Abuja, Nigeria", // Changed location
+    description:
+      "A premium residential development featuring contemporary three and four-bedroom maisonettes. Located in the fast-developing Lugbe area, THE CLOUDS offers secure, modern living with excellent infrastructure for families seeking a luxurious suburban lifestyle.", // Updated description
+    price: "₦ 15.5M - 35M", // Adjusted price range for maisonettes
+    stats: {
+      area: "15 Acres",
+      plots: "120 Units",
+      available: "87 Plots",
+      completion: "2024",
+    },
+    amenities: [
+      "24/7 Security & CCTV",
+      "Interlocked Roads",
+      "Central Water Supply",
+      "Underground Power",
+    ],
+    images: ["/self.jpg", "/suparmaaket.jpg", "/self-1.jpg"],
+  },
+  {
+    id: 2,
+    subtitle: "Project 02: Agricultural",
+    title: "Royal Protein Farms",
+    location: "Kuje, Abuja, Nigeria", // Changed location
+    description:
+      "A specialized mixed-use estate designed for large-scale agricultural investment and protein production (poultry, fishery, livestock). Situated in the Kuje farming zone, this project offers large plots with dedicated water and storage facilities.", // Updated description
+    price: "₦ 6.5M - 18M",
+    stats: {
+      area: "50 Acres",
+      plots: "80 Plots",
+      available: "12 Plots",
+      completion: "2025",
+    },
+    amenities: [
+      "Perimeter Fencing",
+      "Borehole Water Access",
+      "Dedicated Farm Zones",
+      "Gated Entry",
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
+      "/mill.jpg",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+    ],
+  },
+  {
+    id: 3,
+    subtitle: "Project 03: Commercial/Mixed-Use",
+    title: "Iron Roots Farm",
+    location: "Wuse II, Abuja, Nigeria", // Changed location
+    description:
+      "Iron Roots Farms is an innovative mixed-use agricultural estate in Kuje, Abuja, a region zoned for farming under the Abuja Master Plan. It features curated layouts for crop cultivation and animal husbandry, ensuring operational efficiency and sustainable practices.", // Updated description
+    price: "₦ 40M - 85M", // Adjusted price range for prime central plots
+    stats: {
+      area: "5 Acres",
+      plots: "20 Plots",
+      available: "3 Plots",
+      completion: "Ready",
+    },
+    amenities: [
+      "Commercial Zoning Approval",
+      "Sewer Line Connected",
+      "Street Lighting",
+      "Dual Carriage Access",
+    ],
+    images: ["/gate.jpg", "/gate-2.jpg", "/gate-3.jpg"],
+  },
+];
+
 const ProjectShowcase = () => {
   return (
     <section className="w-full bg-gray-50 py-20 overflow-hidden">
@@ -247,7 +244,7 @@ const SingleProjectItem = ({
             </h4>
             <div className="flex flex-wrap gap-3">
               {project.amenities.map((amenity, i) => (
-                <span // amenity was implicitly any
+                <span
                   key={i}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-50 text-gray-800 text-sm border border-red-100"
                 >

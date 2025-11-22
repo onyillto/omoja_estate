@@ -51,27 +51,13 @@ const Footer = () => {
               />
             </Link>
             <p className="text-gray-200 text-sm leading-relaxed max-w-sm">
-              <span className="font-bold text-white">Building sustainable agricultural and residential communities</span>
+              <span className="font-bold text-white">
+                Building sustainable agricultural and residential communities
+              </span>
               for the future. Join us in redefining modern living with resilient
               infrastructure and clear documentation.
             </p>
             {/* Social Icons moved to the Brand column for better grouping */}
-            <div className="pt-4 flex items-center gap-3">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-200 hover:bg-white hover:text-[#800517] transition-all duration-300"
-                  aria-label={`Follow us on ${
-                    ["Facebook", "Instagram", "Twitter", "LinkedIn"][index]
-                  }`}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Column 2: Quick Links (New Column for structure) */}
@@ -96,8 +82,6 @@ const Footer = () => {
                   About Us
                 </Link>
               </li>
-
-              
             </ul>
           </div>
 
@@ -110,7 +94,9 @@ const Footer = () => {
               {/* MapPin - Aligned Start for multi-line text */}
               <li className="flex items-start gap-3 text-gray-200 text-sm">
                 <MapPin className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
-                <span className="leading-relaxed">Birgi Plaza, Wuye, Abuja Nigeria</span>
+                <span className="leading-relaxed">
+                  Birgi Plaza, Wuye, Abuja Nigeria
+                </span>
               </li>
               {/* Phone */}
               <li className="flex items-center gap-3 text-gray-200 text-sm">
@@ -144,6 +130,22 @@ const Footer = () => {
                   WhatsApp Support
                 </a>
               </li>
+              <div className="pt-4 flex items-center gap-3">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-200 hover:bg-white hover:text-[#800517] transition-all duration-300"
+                    aria-label={`Follow us on ${
+                      ["Facebook", "Instagram", "Twitter", "LinkedIn"][index]
+                    }`}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
             </ul>
           </div>
         </div>

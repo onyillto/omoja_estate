@@ -27,8 +27,11 @@ const ProjectsIndex = () => {
       name: "Cloud Maisonette",
       tag: "Residential Estate",
       location: "Kuje, Abuja, Nigeria",
+      // ********************************************
+      // *** UPDATED: Description to match "Cloud Maisonette" ***
+      // ********************************************
       description:
-        "Royal Protein Farms is an innovative mixed-use agricultural estate in Kuje, Abuja, a region zoned for farming under the Abuja Master Plan. It features curated layouts for crop cultivation and animal husbandry, ensuring operational efficiency and sustainable practices.",
+        "Cloud Maisonette is a luxurious, high-end residential estate featuring modern detached and semi-detached maisonettes. Located in the serene Kuje area of Abuja, it offers residents a blend of contemporary design, premium amenities, and a peaceful living environment.",
       landArea: "25 Acres",
       totalPlots: 120,
       availablePlots: 87,
@@ -54,8 +57,12 @@ const ProjectsIndex = () => {
         "Jogging tracks",
         "Water drainage system",
       ],
-      link: "/royal-protein-farms",
+      // ********************************************
+      // *** UPDATED: Link to match "Cloud Maisonette" ***
+      // ********************************************
+      link: "/cloud-maisonette",
     },
+    // The commented-out project remains unchanged:
     // {
     //   name: "Iron Roots Estates", // New Project Name
     //   tag: "Residential & Commercial",

@@ -23,18 +23,18 @@ const PortfolioHero = () => {
         {/* Portfolio Tag */}
         <div className="mb-8 animate-fadeIn">
           <span className="text-[#800517] text-[14px] md:text-[13px] uppercase tracking-[3px] font-medium">
-            Residential RealEstate
+            Residential Real Estate
           </span>
         </div>
 
         {/* Main Heading */}
         <h1 className="text-white text-[48px] md:text-[40px] sm:text-[32px] font-bold mb-6 text-center animate-fadeInUp">
-          Residential RealEstate
+          Residential Real Estate
         </h1>
 
         {/* Description */}
         <p className="text-white text-[18px] md:text-[16px] sm:text-[14px] leading-[32px] md:leading-[28px] text-center max-w-[850px] mx-auto mb-16 animate-fadeInUp delay-200">
-          Come Experience the realest form of Housing RealEstate{" "}
+          Come Experience the realest form of Housing Real Estate{" "}
         </p>
 
         {/* Scroll CTA */}

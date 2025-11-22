@@ -31,12 +31,12 @@ const ProjectTwo = () => {
         {/* Project Header */}
         <div className="mb-16 md:mb-12">
           <span className="text-gray-300 text-[13px] uppercase tracking-[3px] font-medium mb-8 block">
-            Iron Root Farm
+            Iron Roots Farm
           </span>
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
             <div className="flex-1">
               <h2 className="text-white text-[36px] md:text-[32px] sm:text-[28px] font-bold mb-4">
-                Iron Root Farm
+                Iron Roots Farm
               </h2>
               <div className="flex items-center gap-2 text-gray-300 mb-6">
                 <svg

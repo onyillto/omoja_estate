@@ -51,7 +51,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-gray-200 text-sm leading-relaxed max-w-sm">
-              **Building sustainable agricultural and residential communities**
+              <span className="font-bold text-white">Building sustainable agricultural and residential communities</span>
               for the future. Join us in redefining modern living with resilient
               infrastructure and clear documentation.
             </p>

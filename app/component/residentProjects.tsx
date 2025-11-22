@@ -25,9 +25,9 @@ const ProjectDetails = () => {
       <div className="max-w-[1400px] mx-auto px-10 md:px-10 sm:px-5">
         {/* Project Header */}
         <div className="mb-16 md:mb-12">
-          <span className="text-[#2d7a6e] text-[13px] uppercase tracking-[3px] font-medium mb-8 block">
+          {/* <span className="text-[#2d7a6e] text-[13px] uppercase tracking-[3px] font-medium mb-8 block">
             Project 01
-          </span>
+          </span> */}
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="flex-1">
               <h1 className="text-[#800517] text-[36px] md:text-[32px] sm:text-[28px] font-bold mb-4">
@@ -56,11 +56,12 @@ const ProjectDetails = () => {
                 <span className="text-[15px]">Abuja, Nigeria</span>
               </div>
               <p className="text-gray-700 text-[15px] leading-[26px] max-w-[600px]">
-                A premium gated community located in the serene Karen area. Moja
-                Gardens Estate offers modern living with excellent connectivity
-                to the CBD and amenities. The estate features well-planned plots
-                with ready titles and is ideal for families seeking a peaceful
-                suburban lifestyle.
+                **Royal Protein Farms** is an innovative **agricultural estate**
+                in Abuja, designed for large-scale crop cultivation and animal
+                husbandry. It features curated farm layouts, dedicated
+                infrastructure for processing, and plots zoned specifically for
+                **protein production**, making it ideal for investors focused on
+                sustainable agribusiness.
               </p>
             </div>
 
@@ -176,7 +177,7 @@ const ProjectDetails = () => {
                 Plot Sizes
               </h3>
               <p className="text-gray-700 text-[15px]">
-                40x80 ft, 50x100 ft, 100x100 ft
+                40x80 ft, 50x100 ft, 100x100 ft (Suitable for farm layouts)
               </p>
             </div>
 
@@ -185,7 +186,7 @@ const ProjectDetails = () => {
                 Price Range
               </h3>
               <p className="text-[#2d7a6e] text-[24px] font-bold">
-                NGA 4.5M - 12M
+                ₦ 4.5M - 12M
               </p>
             </div>
           </div>
@@ -193,7 +194,7 @@ const ProjectDetails = () => {
           {/* Right Column */}
           <div className="bg-white border-2 border-[#800517]/20 rounded-2xl p-8 md:p-6 shadow-lg">
             <h3 className="text-[#800517] text-[18px] font-semibold mb-6">
-              Estate Amenities & Features
+              Estate Amenities & Features (Agricultural Focus)
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {amenities.map((amenity, index) => (

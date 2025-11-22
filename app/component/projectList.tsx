@@ -264,10 +264,7 @@ const SingleProjectItem = ({
                 {project.price}
               </span>
             </div>
-            <button className="group px-8 py-3 bg-[#800517] text-white rounded-xl font-semibold shadow-lg hover:bg-[#6a0413] transition-all duration-300 flex items-center gap-2">
-              View Full Details
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+           
           </div>
         </div>
       </div>

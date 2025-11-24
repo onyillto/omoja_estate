@@ -44,37 +44,37 @@ const ReviewsSection = () => {
   const currentReview = reviews[0]; // Displaying only the first review for this specific UI
 
   return (
-    <section className="bg-white text-[#800517] py-24 px-4 sm:px-6 lg:px-8 flex justify-center items-center min-h-screen">
+    <section className="bg-white text-[#800517] py-12 px-4 sm:px-6 lg:px-8 flex justify-center items-center">
       <div className="max-w-4xl text-center">
         {/* Section Heading */}
-        <p className="text-sm tracking-[0.3em] font-light uppercase mb-16 text-gray-500">
+        <p className="text-sm tracking-[0.3em] font-light uppercase mb-6 text-gray-500">
           REVIEWS
         </p>
 
         {/* Quote Icon */}
-        <div className="mb-8">
-          <span className="text-9xl font-serif text-[#800517]/10 leading-none">
+        <div className="mb-2">
+          <span className="text-7xl font-serif text-[#800517]/10 leading-none">
             &ldquo;
           </span>
         </div>
 
         {/* Review Quote */}
-        <p className="font-serif italic text-3xl md:text-4xl leading-relaxed text-gray-800 mb-8">
+        <p className="font-serif italic text-2xl md:text-3xl leading-relaxed text-gray-800 mb-4">
           {currentReview.quote}
         </p>
 
         {/* Quote Icon - Closing */}
-        <div className="mb-12">
-          <span className="text-9xl font-serif text-[#800517]/10 leading-none">
+        <div className="mb-6">
+          <span className="text-7xl font-serif text-[#800517]/10 leading-none">
             &rdquo;
           </span>
         </div>
 
         {/* Author and Role */}
-        <h4 className="text-lg font-light tracking-wider uppercase text-gray-700 mb-2">
+        <h4 className="text-base font-light tracking-wider uppercase text-gray-700 mb-1">
           {currentReview.author}
         </h4>
-        <p className="text-xs tracking-widest uppercase text-gray-500 mb-8">
+        <p className="text-xs tracking-widest uppercase text-gray-500 mb-4">
           {currentReview.role}
         </p>
 

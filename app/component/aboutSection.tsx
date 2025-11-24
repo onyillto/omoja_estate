@@ -11,7 +11,7 @@ const MojaOverview = () => {
           <div className="relative h-[350px] sm:h-[450px] lg:h-[600px] order-2 lg:order-1">
             <Image
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
-              alt="Moja Real Estate Properties"
+              alt="Moja Realestate Properties"
               fill
               className="object-cover rounded-2xl shadow-2xl"
             />
@@ -25,7 +25,7 @@ const MojaOverview = () => {
             {/* Section Label */}
             <div className="inline-block">
               <span className="px-4 py-2 bg-[#800517]/10 text-[#800517] rounded-full text-sm font-semibold">
-                About Moja Real Estate
+                About Moja Realestate
               </span>
             </div>
 
@@ -52,7 +52,7 @@ const MojaOverview = () => {
 
             <div className="space-y-4 md:space-y-5 text-gray-600 text-base md:text-lg leading-relaxed">
               <p>
-                Moja Real Estate Ltd is a premier real estate agency operating
+                Moja Realestate Ltd is a premier real estate agency operating
                 in Abuja, Nigeria&apos;s capital city. We are a company
                 committed to delivering modern, functional, and high-value
                 property solutions that meet the evolving needs of our clients.
@@ -67,7 +67,7 @@ const MojaOverview = () => {
               </p>
 
               <p className="hidden md:block">
-                At Moja Real Estate, we believe in building more than just
+                At Moja Realestate, we believe in building more than just
                 properties—we build lasting relationships, thriving communities,
                 and spaces where dreams become reality. Every project we
                 undertake reflects our dedication to excellence, sustainability,

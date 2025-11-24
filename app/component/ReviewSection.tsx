@@ -9,7 +9,7 @@ const ReviewsSection = () => {
     {
       id: 1,
       quote:
-        "The private chef's unwavering commitment to hospitality left me feeling deeply touched and cared for. Every half hour, his gentle yet insistent voice would beckon me to indulge in the most sumptuous meal.",
+        "From our first inquiry to securing our plot, the Moja team made the entire process seamless and easy to navigate. They explained every document, walked us through the layout of the estate, and kept us updated without us having to chase anyone. The environment feels well planned and secure, and their after-sales support has been genuinely helpful. We’re excited to begin building in a place that already feels like home.",
       author: "Ms. Dima Ukiwe",
       role: "WEDDING PLANNER", // Updated role to match the screenshot
       rating: 3, // Updated rating to match the screenshot (3.5 stars, so 3 solid, 1 half-empty)
@@ -18,7 +18,7 @@ const ReviewsSection = () => {
     {
       id: 2,
       quote:
-        "From our first inquiry to securing our plot, the Moja team made the entire process seamless and easy to navigate. They explained every document, walked us through the layout of the estate, and kept us updated without us having to chase anyone. The environment feels well planned and secure, and their after-sales support has been genuinely helpful. We’re excited to begin building in a place that already feels like home.",
+        "Working with Moja for our farmland project has been a refreshing experience. They carried out proper soil checks, water access assessments, and provided clear information on the estate’s agricultural layout. The land is well-structured and the team handled everything with transparency and professionalism. Their understanding of sustainable farming practices made the process smooth for us, and we’ve already started preparing the land confidently.",
       author: "The Adebayo Family",
       role: "Homeowners",
       rating: 5,
@@ -26,7 +26,7 @@ const ReviewsSection = () => {
     {
       id: 3,
       quote:
-        "Working with Moja for our farmland project has been a refreshing experience. They carried out proper soil checks, water access assessments, and provided clear information on the estate’s agricultural layout. The land is well-structured and the team handled everything with transparency and professionalism. Their understanding of sustainable farming practices made the process smooth for us, and we’ve already started preparing the land confidently.",
+        "Securing farmland through Moja Realestate was straightforward from the start. They took the time to show me around, explain the terrain, and share practical details about access roads, drainage, and future expansion plans. What stood out most was how honest and responsive the team was throughout. The farmland has solid potential for long-term agricultural development, and I appreciate how the Moja staff supported me even after documentation was completed.",
       author: "Mr. & Mrs. Okoro",
       role: "Property Investors",
       rating: 5,

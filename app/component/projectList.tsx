@@ -32,7 +32,7 @@ type ProjectType = {
 const projects: ProjectType[] = [
   {
     id: 1,
-    subtitle: "Project 03: Agricultural Project",
+    subtitle: "Project 01: Agricultural Project",
     title: "Iron Roots Farm",
     location: "Wuse II, Abuja, Nigeria", // Changed location
     description:
@@ -80,7 +80,7 @@ const projects: ProjectType[] = [
   },
   {
     id: 3,
-    subtitle: "Project 01: Residential",
+    subtitle: "Project 03: Residential",
     title: "THE CLOUDS Maisonettes",
     location: "Lugbe, Abuja, Nigeria", // Changed location
     description:

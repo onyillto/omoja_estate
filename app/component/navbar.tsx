@@ -36,6 +36,18 @@ const SimpleNavbar = () => {
         { name: "Sustainability", route: "/company/sustainability" },
       ],
     },
+    {
+      name: "Resources",
+      route: "/resources",
+      children: [
+        {
+          name: "News Room",
+          route: "/resources/news-room",
+        },
+        { name: "Buy A Farm", route: "/resources/buy-farm" },
+        { name: "Buy A Residential Land", route: "/resources/buy-residential" },
+      ],
+    },
   ];
 
   useEffect(() => {
@@ -58,7 +70,7 @@ const SimpleNavbar = () => {
           <Link href="/" className="flex-shrink-0">
             <Image
               src="/logo.png"
-              alt="Moja Real Estate"
+              alt="Moja RealEstate"
               width={180}
               height={60}
               className="h-12 md:h-16 w-auto transition-all"

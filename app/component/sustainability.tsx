@@ -64,7 +64,7 @@ const SustainabilitySection = () => {
 
         {/* Description - Uses text-center */}
         <p className="text-white text-[20px] md:text-[18px] sm:text-[16px] leading-[38px] md:leading-[32px] sm:leading-[28px] text-center max-w-[1100px] mx-auto mb-20 md:mb-16">
-          At Moja Real Estate Ltd, sustainability is not an afterthought;
+          At Moja Realestate Ltd, sustainability is not an afterthought;
           it&apos;s the framework for every parcel we acquire, every service we
           provide, and every community partnership we enter.
         </p>

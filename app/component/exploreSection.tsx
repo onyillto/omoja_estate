@@ -24,12 +24,12 @@ type Property = {
 const initialProperties: Property[] = [
   {
     id: 1,
-    title: "AVE FORSCHE",
-    location: "IKOYI",
+    title: "Royal Protein Farms",
+    location: "Wuse",
     priceRange: "₦300,000 - ₦350,000",
     bedrooms: 3,
     type: "semi-detached exclusive home",
-    image: "/block.jpg",
+    image: "/free.jpg",
     amenities: [
       {
         icon: <BedSingle className="w-4 h-4 text-gray-800" />,
@@ -51,8 +51,8 @@ const initialProperties: Property[] = [
   },
   {
     id: 2,
-    title: "MAYFAIR RESIDENCE",
-    location: "IKOYI",
+    title: "THE CLOUDS Maisonettes",
+    location: "Wuse",
     priceRange: "₦300,000 - ₦350,000",
     bedrooms: 3,
     type: "semi-detached exclusive home",
@@ -79,7 +79,7 @@ const initialProperties: Property[] = [
   {
     id: 3,
     title: "MAYBOURNE",
-    location: "IKOYI",
+    location: "Wuse",
     priceRange: "₦450,000 - ₦500,000",
     bedrooms: 5,
     type: "penthouse",
@@ -106,7 +106,7 @@ const initialProperties: Property[] = [
   {
     id: 4,
     title: "MACDONAL",
-    location: "IKOYI",
+    location: "Wuse",
     priceRange: "₦500,000 - ₦550,000",
     bedrooms: 6,
     type: "duplex",
@@ -132,8 +132,8 @@ const initialProperties: Property[] = [
   },
   {
     id: 5,
-    title: "SUPERMARKET",
-    location: "IKOYI",
+    title: "Iron Farm RealEstate",
+    location: "Wuse",
     priceRange: "₦300,000 - ₦350,000",
     bedrooms: 4,
     type: "suite",
@@ -160,12 +160,11 @@ const initialProperties: Property[] = [
   {
     id: 6,
     title: "ADMIN BLOCK",
-    location: "IKOYI",
+    location: "Wuse",
     priceRange: "₦250,000 - ₦300,000",
     bedrooms: 3,
     type: "flat",
-    image:
-      "https://i.pinimg.com/736x/a8/f5/f8/a8f5f8e5282b6a81a8b6fbc1074f78ef.jpg",
+    image: "/fine.jpg",
     amenities: [
       {
         icon: <BedSingle className="w-4 h-4 text-gray-800" />,
@@ -281,7 +280,8 @@ const PropertyCarousel = () => {
         {/* The Slider Container - Horizontal Scroll with Snap */}
         <div
           ref={scrollRef}
-          className="w-full h-[700px] flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide"
+          // Adjusted height to better fit the minimal card content
+          className="w-full h-[500px] flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide"
         >
           {initialProperties.map((property, index) => {
             const isCentral = index + 1 === currentSlideIndex;
@@ -304,11 +304,11 @@ const PropertyCarousel = () => {
                   </>
                 )}
 
-                {/* Central Modal-like Card */}
+                {/* Central Modal-like Card (MODIFIED) */}
                 <div
                   className={`bg-white shadow-2xl overflow-hidden flex flex-col justify-between p-0 max-w-sm w-full transition-all duration-300 ${
                     isCentral
-                      ? "scale-100 h-full"
+                      ? "scale-100 h-full max-h-[400px] md:max-h-[500px]" // Set max height for the minimal card
                       : "scale-[0.8] opacity-0 h-[0] pointer-events-none"
                   }`}
                 >
@@ -323,9 +323,9 @@ const PropertyCarousel = () => {
                       </p>
                     </div>
 
-                    {/* Main Image from Property (UNCHANGED) */}
+                    {/* Main Image from Property */}
                     <div
-                      className="relative w-full h-48 overflow-hidden lg:cursor-pointer"
+                      className="relative w-full h-48 md:h-64 overflow-hidden lg:cursor-pointer" // Increased height slightly
                       onClick={() => openModal(property)}
                     >
                       <Image
@@ -337,41 +337,14 @@ const PropertyCarousel = () => {
                       />
                     </div>
 
-                    {/* Price and Short Description (UNCHANGED) */}
-                    <div className="p-5 text-center flex-grow">
-                      <p className="text-sm font-semibold text-gray-800 mb-2">
-                        PRICE:{" "}
-                        <span className="line-through text-gray-400 mr-1">
-                          {property.priceRange.split(" - ")[0].replace("₦", "")}
-                        </span>{" "}
-                        - {property.priceRange.split(" - ")[1]}
-                      </p>
-                      <p className="text-xs text-gray-600 mb-4 tracking-wide">
-                        A **{property.type}**
-                      </p>
-
-                      {/* Amenities List (UNCHANGED) */}
-                      <ul className="text-left space-y-2 text-xs">
-                        {property.amenities.map((amenity, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-start gap-2 text-gray-700"
-                          >
-                            <span className="mt-0.5 shrink-0">
-                              {amenity.icon}
-                            </span>
-                            <span>{amenity.text}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    {/* --- REMOVED: Price and Short Description & Amenities List --- */}
                   </div>
 
-                  {/* Action Buttons (Desktop Card Footer - Now should be fully visible) */}
+                  {/* Action Buttons (Desktop Card Footer) */}
                   <div className="flex w-full border-t border-gray-200">
                     <button
                       onClick={() => openModal(property)}
-                      className="flex-1 bg-white text-black py-3 px-2 font-medium tracking-wider uppercase text-xs border-l border-gray-200 hover:bg-red-50 hover:text-[#800517] transition-colors"
+                      className="flex-1 bg-white text-black py-4 px-2 font-bold tracking-wider uppercase text-sm border-l border-gray-200 hover:bg-red-50 hover:text-[#800517] transition-colors"
                     >
                       VIEW DETAILS
                     </button>
@@ -406,7 +379,7 @@ const PropertyCarousel = () => {
         </div>
       </div>
 
-      {/* --- Modal for full details (UNCHANGED) --- */}
+      {/* --- Modal for full details (UNCHANGED - but now contains all the text) --- */}
       {showModal && selectedProperty && (
         <div
           className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-y-auto"
@@ -475,8 +448,11 @@ const PropertyCarousel = () => {
 
               {/* Action Buttons (Modal Footer) */}
               <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#800517]">
-                <button className="flex-1 bg-white hover:bg-red-50 text-[#800517] py-3 px-4 rounded font-medium tracking-wider uppercase transition-colors border-2 border-[#800517] text-sm sm:text-base">
-                  VIEW DETAILS
+                <button
+                  onClick={closeModal} // This button could be a 'Contact Agent' button instead of 'View Details'
+                  className="flex-1 bg-[#800517] text-white py-3 px-4 rounded font-medium tracking-wider uppercase transition-colors hover:bg-red-900 text-sm sm:text-base"
+                >
+                  Contact Us
                 </button>
               </div>
             </div>

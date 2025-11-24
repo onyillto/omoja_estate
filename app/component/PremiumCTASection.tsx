@@ -12,14 +12,14 @@ const PremiumCTASection = () => {
       <div className="max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
         {/* Background Image Container */}
         <div className="relative h-[500px] md:h-[600px]">
-          <Image
+          {/* <Image
             src="/people-livestock.jpg" // Use one compelling image
             alt="Farmers and livestock in a clean, modern agricultural setting"
             layout="fill"
             objectFit="cover"
             quality={90}
             className="object-center"
-          />
+          /> */}
 
           {/* Stronger, more dramatic Overlay */}
           <div

@@ -156,7 +156,7 @@ const Footer = () => {
         {/* Bottom Section: Copyright */}
         <div className="flex justify-center">
           <p className="text-gray-300 text-xs text-center">
-            © {currentYear} Moja Real Estate, Inc. All rights reserved.
+            © {currentYear} Moja Realestate, Inc. All rights reserved.
             <span className="md:inline-block hidden mx-2">|</span>
             <Link
               href="/privacy"

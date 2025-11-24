@@ -262,14 +262,9 @@ const PropertyCarousel = () => {
     document.body.style.overflow = "unset";
   };
 
-  const getNeighborTitle = (offset: number) => {
-    const index = (currentSlideIndex - 1 + offset + totalSlides) % totalSlides;
-    return initialProperties[index]?.title || "";
-  };
-
   // --- JSX Structure ---
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden my-16">
       {/* Full-screen Background - Dynamic Background Image (UNCHANGED) */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out"
@@ -287,7 +282,7 @@ const PropertyCarousel = () => {
       <div className="relative z-10 w-full h-screen flex flex-col justify-center items-center py-10">
         {/* Top Header (UNCHANGED) */}
         <h5 className="text-white text-lg tracking-[0.3em] font-light mb-12 uppercase">
-          BOOK AN APARTMENT
+          Available Properties
         </h5>
 
         {/* The Slider Container - Horizontal Scroll with Snap */}
@@ -305,30 +300,18 @@ const PropertyCarousel = () => {
                 id={`slide-${property.id}`}
                 className="flex-shrink-0 w-full snap-center flex justify-center items-center p-4 md:p-8 relative"
               >
-                {/* Side Titles (UNCHANGED) */}
-                {isCentral && (
-                  <>
-                    <div className="absolute top-1/2 left-4 -translate-y-1/2 text-white/70 text-2xl font-light tracking-widest uppercase origin-right -rotate-90 whitespace-nowrap hidden lg:block">
-                      {getNeighborTitle(-1)}
-                    </div>
-                    <div className="absolute top-1/2 right-4 -translate-y-1/2 text-white/70 text-2xl font-light tracking-widest uppercase origin-left rotate-90 whitespace-nowrap hidden lg:block">
-                      {getNeighborTitle(1)}
-                    </div>
-                  </>
-                )}
-
                 {/* Central Modal-like Card (MODIFIED FOR SPACING AND HEIGHT) */}
                 <div
-                  className={`bg-white shadow-2xl overflow-hidden flex flex-col justify-between p-0 max-w-sm w-full transition-all duration-300 ${
+                  className={`bg-white shadow-2xl overflow-hidden flex flex-col p-0 max-w-sm w-full transition-all duration-300 ${
                     isCentral
                       ? // Increased max-h from 500px to 600px, and ensure h-auto to fit content
-                        "scale-100 h-auto max-h-[600px]"
+                        "scale-100 h-auto max-h-[600px] lg:h-[550px]"
                       : "scale-[0.8] opacity-0 h-[0] pointer-events-none"
                   }`}
                 >
                   {/* Property Header/Title Area (MODIFIED: Reduced padding top) */}
-                  <div className="flex flex-col flex-grow">
-                    <div className="text-center pt-2 pb-3">
+                  <div className="flex flex-col flex-grow overflow-hidden">
+                    <div className="text-center pt-4 pb-3">
                       <h2 className="text-xl font-light tracking-[0.2em] text-gray-800 uppercase">
                         {property.title}
                       </h2>
@@ -339,8 +322,8 @@ const PropertyCarousel = () => {
 
                     {/* Main Image from Property (ADJUSTED HEIGHT) */}
                     <div
-                      // Ensure sufficient height for the image on all screens. Adjusted base h to 80, and lg:h-96
-                      className="relative w-full h-80 md:h-80 lg:h-96 overflow-hidden lg:cursor-pointer"
+                      // The image container will now grow to fill the remaining space in the card.
+                      className="relative w-full flex-grow overflow-hidden lg:cursor-pointer"
                       onClick={() => openModal(property)}
                     >
                       <Image

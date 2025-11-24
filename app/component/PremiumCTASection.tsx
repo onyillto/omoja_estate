@@ -44,8 +44,8 @@ const PremiumCTASection = () => {
 
             {/* Subtext */}
             <p className="text-base md:text-lg leading-relaxed mb-10 max-w-3xl mx-auto opacity-90">
-              Join a community of successful farmers. With **flexible payment
-              plans** and **transparent ownership**, taking the next step
+              Join a community of successful farmers. With flexible payment
+              plans and transparent ownership, taking the next step
               towards securing your land is straightforward and hassle-free.
             </p>
 

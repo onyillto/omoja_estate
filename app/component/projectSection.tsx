@@ -10,17 +10,18 @@ const ProjectsSectionTailwind = () => {
       image: "/block.jpg", // Replace with your actual image path
       alt: "Queen Amina luxury residential towers",
     },
+
     {
       id: 2,
-      title: "Residential Prototype",
-      image: "/self.jpg", // Replace with your actual image path
-      alt: "Leonardo luxury residential tower",
+      title: "Iron Roots Farm",
+      image: "/gate.jpg", // Replace with your actual image path
+      alt: "Lucrezia luxury residential building",
     },
     {
       id: 3,
-      title: "Iron Root Farm",
-      image: "/gate.jpg", // Replace with your actual image path
-      alt: "Lucrezia luxury residential building",
+      title: "Residential Prototype",
+      image: "/self.jpg", // Replace with your actual image path
+      alt: "Leonardo luxury residential tower",
     },
   ];
 

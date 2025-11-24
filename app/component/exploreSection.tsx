@@ -208,10 +208,34 @@ const PropertyCarousel = () => {
     }
   }, []);
 
+  // --- START: Automatic Slide Logic ---
+  const nextSlide = useCallback(() => {
+    const newIndex = (currentSlideIndex % totalSlides) + 1;
+    scrollToSlide(newIndex);
+  }, [currentSlideIndex, totalSlides, scrollToSlide]);
+
+  const prevSlide = () => {
+    const newIndex =
+      currentSlideIndex === 1 ? totalSlides : currentSlideIndex - 1;
+    scrollToSlide(newIndex);
+  };
+
+  useEffect(() => {
+    // Set up interval for automatic sliding (5000ms = 5 seconds)
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+
+    // Clean up the interval when the component unmounts or dependencies change
+    return () => clearInterval(interval);
+  }, [nextSlide]); // Dependency on nextSlide ensures the interval uses the latest function
+  // --- END: Automatic Slide Logic ---
+
   useEffect(() => {
     const handleScroll = () => {
       if (scrollRef.current) {
         const { scrollLeft, offsetWidth } = scrollRef.current;
+        // Determine the closest slide index based on scroll position
         const closestIndex = Math.round(scrollLeft / offsetWidth);
         if (closestIndex + 1 !== currentSlideIndex) {
           setCurrentSlideIndex(closestIndex + 1);
@@ -225,17 +249,6 @@ const PropertyCarousel = () => {
       return () => element.removeEventListener("scroll", handleScroll);
     }
   }, [currentSlideIndex]);
-
-  const nextSlide = () => {
-    const newIndex = (currentSlideIndex % totalSlides) + 1;
-    scrollToSlide(newIndex);
-  };
-
-  const prevSlide = () => {
-    const newIndex =
-      currentSlideIndex === 1 ? totalSlides : currentSlideIndex - 1;
-    scrollToSlide(newIndex);
-  };
 
   const openModal = (property: Property) => {
     setSelectedProperty(property);
@@ -280,8 +293,8 @@ const PropertyCarousel = () => {
         {/* The Slider Container - Horizontal Scroll with Snap */}
         <div
           ref={scrollRef}
-          // Adjusted height to better fit the minimal card content
-          className="w-full h-[500px] flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide"
+          // INCREASED HEIGHT: From h-[600px] to h-[700px] to give more space
+          className="w-full h-[700px] flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide"
         >
           {initialProperties.map((property, index) => {
             const isCentral = index + 1 === currentSlideIndex;
@@ -304,17 +317,18 @@ const PropertyCarousel = () => {
                   </>
                 )}
 
-                {/* Central Modal-like Card (MODIFIED) */}
+                {/* Central Modal-like Card (MODIFIED FOR SPACING AND HEIGHT) */}
                 <div
                   className={`bg-white shadow-2xl overflow-hidden flex flex-col justify-between p-0 max-w-sm w-full transition-all duration-300 ${
                     isCentral
-                      ? "scale-100 h-full max-h-[400px] md:max-h-[500px]" // Set max height for the minimal card
+                      ? // Increased max-h from 500px to 600px, and ensure h-auto to fit content
+                        "scale-100 h-auto max-h-[600px]"
                       : "scale-[0.8] opacity-0 h-[0] pointer-events-none"
                   }`}
                 >
-                  {/* Property Header/Title Area (UNCHANGED) */}
+                  {/* Property Header/Title Area (MODIFIED: Reduced padding top) */}
                   <div className="flex flex-col flex-grow">
-                    <div className="text-center pt-8 pb-3">
+                    <div className="text-center pt-2 pb-3">
                       <h2 className="text-xl font-light tracking-[0.2em] text-gray-800 uppercase">
                         {property.title}
                       </h2>
@@ -323,9 +337,10 @@ const PropertyCarousel = () => {
                       </p>
                     </div>
 
-                    {/* Main Image from Property */}
+                    {/* Main Image from Property (ADJUSTED HEIGHT) */}
                     <div
-                      className="relative w-full h-48 md:h-64 overflow-hidden lg:cursor-pointer" // Increased height slightly
+                      // Ensure sufficient height for the image on all screens. Adjusted base h to 80, and lg:h-96
+                      className="relative w-full h-80 md:h-80 lg:h-96 overflow-hidden lg:cursor-pointer"
                       onClick={() => openModal(property)}
                     >
                       <Image
@@ -333,14 +348,12 @@ const PropertyCarousel = () => {
                         src={property.image}
                         alt={property.title}
                         fill
-                        className="object-cover"
+                        className="object-cover object-center"
                       />
                     </div>
-
-                    {/* --- REMOVED: Price and Short Description & Amenities List --- */}
                   </div>
 
-                  {/* Action Buttons (Desktop Card Footer) */}
+                  {/* Action Buttons (Desktop Card Footer) - Now should be consistently visible */}
                   <div className="flex w-full border-t border-gray-200">
                     <button
                       onClick={() => openModal(property)}
@@ -379,7 +392,7 @@ const PropertyCarousel = () => {
         </div>
       </div>
 
-      {/* --- Modal for full details (UNCHANGED - but now contains all the text) --- */}
+      {/* --- Modal for full details (UNCHANGED) --- */}
       {showModal && selectedProperty && (
         <div
           className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-y-auto"

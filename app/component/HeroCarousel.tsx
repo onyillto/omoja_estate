@@ -9,7 +9,7 @@ const SimpleHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/MILL-PLANT.jpg"
+          src="/self.jpg"
           alt="Luxury Real Estate"
           fill
           style={{ objectFit: "cover" }}
@@ -27,7 +27,7 @@ const SimpleHero = () => {
 
           {/* Main Title */}
           <h1 className="text-2xl sm:text-5xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight font-serif">
-            Come Experience the realest form of Agriculture
+            Come Experience the cleanest form of Agriculture
           </h1>
 
           {/* Subtitle/Description */}

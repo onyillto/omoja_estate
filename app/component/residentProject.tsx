@@ -24,14 +24,14 @@ const ProjectsIndex = () => {
   // --- Project Data Array ---
   const projects: ProjectData[] = [
     {
-      name: "Cloud Maisonette",
+      name: "THE CLOUDS Maisonettes",
       tag: "Residential Estate",
       location: "Kuje, Abuja, Nigeria",
       // ********************************************
-      // *** UPDATED: Description to match "Cloud Maisonette" ***
+      // *** UPDATED: Description to match "THE CLOUDS Maisonettes" ***
       // ********************************************
       description:
-        "Cloud Maisonette is a luxurious, high-end residential estate featuring modern detached and semi-detached maisonettes. Located in the serene Kuje area of Abuja, it offers residents a blend of contemporary design, premium amenities, and a peaceful living environment.",
+        "THE CLOUDS Maisonettes is a luxurious, high-end residential estate featuring modern detached and semi-detached maisonettes. Located in the serene Kuje area of Abuja, it offers residents a blend of contemporary design, premium amenities, and a peaceful living environment.",
       landArea: "25 Acres",
       totalPlots: 120,
       availablePlots: 87,
@@ -58,7 +58,7 @@ const ProjectsIndex = () => {
         "Water drainage system",
       ],
       // ********************************************
-      // *** UPDATED: Link to match "Cloud Maisonette" ***
+      // *** UPDATED: Link to match "THE CLOUDS Maisonettes" ***
       // ********************************************
       link: "/cloud-maisonette",
     },

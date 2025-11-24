@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { X, Check, BedSingle } from "lucide-react";
+import { X, Check, BedSingle, ArrowLeft, ArrowRight } from "lucide-react";
 
+// --- Type Definitions (UNCHANGED) ---
 type Amenity = {
   icon: React.ReactNode;
   text: string;
@@ -19,343 +20,393 @@ type Property = {
   amenities: Amenity[];
 };
 
-const PropertyModal = () => {
+// --- Property Data (UNCHANGED) ---
+const initialProperties: Property[] = [
+  {
+    id: 1,
+    title: "AVE FORSCHE",
+    location: "IKOYI",
+    priceRange: "₦300,000 - ₦350,000",
+    bedrooms: 3,
+    type: "semi-detached exclusive home",
+    image: "/block.jpg",
+    amenities: [
+      {
+        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
+        text: "Luxuriously furnished 3 bedroom",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Mini Automation (Curtains)",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Seasoned Private Chef/Fully equipped kitchen",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Wi-Fi/NETFLIX/DSTV.",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "MAYFAIR RESIDENCE",
+    location: "IKOYI",
+    priceRange: "₦300,000 - ₦350,000",
+    bedrooms: 3,
+    type: "semi-detached exclusive home",
+    image: "/gate.jpg",
+    amenities: [
+      {
+        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
+        text: "Luxuriously furnished 3 bedroom",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Mini Automation (Curtains)",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Seasoned Private Chef/Fully equipped kitchen",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Wi-Fi/NETFLIX/DSTV.",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "MAYBOURNE",
+    location: "IKOYI",
+    priceRange: "₦450,000 - ₦500,000",
+    bedrooms: 5,
+    type: "penthouse",
+    image: "/hall.jpg",
+    amenities: [
+      {
+        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
+        text: "Luxuriously furnished 5 bedroom",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Smart Home Features",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Private Chef/Equipped kitchen",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Premium Entertainment Package",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "MACDONAL",
+    location: "IKOYI",
+    priceRange: "₦500,000 - ₦550,000",
+    bedrooms: 6,
+    type: "duplex",
+    image: "/selfcon.jpg",
+    amenities: [
+      {
+        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
+        text: "Luxuriously furnished 6 bedroom",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Home Theatre System",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Full Staff Quarters",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "24/7 Concierge Service",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "SUPERMARKET",
+    location: "IKOYI",
+    priceRange: "₦300,000 - ₦350,000",
+    bedrooms: 4,
+    type: "suite",
+    image: "/supermarket.jpg",
+    amenities: [
+      {
+        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
+        text: "Luxuriously furnished 4 bedroom",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Double Patio",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Premium security",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "24-hour power supply",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "ADMIN BLOCK",
+    location: "IKOYI",
+    priceRange: "₦250,000 - ₦300,000",
+    bedrooms: 3,
+    type: "flat",
+    image:
+      "https://i.pinimg.com/736x/a8/f5/f8/a8f5f8e5282b6a81a8b6fbc1074f78ef.jpg",
+    amenities: [
+      {
+        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
+        text: "Italian Furnished Living room",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Private Chef with kitchen",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "DSTV / Netflix / Wi-Fi Service",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Premium security / 24-hour power",
+      },
+    ],
+  },
+];
+
+const PropertyCarousel = () => {
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(1);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [showModal, setShowModal] = useState(false);
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(
     null
   );
-  const [showModal, setShowModal] = useState(false);
 
-  const properties = [
-    {
-      id: 1,
-      title: "ADMIN BLOCK",
-      location: "ABUJA",
-      priceRange: "₦250,000 - ₦300,000",
-      bedrooms: 3,
-      type: "flat",
-      image: "/block.jpg",
-      amenities: [
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Italian Furnished Living room and Dining",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Private Chef with a Fully equipped kitchen",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Double Patio",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "DSTV / Netflix / Wi-Fi Service",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Premium security / 24-hour power supply",
-        },
-      ],
-    },
-    {
-      id: 2,
-      title: "Gate House",
-      location: "Abuja",
-      priceRange: "₦450,000 - ₦500,000",
-      bedrooms: 5,
-      type: "penthouse",
-      image: "/gate.jpg",
-      amenities: [
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Italian Furnished Living room and Dining",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Private Chef with a Fully equipped kitchen",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Double Patio",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "DSTV / Netflix / Wi-Fi Service",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Premium security / 24-hour power supply",
-        },
-      ],
-    },
-    {
-      id: 3,
-      title: "HALL",
-      location: "ABUJA",
-      priceRange: "₦350,000 - ₦400,000",
-      bedrooms: 4,
-      type: "flat",
-      image: "/hall.jpg",
-      amenities: [
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Italian Furnished Living room and Dining",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Private Chef with a Fully equipped kitchen",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Double Patio",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "DSTV / Netflix / Wi-Fi Service",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Premium security / 24-hour power supply",
-        },
-      ],
-    },
-    {
-      id: 4,
-      title: "SELFCON RESIDENCE",
-      location: "ABUJA",
-      priceRange: "₦500,000 - ₦550,000",
-      bedrooms: 6,
-      type: "duplex",
-      image: "/selfcon.jpg",
-      amenities: [
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Italian Furnished Living room and Dining",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Private Chef with a Fully equipped kitchen",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Double Patio",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "DSTV / Netflix / Wi-Fi Service",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Premium security / 24-hour power supply",
-        },
-      ],
-    },
-    {
-      id: 5,
-      title: "SUPERMARKET",
-      location: "ABUJA",
-      priceRange: "₦300,000 - ₦350,000",
-      bedrooms: 4,
-      type: "suite",
-      image: "/supermarket.jpg",
-      amenities: [
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Italian Furnished Living room and Dining",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Private Chef with a Fully equipped kitchen",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Double Patio",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "DSTV / Netflix / Wi-Fi Service",
-        },
-        {
-          icon: <Check className="w-4 h-4 text-[#800517] mt-0.5" />,
-          text: "Premium security / 24-hour power supply",
-        },
-      ],
-    },
-  ];
+  const totalSlides = initialProperties.length;
+  const currentProperty = initialProperties[currentSlideIndex - 1];
+
+  const scrollToSlide = useCallback((index: number) => {
+    if (scrollRef.current) {
+      const scrollPosition = (index - 1) * scrollRef.current.offsetWidth;
+      scrollRef.current.scrollTo({
+        left: scrollPosition,
+        behavior: "smooth",
+      });
+      setCurrentSlideIndex(index);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollRef.current) {
+        const { scrollLeft, offsetWidth } = scrollRef.current;
+        const closestIndex = Math.round(scrollLeft / offsetWidth);
+        if (closestIndex + 1 !== currentSlideIndex) {
+          setCurrentSlideIndex(closestIndex + 1);
+        }
+      }
+    };
+
+    const element = scrollRef.current;
+    if (element) {
+      element.addEventListener("scroll", handleScroll);
+      return () => element.removeEventListener("scroll", handleScroll);
+    }
+  }, [currentSlideIndex]);
+
+  const nextSlide = () => {
+    const newIndex = (currentSlideIndex % totalSlides) + 1;
+    scrollToSlide(newIndex);
+  };
+
+  const prevSlide = () => {
+    const newIndex =
+      currentSlideIndex === 1 ? totalSlides : currentSlideIndex - 1;
+    scrollToSlide(newIndex);
+  };
 
   const openModal = (property: Property) => {
     setSelectedProperty(property);
     setShowModal(true);
-    document.body.style.overflow = "hidden"; // Prevent background scroll
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setShowModal(false);
     setSelectedProperty(null);
-    document.body.style.overflow = "unset"; // Restore scroll
+    document.body.style.overflow = "unset";
   };
 
+  const getNeighborTitle = (offset: number) => {
+    const index = (currentSlideIndex - 1 + offset + totalSlides) % totalSlides;
+    return initialProperties[index]?.title || "";
+  };
+
+  // --- JSX Structure ---
   return (
-    <div className="relative min-h-screen bg-white">
-      {/* Header Section */}
-      <div className="text-center py-12 md:py-16 lg:py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h5 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#800517] mb-4 tracking-tight">
-            Available Properties
-          </h5>
-          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-[#800517] to-[#880000] mx-auto mb-6"></div>
-          {/* <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
-            Discover our premium properties with world-class amenities
-          </p> */}
+    <div className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+      {/* Full-screen Background - Dynamic Background Image (UNCHANGED) */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out"
+        style={{
+          backgroundImage: `url(${currentProperty.image})`,
+          backgroundAttachment: "fixed",
+          filter: "blur(4px) brightness(0.7)",
+          transform: "scale(1.05)",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/30"></div>
+      </div>
+
+      {/* Main Content / Slider Area */}
+      <div className="relative z-10 w-full h-screen flex flex-col justify-center items-center py-10">
+        {/* Top Header (UNCHANGED) */}
+        <h5 className="text-white text-lg tracking-[0.3em] font-light mb-12 uppercase">
+          BOOK AN APARTMENT
+        </h5>
+
+        {/* The Slider Container - Horizontal Scroll with Snap */}
+        <div
+          ref={scrollRef}
+          className="w-full h-[700px] flex overflow-x-scroll snap-x snap-mandatory scrollbar-hide"
+        >
+          {initialProperties.map((property, index) => {
+            const isCentral = index + 1 === currentSlideIndex;
+
+            return (
+              <div
+                key={property.id}
+                id={`slide-${property.id}`}
+                className="flex-shrink-0 w-full snap-center flex justify-center items-center p-4 md:p-8 relative"
+              >
+                {/* Side Titles (UNCHANGED) */}
+                {isCentral && (
+                  <>
+                    <div className="absolute top-1/2 left-4 -translate-y-1/2 text-white/70 text-2xl font-light tracking-widest uppercase origin-right -rotate-90 whitespace-nowrap hidden lg:block">
+                      {getNeighborTitle(-1)}
+                    </div>
+                    <div className="absolute top-1/2 right-4 -translate-y-1/2 text-white/70 text-2xl font-light tracking-widest uppercase origin-left rotate-90 whitespace-nowrap hidden lg:block">
+                      {getNeighborTitle(1)}
+                    </div>
+                  </>
+                )}
+
+                {/* Central Modal-like Card */}
+                <div
+                  className={`bg-white shadow-2xl overflow-hidden flex flex-col justify-between p-0 max-w-sm w-full transition-all duration-300 ${
+                    isCentral
+                      ? "scale-100 h-full"
+                      : "scale-[0.8] opacity-0 h-[0] pointer-events-none"
+                  }`}
+                >
+                  {/* Property Header/Title Area (UNCHANGED) */}
+                  <div className="flex flex-col flex-grow">
+                    <div className="text-center pt-8 pb-3">
+                      <h2 className="text-xl font-light tracking-[0.2em] text-gray-800 uppercase">
+                        {property.title}
+                      </h2>
+                      <p className="text-xs tracking-[0.2em] text-gray-500 uppercase">
+                        - {property.location} -
+                      </p>
+                    </div>
+
+                    {/* Main Image from Property (UNCHANGED) */}
+                    <div
+                      className="relative w-full h-48 overflow-hidden lg:cursor-pointer"
+                      onClick={() => openModal(property)}
+                    >
+                      <Image
+                        priority={isCentral}
+                        src={property.image}
+                        alt={property.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Price and Short Description (UNCHANGED) */}
+                    <div className="p-5 text-center flex-grow">
+                      <p className="text-sm font-semibold text-gray-800 mb-2">
+                        PRICE:{" "}
+                        <span className="line-through text-gray-400 mr-1">
+                          {property.priceRange.split(" - ")[0].replace("₦", "")}
+                        </span>{" "}
+                        - {property.priceRange.split(" - ")[1]}
+                      </p>
+                      <p className="text-xs text-gray-600 mb-4 tracking-wide">
+                        A **{property.type}**
+                      </p>
+
+                      {/* Amenities List (UNCHANGED) */}
+                      <ul className="text-left space-y-2 text-xs">
+                        {property.amenities.map((amenity, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-start gap-2 text-gray-700"
+                          >
+                            <span className="mt-0.5 shrink-0">
+                              {amenity.icon}
+                            </span>
+                            <span>{amenity.text}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Action Buttons (Desktop Card Footer - Now should be fully visible) */}
+                  <div className="flex w-full border-t border-gray-200">
+                    <button
+                      onClick={() => openModal(property)}
+                      className="flex-1 bg-white text-black py-3 px-2 font-medium tracking-wider uppercase text-xs border-l border-gray-200 hover:bg-red-50 hover:text-[#800517] transition-colors"
+                    >
+                      VIEW DETAILS
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Navigation & Counter (UNCHANGED) */}
+        <div className="mt-8 flex items-center justify-center gap-6">
+          <button
+            onClick={prevSlide}
+            className="text-white p-3 rounded-full hover:bg-white/20 transition-colors"
+            aria-label="Previous property"
+          >
+            <ArrowLeft className="w-6 h-6" />
+          </button>
+
+          <span className="text-white text-lg font-light tracking-widest">
+            {currentSlideIndex} / {totalSlides}
+          </span>
+
+          <button
+            onClick={nextSlide}
+            className="text-white p-3 rounded-full hover:bg-white/20 transition-colors"
+            aria-label="Next property"
+          >
+            <ArrowRight className="w-6 h-6" />
+          </button>
         </div>
       </div>
 
-      {/* Property Grid - Responsive Layout */}
-      <div className="max-w-7xl mx-auto px-0">
-        {/* Mobile: Single column */}
-        {/* Tablet: 2 columns */}
-        {/* Desktop: 2 top, 3 bottom */}
-
-        {/* Desktop Layout (lg and above) */}
-        <div className="hidden lg:block">
-          {/* Top Row - 2 Properties */}
-          <div className="grid grid-cols-2">
-            {properties.slice(0, 2).map((property, index) => (
-              <div
-                key={property.id}
-                onClick={() => openModal(property)}
-                className={`relative group cursor-pointer overflow-hidden h-[400px] ${
-                  index === 0
-                    ? "border-r border-b border-gray-300"
-                    : "border-b border-gray-300"
-                } hover:shadow-2xl transition-all duration-300`}
-              >
-                <Image
-                  src={property.image}
-                  alt={property.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-[#800517]/90 via-black/50 to-transparent group-hover:from-[#800517]/95 transition-all duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center px-6 w-full max-w-md transform transition-transform duration-300 group-hover:scale-105">
-                    <div className="w-full h-px bg-white/50 mb-4"></div>
-                    <h3 className="text-white text-xl lg:text-2xl font-light tracking-[0.25em] leading-tight">
-                      {property.title}
-                    </h3>
-                    <div className="w-full h-px bg-white/50 mt-4"></div>
-                    <p className="text-white/80 text-sm mt-3 tracking-wider">
-                      Click to view details
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom Row - 3 Properties */}
-          <div className="grid grid-cols-3">
-            {properties.slice(2).map((property, index) => (
-              <div
-                key={property.id}
-                onClick={() => openModal(property)}
-                className={`relative group cursor-pointer overflow-hidden h-[350px] ${
-                  index < 2 ? "border-r border-gray-300" : ""
-                } hover:shadow-2xl transition-all duration-300`}
-              >
-                <Image
-                  src={property.image}
-                  alt={property.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-[#800517]/90 via-black/50 to-transparent group-hover:from-[#800517]/95 transition-all duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center px-4 w-full max-w-xs transform transition-transform duration-300 group-hover:scale-105">
-                    <div className="w-full h-px bg-white/50 mb-4"></div>
-                    <h3 className="text-white text-lg lg:text-xl font-light tracking-[0.2em] leading-tight">
-                      {property.title}
-                    </h3>
-                    <div className="w-full h-px bg-white/50 mt-4"></div>
-                    <p className="text-white/80 text-xs mt-3 tracking-wider">
-                      Click to view details
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Tablet Layout (md to lg) */}
-        <div className="hidden md:block lg:hidden">
-          <div className="grid grid-cols-2 gap-0">
-            {properties.map((property, index) => (
-              <div
-                key={property.id}
-                onClick={() => openModal(property)}
-                className={`relative group cursor-pointer overflow-hidden h-[350px] ${
-                  index % 2 === 0
-                    ? "border-r border-b border-gray-300"
-                    : "border-b border-gray-300"
-                } hover:shadow-2xl transition-all duration-300`}
-              >
-                <Image
-                  src={property.image}
-                  alt={property.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#800517]/90 via-black/50 to-transparent group-hover:from-[#800517]/95 transition-all duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center px-4 w-full transform transition-transform duration-300 group-hover:scale-105">
-                    <div className="w-full h-[1px] bg-white/50 mb-4"></div>
-                    <h3 className="text-white text-lg md:text-xl font-light tracking-[0.2em] leading-tight">
-                      {property.title}
-                    </h3>
-                    <div className="w-full h-[1px] bg-white/50 mt-4"></div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile Layout (below md) */}
-        <div className="block md:hidden">
-          <div className="grid grid-cols-1 gap-0">
-            {properties.map((property) => (
-              <div
-                key={property.id}
-                onClick={() => openModal(property)}
-                className="relative group cursor-pointer overflow-hidden h-[300px] border-b border-gray-300 active:opacity-90 transition-opacity"
-              >
-                <Image
-                  src={property.image}
-                  alt={property.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-active:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#800517]/90 via-black/50 to-transparent"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center px-6 w-full">
-                    <div className="w-full h-[1px] bg-white/50 mb-4"></div>
-                    <h3 className="text-white text-lg font-light tracking-[0.2em] leading-tight">
-                      {property.title}
-                    </h3>
-                    <div className="w-full h-[1px] bg-white/50 mt-4"></div>
-                    <p className="text-white/80 text-xs mt-3 tracking-wider">
-                      Tap to view details
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Modal Overlay */}
+      {/* --- Modal for full details (UNCHANGED) --- */}
       {showModal && selectedProperty && (
         <div
           className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-y-auto"
@@ -422,11 +473,8 @@ const PropertyModal = () => {
                 ))}
               </div>
 
-              {/* Action Buttons */}
+              {/* Action Buttons (Modal Footer) */}
               <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#800517]">
-                <button className="flex-1 bg-linear-to-r from-[#800517] to-[#880000] hover:from-[#6a0413] hover:to-[#700000] text-white py-3 px-4 rounded font-medium tracking-wider uppercase transition-all text-sm sm:text-base">
-                  BOOK NOW
-                </button>
                 <button className="flex-1 bg-white hover:bg-red-50 text-[#800517] py-3 px-4 rounded font-medium tracking-wider uppercase transition-colors border-2 border-[#800517] text-sm sm:text-base">
                   VIEW DETAILS
                 </button>
@@ -437,6 +485,16 @@ const PropertyModal = () => {
       )}
 
       <style jsx>{`
+        /* Custom scrollbar hiding for cleaner look */
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+        }
+
+        /* Animation for modal */
         @keyframes slideIn {
           from {
             opacity: 0;
@@ -455,4 +513,4 @@ const PropertyModal = () => {
   );
 };
 
-export default PropertyModal;
+export default PropertyCarousel;

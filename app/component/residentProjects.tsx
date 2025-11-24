@@ -56,11 +56,11 @@ const ProjectDetails = () => {
                 <span className="text-[15px]">Abuja, Nigeria</span>
               </div>
               <p className="text-gray-700 text-[15px] leading-[26px] max-w-[600px]">
-                **Royal Protein Farms** is an innovative **agricultural estate**
-                in Abuja, designed for large-scale crop cultivation and animal
-                husbandry. It features curated farm layouts, dedicated
+                <span className="text-[#800517] font-semibold">Royal Protein Farms </span>is an innovative agricultural real
+                estate in Abuja, designed for large-scale crop cultivation and
+                animal husbandry. It features curated farm layouts, dedicated
                 infrastructure for processing, and plots zoned specifically for
-                **protein production**, making it ideal for investors focused on
+                protein production, making it ideal for investors focused on
                 sustainable agribusiness.
               </p>
             </div>

@@ -32,29 +32,29 @@ type ProjectType = {
 const projects: ProjectType[] = [
   {
     id: 1,
-    subtitle: "Project 01: Residential",
-    title: "THE CLOUDS Maisonettes",
-    location: "Lugbe, Abuja, Nigeria", // Changed location
+    subtitle: "Project 03: Agricultural Project",
+    title: "Iron Roots Farm",
+    location: "Wuse II, Abuja, Nigeria", // Changed location
     description:
-      "A premium residential development featuring contemporary three and four-bedroom maisonettes. Located in the fast-developing Lugbe area, THE CLOUDS offers secure, modern living with excellent infrastructure for families seeking a luxurious suburban lifestyle.", // Updated description
-    price: "₦ 15.5M - 35M", // Adjusted price range for maisonettes
+      "Iron Roots Farms is an innovative mixed-use agricultural estate in Kuje, Abuja, a region zoned for farming under the Abuja Master Plan. It features curated layouts for crop cultivation and animal husbandry, ensuring operational efficiency and sustainable practices.", // Updated description
+    price: "₦ 40M - 85M", // Adjusted price range for prime central plots
     stats: {
-      area: "15 Acres",
-      plots: "120 Units",
-      available: "87 Plots",
-      completion: "2024",
+      area: "5 Acres",
+      plots: "20 Plots",
+      available: "3 Plots",
+      completion: "Ready",
     },
     amenities: [
-      "24/7 Security & CCTV",
-      "Interlocked Roads",
-      "Central Water Supply",
-      "Underground Power",
+      "Commercial Zoning Approval",
+      "Sewer Line Connected",
+      "Street Lighting",
+      "Dual Carriage Access",
     ],
-    images: ["/self.jpg", "/suparmaaket.jpg", "/self-1.jpg"],
+    images: ["/gate.jpg", "/gate-2.jpg", "/gate-3.jpg"],
   },
   {
     id: 2,
-    subtitle: "Project 02: Agricultural",
+    subtitle: "Project 02: Agricultural Project",
     title: "Royal Protein Farms",
     location: "Kuje, Abuja, Nigeria", // Changed location
     description:
@@ -80,25 +80,25 @@ const projects: ProjectType[] = [
   },
   {
     id: 3,
-    subtitle: "Project 03: Commercial/Mixed-Use",
-    title: "Iron Roots Farm",
-    location: "Wuse II, Abuja, Nigeria", // Changed location
+    subtitle: "Project 01: Residential",
+    title: "THE CLOUDS Maisonettes",
+    location: "Lugbe, Abuja, Nigeria", // Changed location
     description:
-      "Iron Roots Farms is an innovative mixed-use agricultural estate in Kuje, Abuja, a region zoned for farming under the Abuja Master Plan. It features curated layouts for crop cultivation and animal husbandry, ensuring operational efficiency and sustainable practices.", // Updated description
-    price: "₦ 40M - 85M", // Adjusted price range for prime central plots
+      "A premium residential development featuring contemporary three and four-bedroom maisonettes. Located in the fast-developing Lugbe area, THE CLOUDS offers secure, modern living with excellent infrastructure for families seeking a luxurious suburban lifestyle.", // Updated description
+    price: "₦ 15.5M - 35M", // Adjusted price range for maisonettes
     stats: {
-      area: "5 Acres",
-      plots: "20 Plots",
-      available: "3 Plots",
-      completion: "Ready",
+      area: "15 Acres",
+      plots: "120 Units",
+      available: "87 Plots",
+      completion: "2024",
     },
     amenities: [
-      "Commercial Zoning Approval",
-      "Sewer Line Connected",
-      "Street Lighting",
-      "Dual Carriage Access",
+      "24/7 Security & CCTV",
+      "Interlocked Roads",
+      "Central Water Supply",
+      "Underground Power",
     ],
-    images: ["/gate.jpg", "/gate-2.jpg", "/gate-3.jpg"],
+    images: ["/self.jpg", "/suparmaaket.jpg", "/self-1.jpg"],
   },
 ];
 

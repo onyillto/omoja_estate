@@ -51,10 +51,10 @@ const Footer = () => {
               />
             </Link>
             <p className="text-gray-200 text-sm leading-relaxed max-w-sm">
-              <span className="font-bold text-white">
-                Building sustainable agricultural and residential communities
-              </span>
-              for the future. Join us in redefining modern living with resilient
+              
+                Building sustainable agricultural and residential communities 
+              
+               for the future. Join us in redefining modern living with resilient
               infrastructure and clear documentation.
             </p>
             {/* Social Icons moved to the Brand column for better grouping */}
@@ -156,7 +156,7 @@ const Footer = () => {
         {/* Bottom Section: Copyright */}
         <div className="flex justify-center">
           <p className="text-gray-300 text-xs text-center">
-            © {currentYear} **Moja Real Estate, Inc**. All rights reserved.
+            © {currentYear} Moja Real Estate, Inc. All rights reserved.
             <span className="md:inline-block hidden mx-2">|</span>
             <Link
               href="/privacy"

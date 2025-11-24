@@ -3,9 +3,20 @@ import React from "react";
 import { Star } from "lucide-react";
 
 const ReviewsSection = () => {
+  // Only one review is used for the specific UI you provided, as it's a single testimonial layout.
+  // The other reviews are kept in the array but not directly rendered in this specific design.
   const reviews = [
     {
       id: 1,
+      quote:
+        "The private chef's unwavering commitment to hospitality left me feeling deeply touched and cared for. Every half hour, his gentle yet insistent voice would beckon me to indulge in the most sumptuous meal.",
+      author: "Ms. Dima Ukiwe",
+      role: "WEDDING PLANNER", // Updated role to match the screenshot
+      rating: 3, // Updated rating to match the screenshot (3.5 stars, so 3 solid, 1 half-empty)
+    },
+    // The following reviews are not actively displayed in the single testimonial UI
+    {
+      id: 2,
       quote:
         "From our first inquiry to securing our plot, the Moja team made the entire process seamless and easy to navigate. They explained every document, walked us through the layout of the estate, and kept us updated without us having to chase anyone. The environment feels well planned and secure, and their after-sales support has been genuinely helpful. We’re excited to begin building in a place that already feels like home.",
       author: "The Adebayo Family",
@@ -13,7 +24,7 @@ const ReviewsSection = () => {
       rating: 5,
     },
     {
-      id: 2,
+      id: 3,
       quote:
         "Working with Moja for our farmland project has been a refreshing experience. They carried out proper soil checks, water access assessments, and provided clear information on the estate’s agricultural layout. The land is well-structured and the team handled everything with transparency and professionalism. Their understanding of sustainable farming practices made the process smooth for us, and we’ve already started preparing the land confidently.",
       author: "Mr. & Mrs. Okoro",
@@ -21,7 +32,7 @@ const ReviewsSection = () => {
       rating: 5,
     },
     {
-      id: 3,
+      id: 4,
       quote:
         "Securing farmland through Moja Realestate was straightforward from the start. They took the time to show me around, explain the terrain, and share practical details about access roads, drainage, and future expansion plans. What stood out most was how honest and responsive the team was throughout. The farmland has solid potential for long-term agricultural development, and I appreciate how the Moja staff supported me even after documentation was completed.",
       author: "Dr. Fatima Bello",
@@ -30,85 +41,60 @@ const ReviewsSection = () => {
     },
   ];
 
-  return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-20 w-96 h-96 bg-[#800517]/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#800517]/5 rounded-full blur-3xl"></div>
+  const currentReview = reviews[0]; // Displaying only the first review for this specific UI
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+  return (
+    <section className="bg-white text-[#800517] py-24 px-4 sm:px-6 lg:px-8 flex justify-center items-center min-h-screen">
+      <div className="max-w-4xl text-center">
         {/* Section Heading */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#800517]/10 to-[#880000]/10 rounded-full mb-6">
-            <div className="w-2 h-2 bg-[#800517] rounded-full animate-pulse"></div>
-            <span className="text-sm font-semibold text-[#800517]">
-              What Our Guests Say
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Guest{" "}
-            <span className="bg-gradient-to-r from-[#800517] via-[#880000] to-[#800000] bg-clip-text text-transparent">
-              Reviews
-            </span>
-          </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-[#800517] to-[#880000] mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Hear from our delighted guests about their unforgettable
-            experiences. Your story could be next.
-          </p>
+        <p className="text-sm tracking-[0.3em] font-light uppercase mb-16 text-gray-500">
+          REVIEWS
+        </p>
+
+        {/* Quote Icon */}
+        <div className="mb-8">
+          <span className="text-9xl font-serif text-[#800517]/10 leading-none">
+            &ldquo;
+          </span>
         </div>
 
-        {/* Reviews Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviews.map((review) => (
-            <div
-              key={review.id}
-              className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative group"
-            >
-              {/* Decorative accent */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-[#800517] to-[#880000] rounded-2xl opacity-20 blur-xl group-hover:opacity-30 transition-opacity"></div>
+        {/* Review Quote */}
+        <p className="font-serif italic text-3xl md:text-4xl leading-relaxed text-gray-800 mb-8">
+          {currentReview.quote}
+        </p>
 
-              {/* Quote */}
-              <div className="relative mb-6">
-                <blockquote className="text-gray-700 text-lg leading-relaxed italic before:absolute before:left-0 before:-top-2 before:text-6xl before:text-[#800517]/20 before:font-serif before:quote">
-                  &ldquo;
-                </blockquote>
-                <p className="mb-4 pl-8">{review.quote}</p>
-                <blockquote className="text-gray-700 text-lg leading-relaxed italic after:absolute after:right-0 after:-bottom-2 after:text-6xl after:text-[#800517]/20 after:font-serif after:rotate-180 after:content-['\201D']">
-                  &rdquo;
-                </blockquote>
-              </div>
+        {/* Quote Icon - Closing */}
+        <div className="mb-12">
+          <span className="text-9xl font-serif text-[#800517]/10 leading-none">
+            &rdquo;
+          </span>
+        </div>
 
-              {/* Rating */}
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-5 h-5 ${
-                      i < review.rating
-                        ? "text-[#800517] fill-[#800517]"
-                        : "text-gray-300"
-                    }`}
-                  />
-                ))}
-              </div>
+        {/* Author and Role */}
+        <h4 className="text-lg font-light tracking-wider uppercase text-gray-700 mb-2">
+          {currentReview.author}
+        </h4>
+        <p className="text-xs tracking-widest uppercase text-gray-500 mb-8">
+          {currentReview.role}
+        </p>
 
-              {/* Author */}
-              <div className="pt-4 border-t border-gray-100">
-                <h4 className="font-semibold text-gray-900">{review.author}</h4>
-                <p className="text-sm text-gray-500">{review.role}</p>
-              </div>
-            </div>
+        {/* Rating Stars */}
+        <div className="flex justify-center items-center gap-1 mb-4">
+          {[...Array(5)].map((_, i) => (
+            <Star
+              key={i}
+              className={`w-5 h-5 ${
+                i < Math.floor(currentReview.rating)
+                  ? "text-[#FFD700] fill-[#FFD700]" // Gold for filled stars
+                  : i === Math.floor(currentReview.rating) &&
+                    currentReview.rating % 1 !== 0
+                  ? "text-[#FFD700] fill-current opacity-50" // Half-filled star
+                  : "text-gray-300" // Empty stars
+              }`}
+              strokeWidth={1} // Thinner stroke for stars
+            />
           ))}
         </div>
-
-        {/* Call to Action */}
-        {/* <div className="text-center mt-16">
-          <button className="group px-8 py-4 bg-gradient-to-r from-[#800517] to-[#880000] hover:from-[#880000] hover:to-[#800000] text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-3 mx-auto">
-            <span>Share Your Story</span>
-            <Star className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          </button>
-        </div> */}
       </div>
     </section>
   );

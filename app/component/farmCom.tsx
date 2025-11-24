@@ -34,7 +34,7 @@ const PortfolioHero = () => {
 
         {/* Description */}
         <p className="text-white text-[18px] md:text-[16px] sm:text-[14px] leading-[32px] md:leading-[28px] text-center max-w-[850px] mx-auto mb-16 animate-fadeInUp delay-200">
-          Come Experience the realest form of Housing RealEstate{" "}
+          Come Experience the realest form of Agricultural Real Estate{" "}
         </p>
 
         {/* Scroll CTA */}

@@ -27,14 +27,6 @@ const reviews = [
     role: "Property Investors",
     rating: 5,
   },
-  {
-    id: 4,
-    quote:
-      "Securing farmland through Moja Realestate was straightforward from the start. They took the time to show me around, explain the terrain, and share practical details about access roads, drainage, and future expansion plans. What stood out most was how honest and responsive the team was throughout. The farmland has solid potential for long-term agricultural development, and I appreciate how the Moja staff supported me even after documentation was completed.",
-    author: "Dr. Fatima Bello",
-    role: "Agri-Investor",
-    rating: 5,
-  },
 ];
 
 const ReviewsSection = () => {

@@ -7,9 +7,9 @@ const reviews = [
     id: 1,
     quote:
       "From our first inquiry to securing our plot, the Moja team made the entire process seamless and easy to navigate. They explained every document, walked us through the layout of the estate, and kept us updated without us having to chase anyone. The environment feels well planned and secure, and their after-sales support has been genuinely helpful. We’re excited to begin building in a place that already feels like home.",
-    author: "Ms. Dima Ukiwe",
-    role: "Banker",
-    rating: 3,
+    author: "Mr. & Mrs. Okoro",
+    role: "Property Investors",
+    rating: 5,
   },
   {
     id: 2,
@@ -23,9 +23,9 @@ const reviews = [
     id: 3,
     quote:
       "Securing farmland through Moja Realestate was straightforward from the start. They took the time to show me around, explain the terrain, and share practical details about access roads, drainage, and future expansion plans. What stood out most was how honest and responsive the team was throughout. The farmland has solid potential for long-term agricultural development, and I appreciate how the Moja staff supported me even after documentation was completed.",
-    author: "Mr. & Mrs. Okoro",
-    role: "Property Investors",
-    rating: 5,
+    author: "DR. Fatima Bello",
+    role: "Doctor",
+    rating: 4.5,
   },
 ];
 

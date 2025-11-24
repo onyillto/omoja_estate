@@ -9,7 +9,7 @@ const SimpleHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/self.jpg"
+          src="/home.jpg"
           alt="Luxury Real Estate"
           fill
           style={{ objectFit: "cover" }}

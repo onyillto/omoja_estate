@@ -24,7 +24,34 @@ type Property = {
 const initialProperties: Property[] = [
   {
     id: 1,
-    title: "Royal Protein Farms",
+    title: "IRON ROOTS FARMS",
+    location: "Wuse",
+    priceRange: "₦300,000 - ₦350,000",
+    bedrooms: 4,
+    type: "suite",
+    image: "/supermarket.jpg",
+    amenities: [
+      {
+        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
+        text: "Luxuriously furnished 4 bedroom",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Double Patio",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "Premium security",
+      },
+      {
+        icon: <Check className="w-4 h-4 text-gray-800" />,
+        text: "24-hour power supply",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "ROYAL PROTEIN FARMS",
     location: "Wuse",
     priceRange: "₦300,000 - ₦350,000",
     bedrooms: 3,
@@ -50,8 +77,8 @@ const initialProperties: Property[] = [
     ],
   },
   {
-    id: 2,
-    title: "THE CLOUDS Maisonettes",
+    id: 3,
+    title: "THE CLOUDS MAISONETTES",
     location: "Wuse",
     priceRange: "₦300,000 - ₦350,000",
     bedrooms: 3,
@@ -77,7 +104,7 @@ const initialProperties: Property[] = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "MAYBOURNE",
     location: "Wuse",
     priceRange: "₦450,000 - ₦500,000",
@@ -104,7 +131,7 @@ const initialProperties: Property[] = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "MACDONAL",
     location: "Wuse",
     priceRange: "₦500,000 - ₦550,000",
@@ -130,33 +157,7 @@ const initialProperties: Property[] = [
       },
     ],
   },
-  {
-    id: 5,
-    title: "Iron Farm RealEstate",
-    location: "Wuse",
-    priceRange: "₦300,000 - ₦350,000",
-    bedrooms: 4,
-    type: "suite",
-    image: "/supermarket.jpg",
-    amenities: [
-      {
-        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
-        text: "Luxuriously furnished 4 bedroom",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Double Patio",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Premium security",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "24-hour power supply",
-      },
-    ],
-  },
+
   {
     id: 6,
     title: "ADMIN BLOCK",
@@ -270,9 +271,7 @@ const PropertyCarousel = () => {
         className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out"
         style={{
           backgroundImage: `url(${currentProperty.image})`,
-          backgroundAttachment: "fixed",
           filter: "blur(4px) brightness(0.7)",
-          transform: "scale(1.05)",
         }}
       >
         <div className="absolute inset-0 bg-black/30"></div>

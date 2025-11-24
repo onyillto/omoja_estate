@@ -8,7 +8,7 @@ const reviews = [
     quote:
       "From our first inquiry to securing our plot, the Moja team made the entire process seamless and easy to navigate. They explained every document, walked us through the layout of the estate, and kept us updated without us having to chase anyone. The environment feels well planned and secure, and their after-sales support has been genuinely helpful. We’re excited to begin building in a place that already feels like home.",
     author: "Ms. Dima Ukiwe",
-    role: "WEDDING PLANNER",
+    role: "Banker",
     rating: 3,
   },
   {

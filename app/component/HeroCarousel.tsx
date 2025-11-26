@@ -38,7 +38,7 @@ const SimpleHero = () => {
           {/* CTA Button */}
           <Link
             href="/contact"
-            className="inline-block px-10 py-4 bg-[#800517] text-[#ffff] hover:bg-gray-100 rounded-md text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            className="inline-block px-10 py-4 bg-[#800517] text-[#ffff] hover:bg-gray-100 hover:text-[#800517]  rounded-md text-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
           >
             Schedule an inspection
           </Link>

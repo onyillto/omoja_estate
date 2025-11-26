@@ -25,7 +25,7 @@ const initialProperties: Property[] = [
   {
     id: 1,
     title: "IRON ROOTS FARMS",
-    location: "Wuse",
+    location: "Kuje",
     priceRange: "₦300,000 - ₦350,000",
     bedrooms: 4,
     type: "suite",
@@ -52,7 +52,7 @@ const initialProperties: Property[] = [
   {
     id: 2,
     title: "ROYAL PROTEIN FARMS",
-    location: "Wuse",
+    location: "Kuje",
     priceRange: "₦300,000 - ₦350,000",
     bedrooms: 3,
     type: "semi-detached exclusive home",
@@ -79,7 +79,7 @@ const initialProperties: Property[] = [
   {
     id: 3,
     title: "THE CLOUDS MAISONETTES",
-    location: "Wuse",
+    location: "Kuje",
     priceRange: "₦300,000 - ₦350,000",
     bedrooms: 3,
     type: "semi-detached exclusive home",

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   MapPin,
   ArrowRight,
@@ -17,7 +18,7 @@ type ProjectType = {
   title: string;
   location: string;
   description: string;
-  price: string;
+  // NOTE: 'price' field has been removed as requested
   stats: {
     area: string;
     plots: string;
@@ -28,16 +29,16 @@ type ProjectType = {
   images: string[];
 };
 
-// --- MOCK DATA: Updated to match project names and Nigerian location/context ---
+// --- MOCK DATA: Removed 'price' field ---
 const projects: ProjectType[] = [
   {
     id: 1,
     subtitle: "Project 01: Agricultural Project",
     title: "Iron Roots Farm",
-    location: "Wuse II, Abuja, Nigeria", // Changed location
+    location: "chibiri, kuje, FCT Nigeria", // Changed location
     description:
       "Iron Roots Farms is an innovative mixed-use agricultural estate in Kuje, Abuja, a region zoned for farming under the Abuja Master Plan. It features curated layouts for crop cultivation and animal husbandry, ensuring operational efficiency and sustainable practices.", // Updated description
-    price: "₦ 40M - 85M", // Adjusted price range for prime central plots
+    // price: "₦ 40M - 85M", // Removed
     stats: {
       area: "5 Acres",
       plots: "20 Plots",
@@ -59,7 +60,7 @@ const projects: ProjectType[] = [
     location: "Kuje, Abuja, Nigeria", // Changed location
     description:
       "A specialized mixed-use estate designed for large-scale agricultural investment and protein production (poultry, fishery, livestock). Situated in the Kuje farming zone, this project offers large plots with dedicated water and storage facilities.", // Updated description
-    price: "₦ 6.5M - 18M",
+    // price: "₦ 6.5M - 18M", // Removed
     stats: {
       area: "50 Acres",
       plots: "80 Plots",
@@ -81,7 +82,7 @@ const projects: ProjectType[] = [
     location: "Lugbe, Abuja, Nigeria", // Changed location
     description:
       "A premium residential development featuring contemporary three and four-bedroom maisonettes. Located in the fast-developing Lugbe area, THE CLOUDS offers secure, modern living with excellent infrastructure for families seeking a luxurious suburban lifestyle.", // Updated description
-    price: "₦ 15.5M - 35M", // Adjusted price range for maisonettes
+    // price: "₦ 15.5M - 35M", // Removed
     stats: {
       area: "15 Acres",
       plots: "120 Units",
@@ -142,6 +143,10 @@ const SingleProjectItem = ({
 }) => {
   // This determines if the layout is swapped (Left vs Right)
   const isReversed = index % 2 !== 0;
+
+  // Placeholder WhatsApp link (Nigerian format: 234 + 10 digits)
+  const whatsappNumber = "2348012345678";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=I'm%20interested%20in%20your%20${project.title}%20project%20at%20${project.location}.%20Can%20you%20send%20me%20the%20details%20and%20pricing%3F`;
 
   return (
     <div
@@ -232,7 +237,7 @@ const SingleProjectItem = ({
           />
         </div>
 
-        {/* Amenities & Price */}
+        {/* Amenities & Price/CTA - UPDATED SECTION */}
         <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-xl shadow-gray-100/50">
           <div className="mb-6">
             <h4 className="text-sm font-bold text-gray-900 uppercase mb-4">
@@ -252,15 +257,30 @@ const SingleProjectItem = ({
           </div>
 
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-6 border-t border-gray-100">
+            {/* Removed Price Block */}
             <div>
               <span className="block text-sm text-gray-500 mb-1">
-                Starting From
+                Interested in this project?
               </span>
-              <span className="block text-3xl font-bold text-[#800517] tracking-tight">
-                {project.price}
+              <span className="block text-xl font-semibold text-gray-900 tracking-tight">
+                Request Details & Pricing
               </span>
             </div>
-           
+
+            {/* New WhatsApp Button */}
+            <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <span className="group inline-flex items-center gap-3 bg-[#800517] hover:bg-[#6a0413] text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-[1.03] shadow-lg whitespace-nowrap">
+                {/* Using an icon that implies contact/forwarding */}
+                <svg
+                  className="w-5 h-5 fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.35 4.96L2 22l5.35-1.42c1.45.79 3.08 1.21 4.69 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm3.36 14.4c-.18.3-.43.43-.9.66-.46.24-2.14.9-2.45.97-.3.08-.63.12-.96.12-.34 0-.58-.12-.8-.37-.22-.24-.84-.89-.84-1.74 0-.85.58-1.52.66-1.63.07-.11.16-.27.35-.49.18-.21.23-.37.35-.55.12-.17.06-.33-.03-.49-.09-.17-.9-.98-1.24-1.34-.33-.37-.7-.3-.49-.52.2-.21.46-.5.66-.74.2-.24.4-.2.53-.2.12 0 .26.03.4.03.14 0 .42-.17.65-.49.23-.3.8-.75 1.05-.98.25-.24.41-.16.52-.16.12 0 .52.01.7.4.18.37.52 1.08.58 1.17.07.09.12.19.06.32-.06.12-.19.3-.4.51-.21.2-.42.4-.59.56-.16.17-.37.33-.23.57.14.23.63 1.01 1.09 1.48.46.47.81.65 1.03.74.22.09.35.07.49-.03.14-.1.43-.16.74-.35.3-.19.98-.6 1.13-.8.15-.2.28-.27.42-.27.14 0 .93.44 1.16.55.23.1.4.2.46.3.06.09.06.6.06.67-.02.08-.22.51-.38.74-.17.23-.36.42-.62.63l-.1.08z" />
+                </svg>
+                Contact Us on WhatsApp
+              </span>
+            </Link>
           </div>
         </div>
       </div>
@@ -268,7 +288,7 @@ const SingleProjectItem = ({
   );
 };
 
-// Helper component for the stats boxes
+// Helper component for the stats boxes (remains unchanged)
 interface StatBoxProps {
   label: string;
   value: string;

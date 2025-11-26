@@ -8,7 +8,7 @@ const PortfolioHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/admin-1.jpg"
+          src="/farm.jpg"
           alt="Iron Roots Farm"
           fill
           className="object-cover"

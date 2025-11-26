@@ -29,7 +29,7 @@ const initialProperties: Property[] = [
     priceRange: "₦300,000 - ₦350,000",
     bedrooms: 4,
     type: "suite",
-    image: "/supermarket.jpg",
+    image: "/gate.jpg",
     amenities: [
       {
         icon: <BedSingle className="w-4 h-4 text-gray-800" />,
@@ -56,7 +56,7 @@ const initialProperties: Property[] = [
     priceRange: "₦300,000 - ₦350,000",
     bedrooms: 3,
     type: "semi-detached exclusive home",
-    image: "/free.jpg",
+    image: "/farm.jpg",
     amenities: [
       {
         icon: <BedSingle className="w-4 h-4 text-gray-800" />,
@@ -83,7 +83,7 @@ const initialProperties: Property[] = [
     priceRange: "₦300,000 - ₦350,000",
     bedrooms: 3,
     type: "semi-detached exclusive home",
-    image: "/gate.jpg",
+    image: "/cloud.jpg",
     amenities: [
       {
         icon: <BedSingle className="w-4 h-4 text-gray-800" />,
@@ -103,88 +103,8 @@ const initialProperties: Property[] = [
       },
     ],
   },
-  {
-    id: 4,
-    title: "MAYBOURNE",
-    location: "Wuse",
-    priceRange: "₦450,000 - ₦500,000",
-    bedrooms: 5,
-    type: "penthouse",
-    image: "/hall.jpg",
-    amenities: [
-      {
-        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
-        text: "Luxuriously furnished 5 bedroom",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Smart Home Features",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Private Chef/Equipped kitchen",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Premium Entertainment Package",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "MACDONAL",
-    location: "Wuse",
-    priceRange: "₦500,000 - ₦550,000",
-    bedrooms: 6,
-    type: "duplex",
-    image: "/selfcon.jpg",
-    amenities: [
-      {
-        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
-        text: "Luxuriously furnished 6 bedroom",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Home Theatre System",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Full Staff Quarters",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "24/7 Concierge Service",
-      },
-    ],
-  },
-
-  {
-    id: 6,
-    title: "ADMIN BLOCK",
-    location: "Wuse",
-    priceRange: "₦250,000 - ₦300,000",
-    bedrooms: 3,
-    type: "flat",
-    image: "/fine.jpg",
-    amenities: [
-      {
-        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
-        text: "Italian Furnished Living room",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Private Chef with kitchen",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "DSTV / Netflix / Wi-Fi Service",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Premium security / 24-hour power",
-      },
-    ],
-  },
+ 
+ 
 ];
 
 const PropertyCarousel = () => {

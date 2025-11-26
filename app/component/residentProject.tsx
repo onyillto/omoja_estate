@@ -39,12 +39,12 @@ const ProjectsIndex = () => {
       plotSizes: "700sqm, 1000sqm",
       priceRange: "₦5.5M - ₦6.0M",
       images: [
-        "/self.jpg",
-        "/gate.jpg",
-        "/suparmaaket.jpg",
-        "/hall.jpg",
-        "/gate-2.jpg",
-        "/self-2.jpg",
+        "/cloud-two.jpg",
+        "/interior.jpg",
+        "/interior-two.jpg",
+        "/inter.jpg",
+        "/int.jpg",
+        "/int-2.jpg",
       ],
       amenities: [
         "Controlled access gate",

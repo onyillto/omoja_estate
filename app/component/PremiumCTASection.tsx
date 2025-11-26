@@ -4,62 +4,67 @@ import Image from "next/image";
 import Link from "next/link";
 
 const PremiumCTASection = () => {
-  const brandColor = "#800517"; // Your primary brand color (Red)
-  const secondaryColor = "#6a0413"; // Your secondary brand color (Darker Red)
+  const brandColor = "#800517"; // Primary brand color (Dark Red)
+  const secondaryColor = "#fff"; // Secondary brand color (White)
 
   return (
     <section className="relative w-full py-20 lg:py-32 overflow-hidden bg-white px-4 sm:px-6">
       <div className="max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
-        {/* Background Image Container */}
+        {/* Background Image Container with dynamic image */}
         <div className="relative h-[500px] md:h-[600px]">
-          {/* <Image
-            src="/people-livestock.jpg" // Use one compelling image
-            alt="Farmers and livestock in a clean, modern agricultural setting"
+          {/* Image 3: A vibrant, expansive farm landscape with modern elements,
+              showing a blend of technology and nature, maybe a drone shot
+              over fields or a farmer interacting with smart irrigation.
+              The mood should be aspirational and forward-thinking. */}
+
+          {/* Output the image tag for the AI to generate an image */}
+          <Image
+            src="/farm.jpg" // Placeholder, will be replaced by AI
+            alt="Expansive, modern farm landscape with vibrant fields and technology"
             layout="fill"
             objectFit="cover"
             quality={90}
             className="object-center"
-          /> */}
+          />
 
-          {/* Stronger, more dramatic Overlay */}
+          {/* Overlay with brand color gradient for strong visual impact and text readability */}
           <div
             className="absolute inset-0"
-            // Using a darker, more opaque gradient that leads into your brand color
             style={{
-              background: `linear-gradient(135deg, ${secondaryColor}DD 0%, ${brandColor}CC 100%)`,
+              background: `linear-gradient(135deg, ${brandColor}E6 0%, ${brandColor}CC 100%)`, // Darker, more opaque red gradient
             }}
           ></div>
 
           {/* CTA Content Block - Centered and highly visible */}
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white p-6 md:p-12">
             {/* Top Tagline */}
-            <h3 className="text-sm md:text-base mb-4 tracking-[4px] uppercase font-medium opacity-85">
-              Ready to Build Your Agricultural Future?
+            <h3 className="text-sm md:text-base mb-4 tracking-[4px] uppercase font-medium text-white text-opacity-85">
+              Cultivate Your Legacy
             </h3>
 
-            {/* Main Headline - Finer, bolder, and clearer */}
-            <p className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-snug mb-6 md:mb-10 max-w-4xl mx-auto">
-              Unlock Your Potential with Productive and Secure Land
+            {/* Main Headline - Bold, impactful, and clearly stating the benefit */}
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6 md:mb-10 max-w-4xl mx-auto drop-shadow-md">
+              Secure Your Future with Iron Roots Farms
             </p>
 
-            {/* Subtext */}
-            <p className="text-base md:text-lg leading-relaxed mb-10 max-w-3xl mx-auto opacity-90">
-              Join a community of successful farmers. With flexible payment
-              plans and transparent ownership, taking the next step
-              towards securing your land is straightforward and hassle-free.
+            {/* Subtext - Clear, concise, and reassuring */}
+            <p className="text-base md:text-lg leading-relaxed mb-10 max-w-3xl mx-auto text-white text-opacity-90">
+              Discover prime agricultural land engineered for success. With our
+              transparent process and supportive community, owning productive,
+              secure land has never been easier.
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - High contrast against the red background */}
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center">
               <Link href="/schedule-visit">
-                {/* Primary CTA - High contrast white button */}
-                <span className="group inline-flex items-center justify-center w-full sm:w-auto bg-white hover:bg-gray-100 text-lg font-bold py-3.5 px-10 rounded-xl transition duration-300 transform hover:scale-[1.02] shadow-xl text-red-800">
+                {/* Primary CTA - White button with red text */}
+                <span className="group inline-flex items-center justify-center w-full sm:w-auto bg-white text-lg font-bold py-3.5 px-10 rounded-xl transition duration-300 transform hover:scale-[1.02] shadow-xl text-red-800 hover:bg-gray-100">
                   Schedule a Site Visit
                 </span>
               </Link>
               <Link href="/contact-us">
-                {/* Secondary CTA - High contrast outline or filled with secondary color */}
-                <span className="group inline-flex items-center justify-center w-full sm:w-auto text-lg font-semibold py-3.5 px-10 rounded-xl border-2 border-white hover:bg-white/10 transition duration-300 text-white">
+                {/* Secondary CTA - White outline button with white text */}
+                <span className="group inline-flex items-center justify-center w-full sm:w-auto text-lg font-semibold py-3.5 px-10 rounded-xl border-2 border-white text-white hover:bg-white/10 transition duration-300">
                   Contact Our Team
                 </span>
               </Link>

@@ -50,7 +50,7 @@ const projects: ProjectType[] = [
       "Street Lighting",
       "Dual Carriage Access",
     ],
-    images: ["/gate.jpg", "/gate-2.jpg", "/gate-3.jpg"],
+    images: ["/gate.jpg", "/self.jpg", "/gate-3.jpg"],
   },
   {
     id: 2,
@@ -72,11 +72,7 @@ const projects: ProjectType[] = [
       "Dedicated Farm Zones",
       "Gated Entry",
     ],
-    images: [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
-      "/mill.jpg",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-    ],
+    images: ["/farm.jpg", "/farming.jpg", "/farm-road.jpg"],
   },
   {
     id: 3,
@@ -98,7 +94,7 @@ const projects: ProjectType[] = [
       "Central Water Supply",
       "Underground Power",
     ],
-    images: ["/self.jpg", "/suparmaaket.jpg", "/self-1.jpg"],
+    images: ["/cloud-two.jpg", "/interior.jpg", "/interior-two.jpg"],
   },
 ];
 

@@ -4,9 +4,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import CTA from "../component/PremiumCTASection"
-import Plan from "../component/plan"
-const LandingPage = () => {
+import CTA from "../component/PremiumCTASection";
+import Plan from "../component/plan";
+
+const WhyChooseIronFarmPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
       {/* Section 1: Hero Section (Image 1) */}
@@ -21,7 +22,7 @@ const LandingPage = () => {
           className="z-0 opacity-50" // Adjust opacity as needed
         />
 
-        {/* Content */}
+        {/* Content - UPDATED HERO COPY */}
         <div className="relative z-10 p-6 max-w-4xl mx-auto flex flex-col items-center">
           <span className="bg-[#2d7a6e] text-white text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4 font-semibold">
             Kuje, Abuja
@@ -29,20 +30,23 @@ const LandingPage = () => {
           <h3 className="text-gray-200 text-sm md:text-base mb-3 tracking-wide uppercase font-medium">
             Why Choose Iron Roots Farms
           </h3>
+          {/* H1 - NEW COPY */}
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 px-4">
-            Where productive land meets practical design — farm smarter, live
-            better.
+            Where fertile land meets purposeful design, farm smarter and grow
+            stronger.
           </h1>
+          {/* P - NEW COPY */}
           <p className="text-gray-300 text-base md:text-lg mb-8 max-w-2xl leading-relaxed">
-            Iron Roots Farms is a purpose-built agricultural estate in Kuje,
-            Abuja, created for people who want productive, resilient and
-            well-managed land. Whether you&apos;re starting a commercial plot,
-            expanding family farming, or building a long-term agricultural
-            enterprise, Iron Roots gives you the infrastructure, security and
-            community to grow with confidence.
+            Iron Roots Farms is a thoughtfully planned agricultural estate in
+            Kuje, Abuja, built for individuals and businesses who value
+            productivity, resilience and long-term land stewardship. Whether
+            you’re launching a commercial venture, expanding a family farm or
+            establishing a sustainable agricultural enterprise, Iron Roots
+            provides the infrastructure, security and supportive ecosystem you
+            need to cultivate with confidence.
           </p>
 
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          {/* <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <Link href="/get-started">
               <span className="bg-[#2d7a6e] hover:bg-[#236d61] text-white font-semibold py-3 px-8 rounded-lg transition duration-300 cursor-pointer text-lg">
                 Get Started
@@ -53,7 +57,7 @@ const LandingPage = () => {
                 Learn More
               </span>
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -69,7 +73,7 @@ const LandingPage = () => {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Feature Card 1 */}
+            {/* Feature Card 1: Prime Location - UPDATED COPY */}
             <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col items-start text-left hover:shadow-md transition-shadow duration-300">
               <div className="bg-green-100 p-3 rounded-full mb-4">
                 <svg
@@ -94,17 +98,21 @@ const LandingPage = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Prime Location — Market Access Without the Commute
+                Prime Location: Direct Access to Markets Without the Long Haul
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Situated in Kuje – one of Abuja’s busiest food corridors – Iron
-                Roots places your farm close to major buyers, wholesalers and
-                transport links. Lower haulage time and logistics friction for
-                your produce.
+                Located in Kuje, one of Abuja’s most active agricultural and
+                food distribution hubs, Iron Roots positions your farm within
+                immediate reach of major buyers, wholesalers and transport
+                routes. The result is faster off-take, reduced haulage time and
+                smoother logistics for your produce. You enjoy the convenience
+                of nearby markets and internal estate market while maintaining
+                the land quality, space and conditions essential for strong,
+                consistent yields.
               </p>
             </div>
 
-            {/* Feature Card 2 */}
+            {/* Feature Card 2: Thoughtful Layout - UPDATED COPY */}
             <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col items-start text-left hover:shadow-md transition-shadow duration-300">
               <div className="bg-green-100 p-3 rounded-full mb-4">
                 <svg
@@ -123,17 +131,21 @@ const LandingPage = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Thoughtful Layout For Real Farming Needs
+                A Layout Engineered for Real Agricultural Performance
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Plots are zoned for crop cultivation, livestock operations and
-                residential oversight. Clear demarcation improves bioreactivity
-                and day-to-day efficiency with integrated owner and worker
-                housing.
+                Iron Roots is designed by people who understand the rhythm and
+                requirements of farming. Plots are intentionally zoned for crop
+                cultivation, livestock farming and residential oversight,
+                ensuring each function complements rather than competes with the
+                other. Defined separation between planting zones and animal
+                areas enhances biosecurity and overall farm efficiency.
+                Integrated housing for owners and workers to support consistent,
+                hands on management every single day.
               </p>
             </div>
 
-            {/* Feature Card 3 */}
+            {/* Feature Card 3: Water Security - UPDATED COPY */}
             <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col items-start text-left hover:shadow-md transition-shadow duration-300">
               <div className="bg-green-100 p-3 rounded-full mb-4">
                 <svg
@@ -152,16 +164,21 @@ const LandingPage = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Water Security That Supports Every Season
+                Water Security Engineered for Year-Round Productivity
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Dual boreholes (separate supplies for crops and livestock) plus
-                supplementary wells keep irrigation steady, reduce concerns
-                during dry spells, and protect livestock health across seasons.
+                Reliable water is the foundation of sustainable agriculture and
+                Iron Roots is built with that in mind. The estate features 5
+                boreholes with independent lines for crops and livestock powered
+                by both electricity and solar to reduce reliance on external
+                supply. This layered water system ensures consistent irrigation,
+                minimizes dry season crop stress and safeguards livestock
+                health. The result is operational continuity and stable output
+                across all seasons.
               </p>
             </div>
 
-            {/* Feature Card 4 */}
+            {/* Feature Card 4: Layered Security - UPDATED COPY */}
             <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col items-start text-left hover:shadow-md transition-shadow duration-300">
               <div className="bg-green-100 p-3 rounded-full mb-4">
                 <svg
@@ -180,16 +197,21 @@ const LandingPage = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Layered Security for Peace of Mind
+                Layered Security Designed for True Peace of Mind
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                High perimeter fencing, gated entry, electric barbed wire and
-                24/7 on-site security personnel. Optional CCTV and controlled
-                access points provide an added layer of protection.
+                Security at Iron Roots is built into the estate from the ground
+                up: high perimeter fencing, gated entry, electric barbed wire,
+                and 24/7 on-site personnel create a strong first line of
+                protection. Optional CCTV and controlled access points add
+                enhanced oversight for those who want it. And with an active
+                community of resident and working farmers, the estate remains
+                secure because it is lived in, monitored and engaged every
+                single day.
               </p>
             </div>
 
-            {/* Feature Card 5 */}
+            {/* Feature Card 5: Practical Infrastructure - UPDATED COPY */}
             <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col items-start text-left hover:shadow-md transition-shadow duration-300">
               <div className="bg-green-100 p-3 rounded-full mb-4">
                 <svg
@@ -208,16 +230,20 @@ const LandingPage = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Practical Infrastructure That Reduces Wastage
+                Practical Infrastructure That Removes Friction, Not Adds to It
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Engineered drainage to prevent erosion and flooding, truck-ready
-                internal roads and clear plot access. Infrastructure designed to
-                make farming easier and more reliable.
+                Iron Roots is built with the realities of farming in mind.
+                Engineered drainage systems prevent erosion and flooding, while
+                truck-ready internal roads ensure smooth movement of equipment
+                and produce. Every plot has clear boundaries and defined access
+                points to support mechanised planting, harvesting and transport.
+                The result is an estate where infrastructure reduces operational
+                stress, saves time and protects your bottom line.
               </p>
             </div>
 
-            {/* Feature Card 6 */}
+            {/* Feature Card 6: Commercial Opportunities - UPDATED COPY */}
             <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col items-start text-left hover:shadow-md transition-shadow duration-300">
               <div className="bg-green-100 p-3 rounded-full mb-4">
                 <svg
@@ -236,16 +262,23 @@ const LandingPage = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Ready-Made Commercial Opportunities
+                Built-in Commercial Opportunities That Strengthen Your
+                Operations
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Designated commercial plots for feed mill, veterinary clinic,
-                rental storage units and multipurpose hall for training and
-                aggregation services – creating a self-supporting ecosystem.
+                Iron Roots incorporates designated commercial plots for
+                essential agribusiness services including a feed mill,
+                veterinary clinic, rental storage units, farm produce
+                supermarket and a multipurpose hall for training and value
+                addition activities. These service hubs create a self sustaining
+                agricultural ecosystem where suppliers, specialists and traders
+                are within reach. This is to reduce operating costs, faster
+                access to support and a smoother, more efficient farming
+                experience.
               </p>
             </div>
 
-            {/* Feature Card 7 */}
+            {/* Feature Card 7: Ownership and Paperwork - UPDATED COPY */}
             <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col items-start text-left hover:shadow-md transition-shadow duration-300">
               <div className="bg-green-100 p-3 rounded-full mb-4">
                 <svg
@@ -264,16 +297,19 @@ const LandingPage = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Straightforward Ownership and Transparent Paperwork
+                Simple Ownership, Transparent Documentation
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Full documentation including receipt, contract of sale, deed of
-                assignment, surveyor/letter of allocation. Flexible payment
-                plans and transparent sales process.
+                Acquiring land at Iron Roots is designed to be seamless. Every
+                buyer receives complete documentation including receipt, letter
+                of acknowledgement, contract of sale, deed of assignment, survey
+                and letter of allocation. With flexible payment plans and a
+                fully transparent sales process, you know exactly what you’re
+                purchasing and how to begin developing your plot from day one.
               </p>
             </div>
 
-            {/* Feature Card 8 */}
+            {/* Feature Card 8: Community - UPDATED COPY */}
             <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col items-start text-left hover:shadow-md transition-shadow duration-300">
               <div className="bg-green-100 p-3 rounded-full mb-4">
                 <svg
@@ -292,16 +328,21 @@ const LandingPage = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                A Community That Grows With You
+                A Community Designed to Grow With You
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                A working neighborhood of farmers, service providers and support
-                networks. Regular trainings, shared knowledge sessions and
-                collaboration opportunities for all experience levels.
+                Iron Roots is more than a collection of plots, it’s a
+                functional, collaborative farming neighbourhood. With knowledge
+                sharing sessions and a multipurpose hall dedicated to capacity
+                building, meetings and place to foster the educational side of
+                agriculture, the estate fosters continuous learning and
+                practical skills transfer. Both new and experienced farmers
+                benefit from a community that shares resources, supports one
+                another and collectively drives better farming outcomes.
               </p>
             </div>
 
-            {/* Feature Card 9 */}
+            {/* Feature Card 9: Sustainability - UPDATED COPY */}
             <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm flex flex-col items-start text-left hover:shadow-md transition-shadow duration-300">
               <div className="bg-green-100 p-3 rounded-full mb-4">
                 <svg
@@ -320,12 +361,18 @@ const LandingPage = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Sustainable, Future Ready Practices
+                Sustainable and Future Ready Practices Built Into Its Planning
+                From Day One
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Efficient water use, erosion control, proper waste management
-                and space for regenerative practices like crop rotations and
-                agroforestry to protect soil fertility.
+                Iron Roots is planned with long term land health at its core.
+                Efficient water systems, erosion control measures, pest control
+                and responsible waste management create a stable foundation,
+                while dedicated space for regenerative practices such as crop
+                rotation and agroforestry helps maintain soil structure and
+                fertility. These integrated systems keep yields strong across
+                seasons and ensure your land remains productive for decades to
+                come.
               </p>
             </div>
           </div>
@@ -338,4 +385,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default WhyChooseIronFarmPage;

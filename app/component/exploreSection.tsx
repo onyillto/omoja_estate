@@ -83,7 +83,7 @@ const initialProperties: Property[] = [
     priceRange: "₦300,000 - ₦350,000",
     bedrooms: 3,
     type: "semi-detached exclusive home",
-    image: "/cloud.jpg",
+    image: "/cloud-two.jpg",
     amenities: [
       {
         icon: <BedSingle className="w-4 h-4 text-gray-800" />,
@@ -103,8 +103,6 @@ const initialProperties: Property[] = [
       },
     ],
   },
- 
- 
 ];
 
 const PropertyCarousel = () => {

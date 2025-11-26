@@ -25,56 +25,22 @@ const initialProperties: Property[] = [
   {
     id: 1,
     title: "IRON ROOTS FARMS",
-    location: "Kuje",
-    priceRange: "₦300,000 - ₦350,000",
-    bedrooms: 4,
-    type: "suite",
+    location: "Kuje, Abuja",
+    priceRange: "Price on Request",
+    bedrooms: 0, // Not applicable for land
+    type: "700sqm & 1000sqm Farm Plots",
     image: "/gate.jpg",
-    amenities: [
-      {
-        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
-        text: "Luxuriously furnished 4 bedroom",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Double Patio",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Premium security",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "24-hour power supply",
-      },
-    ],
+    amenities: [],
   },
   {
     id: 2,
     title: "ROYAL PROTEIN FARMS",
-    location: "Kuje",
-    priceRange: "₦300,000 - ₦350,000",
-    bedrooms: 3,
-    type: "semi-detached exclusive home",
+    location: "Kuje, Abuja",
+    priceRange: "Price on Request",
+    bedrooms: 0, // Not applicable for land
+    type: "700sqm & 1000sqm Farm Plots",
     image: "/farm.jpg",
-    amenities: [
-      {
-        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
-        text: "Luxuriously furnished 3 bedroom",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Mini Automation (Curtains)",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Seasoned Private Chef/Fully equipped kitchen",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Wi-Fi/NETFLIX/DSTV.",
-      },
-    ],
+    amenities: [],
   },
   {
     id: 3,
@@ -331,33 +297,41 @@ const PropertyCarousel = () => {
                 <p className="text-xs tracking-[0.2em] text-gray-600 uppercase">
                   - {selectedProperty.location} -
                 </p>
-                <p className="text-base sm:text-lg font-medium text-gray-800 mt-3">
-                  {selectedProperty.priceRange} / Night
-                </p>
+                {selectedProperty.priceRange && (
+                  <p className="text-base sm:text-lg font-medium text-gray-800 mt-3">
+                    {selectedProperty.priceRange}
+                  </p>
+                )}
               </div>
 
               {/* Bedroom Info */}
-              <div className="flex items-center justify-center gap-2 py-3 border-t border-b border-[#800517]">
-                <BedSingle className="w-5 h-5 text-[#800517]" />
+              <div className="flex items-center justify-center gap-2 py-3 border-t border-b border-[#800517] text-center">
+                {selectedProperty.bedrooms > 0 && (
+                  <BedSingle className="w-5 h-5 text-[#800517] shrink-0" />
+                )}
                 <p className="text-sm sm:text-base font-medium text-[#800517] uppercase tracking-wide">
-                  {selectedProperty.bedrooms} Bedroom {selectedProperty.type}
+                  {selectedProperty.bedrooms > 0
+                    ? `${selectedProperty.bedrooms} Bedroom ${selectedProperty.type}`
+                    : selectedProperty.type}
                 </p>
               </div>
 
               {/* Amenities */}
-              <div className="space-y-3">
-                <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
-                  Amenities
-                </h4>
-                {selectedProperty.amenities.map((amenity, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <span className="shrink-0 mt-0.5">{amenity.icon}</span>
-                    <p className="text-sm text-gray-700 leading-relaxed flex-1">
-                      {amenity.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              {selectedProperty.amenities.length > 0 && (
+                <div className="space-y-3">
+                  <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
+                    Amenities
+                  </h4>
+                  {selectedProperty.amenities.map((amenity, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <span className="shrink-0 mt-0.5">{amenity.icon}</span>
+                      <p className="text-sm text-gray-700 leading-relaxed flex-1">
+                        {amenity.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               {/* Action Buttons (Modal Footer) */}
               <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#800517]">

@@ -267,8 +267,9 @@ const SingleProjectItem = ({
               </span>
             </div>
 
+            {/* {whatsappLink} */}
             {/* New WhatsApp Button */}
-            <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
+            <Link href="#" target="_blank" rel="noopener noreferrer">
               <span className="group inline-flex items-center gap-3 bg-[#800517] hover:bg-[#6a0413] text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-[1.03] shadow-lg whitespace-nowrap">
                 {/* Using an icon that implies contact/forwarding */}
                 <svg

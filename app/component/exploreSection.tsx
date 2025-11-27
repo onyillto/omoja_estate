@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { X, Check, BedSingle, ArrowLeft, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 // --- Type Definitions (UNCHANGED) ---
 type Amenity = {
@@ -45,28 +46,56 @@ const initialProperties: Property[] = [
   {
     id: 3,
     title: "THE CLOUDS MAISONETTES",
-    location: "Kuje",
-    priceRange: "₦300,000 - ₦350,000",
-    bedrooms: 3,
-    type: "semi-detached exclusive home",
+    location: "Aco, ariport road, Abuja, Nigeria",
+    priceRange: "Price on Request",
+    bedrooms: 0, // Not applicable for land
+    type: "700sqm & 1000sqm Farm Plots",
     image: "/cloud-two.jpg",
     amenities: [
-      {
-        icon: <BedSingle className="w-4 h-4 text-gray-800" />,
-        text: "Luxuriously furnished 3 bedroom",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Mini Automation (Curtains)",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Seasoned Private Chef/Fully equipped kitchen",
-      },
-      {
-        icon: <Check className="w-4 h-4 text-gray-800" />,
-        text: "Wi-Fi/NETFLIX/DSTV.",
-      },
+      // {
+      //   icon: <BedSingle className="w-4 h-4 text-gray-800" />,
+      //   text: "Luxuriously furnished 3 bedroom",
+      // },
+      // {
+      //   icon: <Check className="w-4 h-4 text-gray-800" />,
+      //   text: "Mini Automation (Curtains)",
+      // },
+      // {
+      //   icon: <Check className="w-4 h-4 text-gray-800" />,
+      //   text: "Seasoned Private Chef/Fully equipped kitchen",
+      // },
+      // {
+      //   icon: <Check className="w-4 h-4 text-gray-800" />,
+      //   text: "Wi-Fi/NETFLIX/DSTV.",
+      // },
+    ],
+  },
+
+  {
+    id: 4,
+    title: "La-Familia",
+    location: "Guzape, Abuja, Nigeria",
+    priceRange: "Price on Request",
+    bedrooms: 0, // Not applicable for land
+    type: "700sqm & 1000sqm Farm Plots",
+    image: "/residential-new-1.jpg",
+    amenities: [
+      // {
+      //   icon: <BedSingle className="w-4 h-4 text-gray-800" />,
+      //   text: "Luxuriously furnished 3 bedroom",
+      // },
+      // {
+      //   icon: <Check className="w-4 h-4 text-gray-800" />,
+      //   text: "Mini Automation (Curtains)",
+      // },
+      // {
+      //   icon: <Check className="w-4 h-4 text-gray-800" />,
+      //   text: "Seasoned Private Chef/Fully equipped kitchen",
+      // },
+      // {
+      //   icon: <Check className="w-4 h-4 text-gray-800" />,
+      //   text: "Wi-Fi/NETFLIX/DSTV.",
+      // },
     ],
   },
 ];
@@ -335,12 +364,11 @@ const PropertyCarousel = () => {
 
               {/* Action Buttons (Modal Footer) */}
               <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#800517]">
-                <button
-                  onClick={closeModal} // This button could be a 'Contact Agent' button instead of 'View Details'
-                  className="flex-1 bg-[#800517] text-white py-3 px-4 rounded font-medium tracking-wider uppercase transition-colors hover:bg-red-900 text-sm sm:text-base"
-                >
-                  Contact Us
-                </button>
+                <Link href="/contact" className="flex-1">
+                  <button className="w-full bg-[#800517] text-white py-3 px-4 rounded font-medium tracking-wider uppercase transition-colors hover:bg-red-900 text-sm sm:text-base">
+                    Contact Us
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

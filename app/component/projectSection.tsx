@@ -21,7 +21,13 @@ const ProjectsSectionTailwind = () => {
       id: 3,
       title: "Residential Prototype",
       image: "/self.jpg", // Replace with your actual image path
-      alt: "Leonardo luxury residential tower",
+      alt: "Leonardo luxury residential Estate",
+    },
+    {
+      id: 4,
+      title: "La-Familia",
+      image: "/self.jpg", // Replace with your actual image path
+      alt: "luxury residential Estate",
     },
   ];
 
@@ -35,11 +41,11 @@ const ProjectsSectionTailwind = () => {
           OUR PROJECTS
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="flex overflow-x-auto space-x-8 lg:space-x-10 pb-4 scrollbar-thin scrollbar-thumb-red-200 scrollbar-track-gray-100">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+              className="group cursor-pointer transition-transform duration-300 hover:-translate-y-2 flex-shrink-0 w-[80vw] md:w-[40vw] lg:w-[30vw]"
             >
               <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden rounded-lg bg-gray-200">
                 <Image

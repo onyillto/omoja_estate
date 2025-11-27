@@ -14,7 +14,7 @@ interface ProjectData {
   availablePlots: number;
   completion: string;
   plotSizes: string;
-  priceRange: string;
+  priceRange: string; // This field remains in the type but won't be displayed
   images: string[];
   amenities: string[];
   link: string;
@@ -26,10 +26,7 @@ const ProjectsIndex = () => {
     {
       name: "THE CLOUDS Maisonettes",
       tag: "Residential Estate",
-      location: "Kuje, Abuja, Nigeria",
-      // ********************************************
-      // *** UPDATED: Description to match "THE CLOUDS Maisonettes" ***
-      // ********************************************
+      location: "Aco, ariport road, Abuja, Nigeria",
       description:
         "THE CLOUDS Maisonettes is a luxurious, high-end residential estate featuring modern detached and semi-detached maisonettes. Located in the serene Kuje area of Abuja, it offers residents a blend of contemporary design, premium amenities, and a peaceful living environment.",
       landArea: "25 Acres",
@@ -57,9 +54,6 @@ const ProjectsIndex = () => {
         "Jogging tracks",
         "Water drainage system",
       ],
-      // ********************************************
-      // *** UPDATED: Link to match "THE CLOUDS Maisonettes" ***
-      // ********************************************
       link: "/cloud-maisonette",
     },
     // The commented-out project remains unchanged:
@@ -226,9 +220,9 @@ const ProjectsIndex = () => {
         </div>
       </div>
 
-      {/* Details Section */}
+      {/* Details Section (Refactored) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
-        {/* Left Column - Plot Sizes & Price */}
+        {/* Left Column - Plot Sizes (Now taking up space previously used by Price Range) */}
         <div className="lg:col-span-5 space-y-6">
           <div className="bg-gray-50 border border-red-200 rounded-2xl p-8 md:p-6">
             <h3 className="text-gray-900 text-[18px] font-semibold mb-6">
@@ -236,15 +230,17 @@ const ProjectsIndex = () => {
             </h3>
             <p className="text-gray-600 text-[15px]">{project.plotSizes}</p>
           </div>
-
-          <div className="bg-red-50 border border-red-200 rounded-2xl p-8 md:p-6">
-            <h3 className="text-gray-900 text-[18px] font-semibold mb-4">
-              Price Range
-            </h3>
-            <p className="text-red-500 text-[24px] font-bold">
-              {project.priceRange}
-            </p>
-          </div>
+          {/*
+             *** REMOVED THE FOLLOWING BLOCK AS REQUESTED ***
+             <div className="bg-red-50 border border-red-200 rounded-2xl p-8 md:p-6">
+               <h3 className="text-gray-900 text-[18px] font-semibold mb-4">
+                 Price Range
+               </h3>
+               <p className="text-red-500 text-[24px] font-bold">
+                 {project.priceRange}
+               </p>
+             </div>
+          */}
         </div>
 
         {/* Right Column - Amenities */}
@@ -266,10 +262,10 @@ const ProjectsIndex = () => {
       {/* CTA Button */}
       <div className="flex justify-center">
         <Link
-          href={project.link}
+          href="/contact"
           className="group inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-[15px] font-medium transition-all duration-300"
         >
-          View {project.name} Details
+          Make Inquiry
           <svg
             className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
             fill="none"

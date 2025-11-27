@@ -8,7 +8,7 @@ const reviews = [
     quote:
       "From our first inquiry to securing our plot, the Moja team made the entire process seamless and easy to navigate. They explained every document, walked us through the layout of the estate, and kept us updated without us having to chase anyone. The environment feels well planned and secure, and their after-sales support has been genuinely helpful. We’re excited to begin building in a place that already feels like home.",
     author: "Mr. & Mrs. Okoro",
-    role: "Property Investors",
+    role: "Landowners",
     rating: 5,
   },
   {
@@ -56,6 +56,7 @@ const ReviewsSection = () => {
   // ---------------------------------
 
   return (
+    // Ensured the main section has appropriate padding (px-4 sm:px-6 lg:px-8)
     <section className="bg-white text-[#800517] py-16 px-4 sm:px-6 lg:px-8 flex justify-center items-center relative">
       <div className="max-w-4xl text-center w-full relative">
         {/* Section Heading */}
@@ -74,7 +75,7 @@ const ReviewsSection = () => {
           </div>
 
           {/* Review Quote */}
-          <p className="font-serif italic text-2xl md:text-3xl leading-relaxed text-gray-800 mb-4">
+          <p className="font-serif italic text-lg md:text-3xl leading-relaxed text-gray-800 mb-4">
             {currentReview.quote}
           </p>
 
@@ -112,26 +113,6 @@ const ReviewsSection = () => {
           </div>
         </div>
 
-        {/* Manual Navigation Arrows */}
-        <div className="absolute left-0 top-1/2 transform -translate-y-1/2 hidden md:block w-full pointer-events-none">
-          <div className="flex justify-between max-w-4xl mx-auto px-4">
-            <button
-              onClick={prevReview}
-              className="p-3 text-gray-600 hover:text-[#800517] pointer-events-auto transition-colors"
-              aria-label="Previous review"
-            >
-              <ArrowLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={nextReview}
-              className="p-3 text-gray-600 hover:text-[#800517] pointer-events-auto transition-colors"
-              aria-label="Next review"
-            >
-              <ArrowRight className="w-6 h-6" />
-            </button>
-          </div>
-        </div>
-
         {/* Dots/Indicators (Optional, but helpful for context) */}
         <div className="flex justify-center mt-6 gap-2">
           {reviews.map((_, index) => (
@@ -147,6 +128,24 @@ const ReviewsSection = () => {
             />
           ))}
         </div>
+      </div>
+
+      {/* Manual Navigation Arrows */}
+      <div className="absolute left-0 right-0 sm:left-2 sm:right-2 lg:left-8 lg:right-8 top-1/2 transform -translate-y-1/2 flex justify-between">
+        <button
+          onClick={prevReview}
+          className="p-3 text-[#800517] hover:text-[#5a030f] transition-colors z-10 animate-bounce-slow"
+          aria-label="Previous review"
+        >
+          <ArrowLeft className="w-8 h-8" />
+        </button>
+        <button
+          onClick={nextReview}
+          className="p-3 text-[#800517] hover:text-[#5a030f] transition-colors z-10 animate-bounce-slow"
+          aria-label="Next review"
+        >
+          <ArrowRight className="w-8 h-8" />
+        </button>
       </div>
 
       <style jsx>{`
@@ -165,6 +164,22 @@ const ReviewsSection = () => {
         /* Apply the animation to the div when its key changes */
         .review-slide-transition {
           animation: slideIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        /* Bouncy Animation Keyframes */
+        @keyframes bounce-slow {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-6px); /* A bit less intense for the arrows */
+          }
+        }
+
+        /* Applying the custom animation */
+        .animate-bounce-slow {
+          animation: bounce-slow 2.5s infinite ease-in-out;
         }
       `}</style>
     </section>

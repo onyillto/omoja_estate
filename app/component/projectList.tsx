@@ -79,7 +79,7 @@ const projects: ProjectType[] = [
     id: 3,
     subtitle: "Project 03: Residential",
     title: "THE CLOUDS Maisonettes",
-    location: "Lugbe, Abuja, Nigeria", // Changed location
+    location: " Aco, ariport road, Abuja, Nigeria", // Changed location
     description:
       "A premium residential development featuring contemporary three and four-bedroom maisonettes. Located in the fast-developing Lugbe area, THE CLOUDS offers secure, modern living with excellent infrastructure for families seeking a luxurious suburban lifestyle.", // Updated description
     // price: "₦ 15.5M - 35M", // Removed
@@ -96,6 +96,31 @@ const projects: ProjectType[] = [
       "Underground Power",
     ],
     images: ["/cloud-two.jpg", "/interior.jpg", "/interior-two.jpg"],
+  },
+  {
+    id: 4,
+    subtitle: "Project 04: Residential",
+    title: "La-Familia",
+    location: "Guzape, Abuja, Nigeria",
+    description:
+      "An exclusive community offering luxury 5-bedroom duplexes with private gardens. La-Familia is designed for modern families who value comfort, security, and a connection to nature, all within a prime urban location.",
+    stats: {
+      area: "20 Acres",
+      plots: "50 Units",
+      available: "35 Plots",
+      completion: "2026",
+    },
+    amenities: [
+      "Gated Community & 24/7 Security",
+      "Recreational Parks & Green Areas",
+      "Paved Roads & Streetlights",
+      "Modern Drainage System",
+    ],
+    images: [
+      "/residential-new-1.jpg",
+      "/residential-new-2.jpg",
+      "/residential-new-3.jpg",
+    ],
   },
 ];
 
@@ -267,9 +292,9 @@ const SingleProjectItem = ({
               </span>
             </div>
 
-            {/* {whatsappLink} */}
+            {/*  */}
             {/* New WhatsApp Button */}
-            <Link href="#" target="_blank" rel="noopener noreferrer">
+            <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <span className="group inline-flex items-center gap-3 bg-[#800517] hover:bg-[#6a0413] text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-[1.03] shadow-lg whitespace-nowrap">
                 {/* Using an icon that implies contact/forwarding */}
                 <svg

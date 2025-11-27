@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import { Check, Calendar, ArrowRight, ShieldCheck } from "lucide-react";
 
 const PaymentStructure = () => {
@@ -32,7 +33,7 @@ const PaymentStructure = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-sm font-bold text-[#800517] uppercase tracking-widest mb-2">
-            Investment Options
+            Acquisition Plans
           </h2>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Flexible Payment Plans
@@ -150,29 +151,23 @@ const PaymentStructure = () => {
             {/* Right Side: The Pricing & Action */}
             <div className="md:col-span-5 bg-gray-50 p-8 md:p-12 flex flex-col justify-center border-l border-gray-100">
               <div className="text-center md:text-left">
-                <p className="text-sm text-gray-500 font-medium mb-2">
-                  Total Investment
+                <p className="text-sm text-gray-500 font-medium mb-4">
+                  Ready to proceed?
                 </p>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 tracking-tight">
-                  {activePlan === "outright" ? "₦5.5M" : "₦6.0M"}
-                </h2>
-                <p className="text-[#800517] text-sm font-medium mb-8">
-                  {activePlan === "outright"
-                    ? "Includes 5% Discount applied"
-                    : "Spread over 4 months"}
+                <p className="text-gray-800 text-lg mb-8">
+                  Contact our sales team to get the latest pricing and complete
+                  your acquisition.
                 </p>
 
-                <button className="w-full group relative py-4 px-6 rounded-xl bg-[#800517] text-white font-semibold shadow-lg shadow-red-200 hover:bg-[#6a0413] hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 overflow-hidden">
-                  <span className="relative z-10">
-                    {activePlan === "outright"
-                      ? "Make Payment Now"
-                      : "Start with Deposit"}
-                  </span>
-                  <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-                </button>
+                <Link href="/contact">
+                  <button className="w-full group relative py-4 px-6 rounded-xl bg-[#800517] text-white font-semibold shadow-lg shadow-red-200 hover:bg-[#6a0413] hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 overflow-hidden">
+                    <span className="relative z-10">Request Plan Details</span>
+                    <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
 
                 <p className="text-xs text-center text-gray-400 mt-6">
-                  *Prices are subject to change based on market value. <br />
+                  *Pricing and availability are subject to change. <br />
                   Terms and conditions apply.
                 </p>
               </div>

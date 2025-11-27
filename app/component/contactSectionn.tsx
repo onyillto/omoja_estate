@@ -1,13 +1,114 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import { X, CheckCircle, AlertTriangle, Send } from "lucide-react";
+
+const emailRecipient = "achomaduonyinye@gmail.com";
+
+interface ToastProps {
+  message: string;
+  type: "success" | "error" | "loading" | "";
+  onClose: () => void;
+}
+
+// --- Toast Component ---
+const Toast: React.FC<ToastProps> = ({ message, type, onClose }) => {
+  if (!message) return null;
+
+  const getStyle = () => {
+    switch (type) {
+      case "success":
+        return {
+          bgColor: "bg-green-600",
+          icon: <CheckCircle className="w-5 h-5" />,
+          title: "Success",
+        };
+      case "error":
+        return {
+          bgColor: "bg-red-600",
+          icon: <AlertTriangle className="w-5 h-5" />,
+          title: "Error",
+        };
+      case "loading":
+        return {
+          bgColor: "bg-blue-600",
+          icon: (
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+          ),
+          title: "Sending...",
+        };
+      default:
+        return {
+          bgColor: "bg-gray-600",
+          icon: <AlertTriangle className="w-5 h-5" />,
+          title: "Info",
+        };
+    }
+  };
+
+  const { bgColor, icon, title } = getStyle();
+
+  return (
+    <div
+      className={`fixed bottom-5 right-5 z-50 p-4 rounded-lg shadow-2xl transition-all duration-300 ease-in-out transform ${bgColor} text-white max-w-sm w-full`}
+      role="alert"
+    >
+      <div className="flex items-start">
+        <div className="flex-shrink-0 pt-0.5">{icon}</div>
+        <div className="ml-3 flex-1">
+          <p className="text-sm font-bold">{title}</p>
+          <p className="text-sm opacity-90 mt-1 whitespace-pre-wrap">
+            {message}
+          </p>
+        </div>
+        {type !== "loading" && (
+          <button
+            onClick={onClose}
+            className="ml-4 -mr-1 -mt-1 p-1 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors flex items-center justify-center"
+            aria-label="Close"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
+
+interface FormDataState {
+  firstName: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+type ToastType = "success" | "error" | "loading" | "";
+
+interface ToastState {
+  message: string;
+  type: ToastType;
+}
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormDataState>({
     firstName: "",
     email: "",
     phone: "",
     message: "",
   });
+
+  const [toastState, setToastState] = useState<ToastState>({
+    message: "",
+    type: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Function to show the toast, which automatically hides after 5 seconds
+  const showToast = useCallback((message: string, type: ToastType) => {
+    setToastState({ message, type });
+    if (type !== "loading") {
+      setTimeout(() => setToastState({ message: "", type: "" }), 8000); // Extended visibility for the detailed message
+    }
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -18,9 +119,73 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
+    if (isLoading) return;
+
+    // Client-side quick validation check
+    if (formData.message.trim().length < 10) {
+      showToast(
+        "Message content is too short. Please provide at least 10 characters.",
+        "error"
+      );
+      return;
+    }
+
+    setIsLoading(true);
+    showToast("Attempting to send your message...", "loading");
+
+    const MAX_RETRIES = 3;
+    let success = false;
+    let finalMessage = "An unexpected error occurred. Please try again later.";
+
+    // --- API Call with Exponential Backoff ---
+    for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+      try {
+        const response = await fetch("/api/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        success = true;
+        finalMessage =
+          "Message sent successfully! We will get back to you soon.";
+
+        break; // Exit loop on successful response processing
+      } catch (error) {
+        console.error(`Attempt ${attempt + 1} failed:`, error);
+        if (attempt < MAX_RETRIES - 1) {
+          // Implement exponential backoff delay (1s, 2s, 4s)
+          const delay = Math.pow(2, attempt) * 1000;
+          await new Promise((resolve) => setTimeout(resolve, delay));
+        } else {
+          finalMessage =
+            "Failed to reach the server after multiple retries. Please check your connection and try again.";
+        }
+      }
+    }
+    // --- End API Call ---
+
+    setIsLoading(false);
+    setToastState({ message: "", type: "" }); // Clear loading state
+
+    if (success) {
+      showToast(finalMessage, "success");
+      setFormData({
+        firstName: "",
+        email: "",
+        phone: "",
+        message: "",
+      }); // Clear form
+    } else {
+      showToast(finalMessage, "error");
+    }
   };
 
   const contactInfo = [
@@ -41,7 +206,7 @@ const ContactSection = () => {
         </svg>
       ),
       title: "Email",
-      info: "info@mojarealestatelimited.com",
+      info: emailRecipient,
     },
     {
       icon: (
@@ -125,181 +290,194 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="relative w-full bg-[#800517] py-20 md:py-16">
-      <div className="max-w-[1400px] mx-auto px-10 md:px-10 sm:px-5">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-12">
-          {/* Left Column - Contact Information */}
-          <div>
-            {/* Header */}
-            <div className="mb-12">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-0.5 bg-red-400"></div>
-                <span className="text-red-400 text-[14px] uppercase tracking-[3px] font-semibold">
-                  Get in Touch
-                </span>
-              </div>
-              <h2 className="text-white text-[36px] md:text-[32px] font-bold mb-4">
-                Contact Information
-              </h2>
-              <p className="text-gray-100 text-[16px] leading-7">
-                We&apos;re here to answer your questions and help you find the
-                perfect property. Reach out to us through any of the channels
-                below.
-              </p>
-            </div>
-
-            {/* Contact Cards */}
-            <div className="space-y-6 mb-12">
-              {contactInfo.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-5 bg-white/5 border border-white/10 rounded-xl p-6 hover:border-red-400 transition-colors"
-                >
-                  <div className="w-14 h-14 bg-red-400/10 rounded-lg flex items-center justify-center text-red-400 flex-shrink-0">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-white font-medium text-[16px] mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-100 text-[15px]">{item.info}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Social Links */}
+    <>
+      <section className="relative w-full bg-[#800517] py-20 md:py-16">
+        <div className="max-w-[1400px] mx-auto px-10 md:px-10 sm:px-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-12">
+            {/* Left Column - Contact Information */}
             <div>
-              <h3 className="text-white font-semibold text-[18px] mb-4">
-                Follow Us
-              </h3>
-              <div className="flex items-center gap-4">
-                {socialLinks.map((social, index) => (
-                  <a
+              {/* Header */}
+              <div className="mb-12">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-0.5 bg-red-400 rounded-full"></div>
+                  <span className="text-red-400 text-[14px] uppercase tracking-[3px] font-semibold">
+                    Get in Touch
+                  </span>
+                </div>
+                <h2 className="text-white text-[36px] md:text-[32px] font-bold mb-4">
+                  Contact Information
+                </h2>
+                <p className="text-gray-100 text-[16px] leading-7">
+                  We&apos;re here to answer your questions and help you find the
+                  perfect property. Reach out to us through any of the channels
+                  below.
+                </p>
+              </div>
+
+              {/* Contact Cards */}
+              <div className="space-y-6 mb-12">
+                {contactInfo.map((item, index) => (
+                  <div
                     key={index}
-                    href="#"
-                    className="w-12 h-12 bg-white/5 border border-white/10 hover:border-red-400 rounded-lg flex items-center justify-center text-gray-100 hover:text-red-400 transition-all"
-                    aria-label={social.name}
+                    className="flex items-center gap-5 bg-white/5 border border-white/10 rounded-xl p-6 hover:border-red-400 transition-colors cursor-pointer"
                   >
-                    {social.icon}
-                  </a>
+                    <div className="w-14 h-14 bg-red-400/10 rounded-lg flex items-center justify-center text-red-400 flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-white font-medium text-[16px] mb-1">
+                        {item.title}
+                      </h3>
+                      {/* Note about the mock email for transparency */}
+                      <p
+                        className={`text-gray-100 text-[15px] ${
+                          item.title === "Email" ? "" : ""
+                        }`}
+                      >
+                        {item.info}
+                      </p>
+                    </div>
+                  </div>
                 ))}
               </div>
+
+              {/* Social Links */}
+              <div>
+                <h3 className="text-white font-semibold text-[18px] mb-4">
+                  Follow Us
+                </h3>
+                <div className="flex items-center gap-4">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href="#"
+                      className="w-12 h-12 bg-white/5 border border-white/10 hover:border-red-400 rounded-lg flex items-center justify-center text-gray-100 hover:text-red-400 transition-all shadow-md"
+                      aria-label={social.name}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Contact Form */}
+            <div className="bg-white/5 border border-white/10 rounded-xl p-8 md:p-6 shadow-2xl">
+              <h2 className="text-white text-[28px] md:text-[24px] font-bold mb-2">
+                Send us a Message
+              </h2>
+              <p className="text-gray-100 text-[15px] mb-8">
+                Fill out the form below and we&apos;ll get back to you as soon
+                as possible.
+              </p>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* First Name */}
+                <div>
+                  <label
+                    htmlFor="firstName"
+                    className="block text-gray-300 font-medium text-[14px] mb-2"
+                  >
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder="Enter your first name"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-gray-300 font-medium text-[14px] mb-2"
+                  >
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Enter your email"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
+                  />
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-gray-300 font-medium text-[14px] mb-2"
+                  >
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Enter your phone number (optional)"
+                    className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
+                  />
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-gray-300 font-medium text-[14px] mb-2"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Enter your message (min 10 characters)"
+                    rows={5}
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors resize-none"
+                    minLength={10}
+                  ></textarea>
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg text-[16px] font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl disabled:bg-red-400 disabled:cursor-not-allowed"
+                >
+                  {isLoading ? (
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                  ) : (
+                    <Send className="w-5 h-5 -rotate-45" />
+                  )}
+                  {isLoading ? "Sending..." : "Submit"}
+                </button>
+              </form>
             </div>
           </div>
-
-          {/* Right Column - Contact Form */}
-          <div className="bg-white/5 border border-white/10 rounded-xl p-8 md:p-6">
-            <h2 className="text-white text-[28px] md:text-[24px] font-bold mb-2">
-              Send us a Message
-            </h2>
-            <p className="text-gray-100 text-[15px] mb-8">
-              Fill out the form below and we&apos;ll get back to you as soon as
-              possible.
-            </p>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* First Name */}
-              <div>
-                <label
-                  htmlFor="firstName"
-                  className="block text-gray-300 font-medium text-[14px] mb-2"
-                >
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  placeholder="Enter your first name"
-                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-gray-300 font-medium text-[14px] mb-2"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Enter your email"
-                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
-                />
-              </div>
-
-              {/* Phone */}
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-gray-300 font-medium text-[14px] mb-2"
-                >
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="Enter your phone number"
-                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors"
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-gray-300 font-medium text-[14px] mb-2"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Enter your message"
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-black/20 border border-white/10 focus:border-red-400 outline-none text-white text-[15px] placeholder-gray-500 transition-colors resize-none"
-                ></textarea>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg text-[16px] font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                  />
-                </svg>
-                Submit
-              </button>
-            </form>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Render the Toast Notification */}
+      <Toast
+        message={toastState.message}
+        type={toastState.type}
+        onClose={() => setToastState({ message: "", type: "" })}
+      />
+    </>
   );
 };
 

@@ -5,35 +5,46 @@ import Image from "next/image";
 import {
   Facebook,
   Instagram,
-  Twitter,
   Linkedin,
   Mail,
   MapPin,
   Phone,
 } from "lucide-react";
 
+// Define the TikTokIcon component separately for clarity
+const TikTokIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className="w-5 h-5"
+  >
+    <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6s1.18-2.6 2.6-2.6c.76 0 1.44.33 1.93.86V8.66c-1.45-.4-3.02-.25-4.2.46-2.42 1.48-3.02 4.18-1.53 6.61A5.29 5.29 0 0 0 9.4 19.8c2.94 0 5.3-2.39 5.3-5.3V9.65a7.134 7.134 0 0 0 1.9-3.83Z" />
+  </svg>
+);
+
+const WhatsAppIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className="w-5 h-5 flex-shrink-0"
+  >
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.849 6.067l-1.254 4.587 4.68-1.233z" />
+  </svg>
+);
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, href: "#" },
-    { icon: <Instagram className="w-5 h-5" />, href: "#" },
-    { icon: <Twitter className="w-5 h-5" />, href: "#" },
-    { icon: <Linkedin className="w-5 h-5" />, href: "#" },
+    { name: "Facebook", icon: <Facebook className="w-5 h-5" />, href: "#" },
+    { name: "Instagram", icon: <Instagram className="w-5 h-5" />, href: "#" },
+    { name: "TikTok", icon: <TikTokIcon />, href: "#" }, // Using the separated component
+    { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, href: "#" },
   ];
-
-  const WhatsAppIcon = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-5 h-5 flex-shrink-0"
-    >
-      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.849 6.067l-1.254 4.587 4.68-1.233z" />
-    </svg>
-  );
 
   return (
     <footer className="bg-[#800517] text-white pt-12 pb-6 border-t border-red-900">
@@ -51,13 +62,10 @@ const Footer = () => {
               />
             </Link>
             <p className="text-gray-200 text-sm leading-relaxed max-w-sm">
-              
-                Building sustainable agricultural and residential communities 
-              
-               for the future. Join us in redefining modern living with resilient
+              Building sustainable agricultural and residential communities for
+              the future. Join us in redefining modern living with resilient
               infrastructure and clear documentation.
             </p>
-            {/* Social Icons moved to the Brand column for better grouping */}
           </div>
 
           {/* Column 2: Quick Links (New Column for structure) */}
@@ -68,7 +76,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
-                  href="/projects"
+                  href="/company/projects"
                   className="text-gray-200 hover:text-white transition-colors"
                 >
                   Our Projects
@@ -76,7 +84,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/farm-solution"
+                  href="/why-iron-farm"
                   className="text-gray-200 hover:text-white transition-colors"
                 >
                   About Us
@@ -130,6 +138,7 @@ const Footer = () => {
                   WhatsApp Support
                 </a>
               </li>
+              {/* Social Icons */}
               <div className="pt-4 flex items-center gap-3">
                 {socialLinks.map((social, index) => (
                   <a
@@ -138,9 +147,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-200 hover:bg-white hover:text-[#800517] transition-all duration-300"
-                    aria-label={`Follow us on ${
-                      ["Facebook", "Instagram", "Twitter", "LinkedIn"][index]
-                    }`}
+                    aria-label={`Follow us on ${social.name}`}
                   >
                     {social.icon}
                   </a>

@@ -29,6 +29,12 @@ const ProjectsSectionTailwind = () => {
       image: "/self.jpg", // Replace with your actual image path
       alt: "luxury residential Estate",
     },
+    {
+      id: 4,
+      title: "Iron Roots Farm Extension",
+      image: "/extension.jpg", // Replace with your actual image path
+      alt: "luxury residential Estate",
+    },
   ];
 
   return (

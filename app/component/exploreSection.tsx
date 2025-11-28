@@ -26,7 +26,7 @@ const initialProperties: Property[] = [
   {
     id: 1,
     title: "IRON ROOTS FARMS",
-    location: "Kuje, Abuja",
+    location: "chibiri, kuje, FCT Nigeria",
     priceRange: "Price on Request",
     bedrooms: 0, // Not applicable for land
     type: "700sqm & 1000sqm Farm Plots",
@@ -36,7 +36,7 @@ const initialProperties: Property[] = [
   {
     id: 2,
     title: "ROYAL PROTEIN FARMS",
-    location: "Kuje, Abuja",
+    location: "chibiri, kuje, FCT Nigeria",
     priceRange: "Price on Request",
     bedrooms: 0, // Not applicable for land
     type: "700sqm & 1000sqm Farm Plots",
@@ -49,7 +49,7 @@ const initialProperties: Property[] = [
     location: "Aco, ariport road, Abuja, Nigeria",
     priceRange: "Price on Request",
     bedrooms: 0, // Not applicable for land
-    type: "700sqm & 1000sqm Farm Plots",
+    type: "100sqm & 140sqm Farm Plots",
     image: "/cloud-two.jpg",
     amenities: [
       // {
@@ -79,6 +79,33 @@ const initialProperties: Property[] = [
     bedrooms: 0, // Not applicable for land
     type: "700sqm & 1000sqm Farm Plots",
     image: "/residential-new-1.jpg",
+    amenities: [
+      // {
+      //   icon: <BedSingle className="w-4 h-4 text-gray-800" />,
+      //   text: "Luxuriously furnished 3 bedroom",
+      // },
+      // {
+      //   icon: <Check className="w-4 h-4 text-gray-800" />,
+      //   text: "Mini Automation (Curtains)",
+      // },
+      // {
+      //   icon: <Check className="w-4 h-4 text-gray-800" />,
+      //   text: "Seasoned Private Chef/Fully equipped kitchen",
+      // },
+      // {
+      //   icon: <Check className="w-4 h-4 text-gray-800" />,
+      //   text: "Wi-Fi/NETFLIX/DSTV.",
+      // },
+    ],
+  },
+  {
+    id: 5,
+    title: "Iron Roots Farm Extension",
+    location: "chibiri, kuje, FCT Nigeria",
+    priceRange: "Price on Request",
+    bedrooms: 0, // Not applicable for land
+    type: "700sqm & 1000sqm Farm Plots",
+    image: "/extension.jpg",
     amenities: [
       // {
       //   icon: <BedSingle className="w-4 h-4 text-gray-800" />,

@@ -1,23 +1,25 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ProjectDetails = () => {
   const projectImages = [
-    "https://i.pinimg.com/736x/65/c0/ea/65c0eae07f7b52021a41e0de9bc0831f.jpg",
-    "https://i.pinimg.com/736x/95/bb/1b/95bb1ba4bc02563f8274bdd5a9ff6e77.jpg",
+    "/prot.jpg",
+    "/prote.jpg",
     // "https://i.pinimg.com/736x/d6/eb/d7/d6ebd78fb6fb7ddc2c6148974fa6952f.jpg",
-    "https://i.pinimg.com/736x/95/bb/1b/95bb1ba4bc02563f8274bdd5a9ff6e77.jpg",
-    "https://i.pinimg.com/736x/c6/46/61/c64661eb423cc6e83a4d90ccb2be6fc4.jpg",
+    "/protei.jpg",
+    "/protein.jpg",
   ];
 
   const amenities = [
-    "24/7 Security with CCTV",
-    "Perimeter wall fencing",
-    "Tarmac roads",
-    "Street lighting",
-    "Central water supply",
-    "Underground electricity",
+    "Paved road",
+    "Perimeter fence",
+    "Drainage system",
+    "Water supply",
+    "Electricity",
+    "Vet clinic",
+    "Gate house",
   ];
 
   return (
@@ -53,15 +55,19 @@ const ProjectDetails = () => {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span className="text-[15px]">Abuja, Nigeria</span>
+                <span className="text-[15px]">
+                  Chibiri Kuje, FCT Abuja Nigeria
+                </span>
               </div>
               <p className="text-gray-700 text-[15px] leading-[26px] max-w-[600px]">
-                <span className="text-[#800517] font-semibold">Royal Protein Farms </span>is an innovative agricultural real
-                estate in Abuja, designed for large-scale crop cultivation and
-                animal husbandry. It features curated farm layouts, dedicated
-                infrastructure for processing, and plots zoned specifically for
-                protein production, making it ideal for investors focused on
-                sustainable agribusiness.
+                <span className="text-[#800517] font-semibold">
+                  Royal Protein Farms{" "}
+                </span>
+                is an innovative agricultural real estate in Abuja, designed for
+                large-scale animal husbandry. It features curated farm layouts,
+                dedicated infrastructure for processing, and plots zoned
+                specifically for protein production, making it ideal for
+                investors focused on sustainable agribusiness.
               </p>
             </div>
 
@@ -177,17 +183,20 @@ const ProjectDetails = () => {
                 Plot Sizes
               </h3>
               <p className="text-gray-700 text-[15px]">
-                40x80 ft, 50x100 ft, 100x100 ft (Suitable for farm layouts)
+                1000 SQM (Suitable for animal husbandry layouts)
               </p>
             </div>
 
-            <div className="bg-white border-2 border-[#800517]/20 rounded-2xl p-8 md:p-6 shadow-lg">
-              <h3 className="text-[#800517] text-[18px] font-semibold mb-4">
-                Price Range
+            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 md:p-6 flex flex-col justify-center">
+              <h3 className="text-gray-800 text-[18px] font-semibold mb-4">
+                Pricing
               </h3>
-              <p className="text-[#2d7a6e] text-[24px] font-bold">
-                ₦ 4.5M - 12M
-              </p>
+              <Link
+                href="/contact"
+                className="inline-block text-center bg-[#800517] text-white px-6 py-3 rounded-lg text-[15px] font-medium hover:bg-[#6a0413] transition-colors"
+              >
+                Make an Inquiry
+              </Link>
             </div>
           </div>
 

@@ -46,10 +46,15 @@ const projects: ProjectType[] = [
       completion: "Ready",
     },
     amenities: [
-      "Commercial Zoning Approval",
-      "Sewer Line Connected",
-      "Street Lighting",
-      "Dual Carriage Access",
+      "Gated entry with controlled access",
+      "High perimeter fencing and electric barbed wire",
+      "24/7 on-site security personnel",
+      "5 Boreholes (solar & electric powered)",
+      "Engineered drainage systems",
+      "Truck-ready internal roads",
+      "Veterinary clinic",
+      "Farm produce supermarket",
+      "Multipurpose hall for training and value addition",
     ],
     images: ["/gate.jpg", "/self.jpg", "/gate-3.jpg"],
   },
@@ -294,7 +299,8 @@ const SingleProjectItem = ({
 
             {/*  */}
             {/* New WhatsApp Button */}
-            <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
+            {/* {whatsappLink} */}
+            <Link href="/contact" target="_blank" rel="noopener noreferrer">
               <span className="group inline-flex items-center gap-3 bg-[#800517] hover:bg-[#6a0413] text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-[1.03] shadow-lg whitespace-nowrap">
                 {/* Using an icon that implies contact/forwarding */}
                 <svg
@@ -304,7 +310,7 @@ const SingleProjectItem = ({
                 >
                   <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.35 4.96L2 22l5.35-1.42c1.45.79 3.08 1.21 4.69 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm3.36 14.4c-.18.3-.43.43-.9.66-.46.24-2.14.9-2.45.97-.3.08-.63.12-.96.12-.34 0-.58-.12-.8-.37-.22-.24-.84-.89-.84-1.74 0-.85.58-1.52.66-1.63.07-.11.16-.27.35-.49.18-.21.23-.37.35-.55.12-.17.06-.33-.03-.49-.09-.17-.9-.98-1.24-1.34-.33-.37-.7-.3-.49-.52.2-.21.46-.5.66-.74.2-.24.4-.2.53-.2.12 0 .26.03.4.03.14 0 .42-.17.65-.49.23-.3.8-.75 1.05-.98.25-.24.41-.16.52-.16.12 0 .52.01.7.4.18.37.52 1.08.58 1.17.07.09.12.19.06.32-.06.12-.19.3-.4.51-.21.2-.42.4-.59.56-.16.17-.37.33-.23.57.14.23.63 1.01 1.09 1.48.46.47.81.65 1.03.74.22.09.35.07.49-.03.14-.1.43-.16.74-.35.3-.19.98-.6 1.13-.8.15-.2.28-.27.42-.27.14 0 .93.44 1.16.55.23.1.4.2.46.3.06.09.06.6.06.67-.02.08-.22.51-.38.74-.17.23-.36.42-.62.63l-.1.08z" />
                 </svg>
-                Contact Us on WhatsApp
+                Contact Us 
               </span>
             </Link>
           </div>

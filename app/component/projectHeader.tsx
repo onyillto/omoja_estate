@@ -29,7 +29,7 @@ const projectHeader = () => {
 
         {/* Main Heading */}
         <h1 className="text-white text-[48px] md:text-[40px] sm:text-[32px] font-bold mb-6 text-center animate-fadeInUp">
-          Our Projects
+          Our Projects Page
         </h1>
 
         {/* Description */}

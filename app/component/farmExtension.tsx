@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const ProjectTwo = () => {
+const farmExtension = () => {
   const projectImages = [
     "/self.jpg", // Large Image (Index 0)
     "/gate.jpg", // Top Right Image (Index 1)
@@ -14,15 +14,15 @@ const ProjectTwo = () => {
   ];
 
   const amenities = [
-    "Gated entry with controlled access",
-    "High perimeter fencing and electric barbed wire",
-    "24/7 on-site security personnel",
-    "5 Boreholes (solar & electric powered)",
-    "Engineered drainage systems",
-    "Truck-ready internal roads",
-    "Veterinary clinic",
-    "Farm produce supermarket",
-    "Multipurpose hall for training and value addition",
+    "Controlled access gate",
+    "Solar street lights",
+    "Borehole water",
+    "Cabro paved roads",
+    "Electric fence",
+    "Shopping center (planned)",
+    "Kids play area",
+    "Jogging tracks",
+    "Water drainage system",
   ];
 
   return (
@@ -31,12 +31,12 @@ const ProjectTwo = () => {
         {/* Project Header */}
         <div className="mb-16 md:mb-12">
           <span className="text-[#800517] text-[13px] uppercase tracking-[3px] font-medium mb-8 block">
-            Iron Roots Farms
+            Farm Extension
           </span>
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
             <div className="flex-1">
               <h2 className="text-[#800517] text-[36px] md:text-[32px] sm:text-[28px] font-bold mb-4">
-                Iron Roots Farms
+                Farm Extension
               </h2>
               <div className="flex items-center gap-2 text-gray-600 mb-6">
                 <svg
@@ -63,13 +63,11 @@ const ProjectTwo = () => {
                 </span>
               </div>
               <p className="text-gray-600 text-[15px] leading-[26px] max-w-[600px]">
-                Iron Roots Farms is a thoughtfully planned agricultural estate
-                in Kuje, Abuja, built for individuals and businesses who value
-                productivity, resilience and long-term land stewardship. Whether
-                you’re launching a commercial venture, expanding a family farm
-                or establishing a sustainable agricultural enterprise, Iron
-                Roots provides the infrastructure, security and supportive
-                ecosystem you need to cultivate with confidence.
+                Farm Extensions is an innovative mixed-use agricultural estate
+                in Kuje, Abuja, a region zoned for farming under the Abuja
+                Master Plan. It features curated layouts for crop cultivation
+                and animal husbandry, ensuring operational efficiency and
+                sustainable practices.
               </p>
             </div>
 
@@ -218,7 +216,7 @@ const ProjectTwo = () => {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
+                strokeWidth={2}
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
@@ -229,4 +227,4 @@ const ProjectTwo = () => {
   );
 };
 
-export default ProjectTwo;
+export default farmExtension;

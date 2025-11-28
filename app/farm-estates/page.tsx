@@ -4,6 +4,7 @@ import Navbar from "../component/navbar";
 import FarmHeader from "../component/farmCom";
 import FarmProjectsSection from "../component/residentProjects";
 import ProjectTwo from "../component/ProjectTwo";
+import FarmExtension from "../component/farmExtension";
 const residentialPage = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const residentialPage = () => {
 
         <ProjectTwo />
         <FarmProjectsSection />
+        <FarmExtension />
       </main>
     </div>
   );

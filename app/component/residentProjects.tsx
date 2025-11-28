@@ -81,22 +81,22 @@ const ProjectDetails = () => {
                   25 Acres
                 </span>
               </div>
-              <div className="bg-white border-2 border-[#800517]/20 rounded-lg p-5">
+              {/* <div className="bg-white border-2 border-[#800517]/20 rounded-lg p-5">
                 <span className="text-[#2d7a6e] text-[13px] uppercase tracking-[2px] block mb-2">
                   Total Plots
                 </span>
                 <span className="text-[#800517] text-[24px] font-bold">
                   120
                 </span>
-              </div>
-              <div className="bg-white border-2 border-[#800517]/20 rounded-lg p-5">
+              </div> */}
+              {/* <div className="bg-white border-2 border-[#800517]/20 rounded-lg p-5">
                 <span className="text-[#2d7a6e] text-[13px] uppercase tracking-[2px] block mb-2">
                   Available
                 </span>
                 <span className="text-[#800517] text-[24px] font-bold">
                   87 Plots
                 </span>
-              </div>
+              </div> */}
               <div className="bg-white border-2 border-[#800517]/20 rounded-lg p-5">
                 <span className="text-[#2d7a6e] text-[13px] uppercase tracking-[2px] block mb-2">
                   Completion

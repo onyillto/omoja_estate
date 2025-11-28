@@ -46,15 +46,10 @@ const projects: ProjectType[] = [
       completion: "Ready",
     },
     amenities: [
-      "Gated entry with controlled access",
-      "High perimeter fencing and electric barbed wire",
-      "24/7 on-site security personnel",
-      "5 Boreholes (solar & electric powered)",
-      "Engineered drainage systems",
-      "Truck-ready internal roads",
-      "Veterinary clinic",
-      "Farm produce supermarket",
-      "Multipurpose hall for training and value addition",
+      "Commercial Zoning Approval",
+      "Sewer Line Connected",
+      "Street Lighting",
+      "Dual Carriage Access",
     ],
     images: ["/gate.jpg", "/self.jpg", "/gate-3.jpg"],
   },
@@ -249,17 +244,17 @@ const SingleProjectItem = ({
             label="Area"
             value={project.stats.area}
           />
-          <StatBox
+          {/* <StatBox
             icon={<Layers className="w-4 h-4" />}
             label="Plots"
             value={project.stats.plots}
-          />
-          <StatBox
+          /> */}
+          {/* <StatBox
             icon={<Check className="w-4 h-4" />}
             label="Available"
             value={project.stats.available}
             active
-          />
+          /> */}
           <StatBox
             icon={<Calendar className="w-4 h-4" />}
             label="Ready"

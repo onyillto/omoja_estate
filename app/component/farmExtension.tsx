@@ -81,7 +81,7 @@ const farmExtension = () => {
                   25 Acres
                 </span>
               </div>
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              {/* <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
                 <span className="text-[#800517] text-[13px] uppercase tracking-[2px] block mb-2">
                   Total Plots
                 </span>
@@ -94,7 +94,7 @@ const farmExtension = () => {
                 <span className="text-gray-800 text-[24px] font-bold">
                   87 Plots
                 </span>
-              </div>
+              </div> */}
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
                 <span className="text-[#800517] text-[13px] uppercase tracking-[2px] block mb-2">
                   Completion

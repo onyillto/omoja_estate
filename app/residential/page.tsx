@@ -4,6 +4,7 @@ import Navbar from "../component/navbar";
 import ResidentHeader from "../component/farmheader";
 // import ResidentialProjectsSection from "../component/residentProjects";
 import ProjectTwo from "../component/residentProject";
+import ProjectThree from "../component/Familia";
 const residentialPage = () => {
   return (
     <div>
@@ -13,6 +14,7 @@ const residentialPage = () => {
         <ResidentHeader />
         {/* <ResidentialProjectsSection /> */}
         < ProjectTwo />
+        < ProjectThree />
       </main>
     </div>
   );

@@ -102,7 +102,7 @@ const ProjectTwo = () => {
                   Completion
                 </span>
                 <span className="text-gray-800 text-[24px] font-bold">
-                  2024
+                  2026
                 </span>
               </div>
             </div>

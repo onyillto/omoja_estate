@@ -6,8 +6,8 @@ const ProjectsSectionTailwind = () => {
   const projects = [
     {
       id: 1,
-      title: "Farmland",
-      image: "/block.jpg", // Replace with your actual image path
+      title: "ROYAL PROTEIN FARMS",
+      image: "/farm.jpg", // Replace with your actual image path
       alt: "Queen Amina luxury residential towers",
     },
 
@@ -19,18 +19,18 @@ const ProjectsSectionTailwind = () => {
     },
     {
       id: 3,
-      title: "Residential Prototype",
-      image: "/self.jpg", // Replace with your actual image path
+      title: "THE CLOUDS MAISONETTES",
+      image: "/cloud-two.jpg", // Replace with your actual image path
       alt: "Leonardo luxury residential Estate",
     },
     {
       id: 4,
       title: "La-Familia",
-      image: "/self.jpg", // Replace with your actual image path
+      image: "/fine.jpg", // Replace with your actual image path
       alt: "luxury residential Estate",
     },
     {
-      id: 4,
+      id: 5,
       title: "Iron Roots Farm Extension",
       image: "/extension.jpg", // Replace with your actual image path
       alt: "luxury residential Estate",

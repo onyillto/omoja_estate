@@ -42,8 +42,16 @@ const Footer = () => {
   const socialLinks = [
     { name: "Facebook", icon: <Facebook className="w-5 h-5" />, href: "#" },
     { name: "Instagram", icon: <Instagram className="w-5 h-5" />, href: "#" },
-    { name: "TikTok", icon: <TikTokIcon />, href: "#" }, // Using the separated component
-    { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" />, href: "#" },
+    {
+      name: "TikTok",
+      icon: <TikTokIcon />,
+      href: "https://www.tiktok.com/@moja.realestate_ltd1?_r=1&_t=ZS-91r6Kukk1El",
+    }, // Using the separated component
+    {
+      name: "LinkedIn",
+      icon: <Linkedin className="w-5 h-5" />,
+      href: "https://www.linkedin.com/in/moja-realestate-limited-64497339a/",
+    },
   ];
 
   return (

@@ -87,7 +87,7 @@ const projects: ProjectType[] = [
       area: "15 Acres",
       plots: "120 Units",
       available: "87 Plots",
-      completion: "2024",
+      completion: "2026",
     },
     amenities: [
       "24/7 Security & CCTV",
@@ -120,6 +120,36 @@ const projects: ProjectType[] = [
       "/residential-new-1.jpg",
       "/residential-new-2.jpg",
       "/residential-new-3.jpg",
+    ],
+  },
+  {
+    id: 5,
+    subtitle: "Project 04: Agricultural Project",
+    title: "Iron Roots Farm Extension",
+    location: "Chibiri Kuje, FCT Abuja Nigeria",
+    description:
+      "Farm Extensions is an innovative mixed-use agricultural estate in Kuje, Abuja, a region zoned for farming under the Abuja Master Plan. It features curated layouts for crop cultivation and animal husbandry, ensuring operational efficiency and sustainable practices.",
+    stats: {
+      area: "20 Acres",
+      plots: "50 Units",
+      available: "35 Plots",
+      completion: "2026",
+    },
+   amenities: [
+  "Fenced Farmland with Secure Gate",
+  "Irrigation & Water Supply System",
+  "Fruit Trees & Vegetable Garden Areas",
+  "Dedicated Livestock Pens & Housing",
+  "Solar-Powered Borehole",
+  "Farm-to-Market Access Roads",
+  "Storage Barn & Tool Shed",
+  "Farm Workers’ Quarters",
+]
+,
+    images: [
+      "/extension-one.jpg",
+      "/extension-two.jpg",
+      "/extension-three.jpg",
     ],
   },
 ];

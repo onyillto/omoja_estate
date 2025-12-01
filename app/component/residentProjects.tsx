@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const ProjectDetails = () => {
   const projectImages = [
-    "/prot.jpg",
+    "/extension-one.jpg",
     "/prote.jpg",
     // "https://i.pinimg.com/736x/d6/eb/d7/d6ebd78fb6fb7ddc2c6148974fa6952f.jpg",
     "/protei.jpg",
@@ -102,7 +102,7 @@ const ProjectDetails = () => {
                   Completion
                 </span>
                 <span className="text-[#800517] text-[24px] font-bold">
-                  2024
+                  2025
                 </span>
               </div>
             </div>
@@ -120,7 +120,7 @@ const ProjectDetails = () => {
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
-              <button className="absolute bottom-6 left-6 bg-[#800517]/90 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-[13px] flex items-center gap-2 hover:bg-[#800517] transition-colors">
+              {/* <button className="absolute bottom-6 left-6 bg-[#800517]/90 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-[13px] flex items-center gap-2 hover:bg-[#800517] transition-colors">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -135,7 +135,7 @@ const ProjectDetails = () => {
                   />
                 </svg>
                 View Full Image
-              </button>
+              </button> */}
             </div>
 
             {/* Small Images Grid */}

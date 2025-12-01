@@ -31,12 +31,12 @@ const farmExtension = () => {
         {/* Project Header */}
         <div className="mb-16 md:mb-12">
           <span className="text-[#800517] text-[13px] uppercase tracking-[3px] font-medium mb-8 block">
-            Farm Extension
+            Iron Roots Farm Extension
           </span>
           <div className="flex flex-col lg:flex-row justify-between items-start gap-8">
             <div className="flex-1">
               <h2 className="text-[#800517] text-[36px] md:text-[32px] sm:text-[28px] font-bold mb-4">
-                Farm Extension
+                Iron Roots Farm Extension
               </h2>
               <div className="flex items-center gap-2 text-gray-600 mb-6">
                 <svg
@@ -63,7 +63,7 @@ const farmExtension = () => {
                 </span>
               </div>
               <p className="text-gray-600 text-[15px] leading-[26px] max-w-[600px]">
-                Farm Extensions is an innovative mixed-use agricultural estate
+                Iron Roots Farm Extensions is an innovative mixed-use agricultural estate
                 in Kuje, Abuja, a region zoned for farming under the Abuja
                 Master Plan. It features curated layouts for crop cultivation
                 and animal husbandry, ensuring operational efficiency and
@@ -100,7 +100,7 @@ const farmExtension = () => {
                   Completion
                 </span>
                 <span className="text-gray-800 text-[24px] font-bold">
-                  2024
+                  2026
                 </span>
               </div>
             </div>

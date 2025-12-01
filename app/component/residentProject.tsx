@@ -32,7 +32,7 @@ const ProjectsIndex = () => {
       landArea: "25 Acres",
       totalPlots: 120,
       availablePlots: 87,
-      completion: "2024",
+      completion: "2026",
       plotSizes: "700sqm, 1000sqm",
       priceRange: "₦5.5M - ₦6.0M",
       images: [

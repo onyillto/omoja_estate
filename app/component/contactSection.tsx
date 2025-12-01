@@ -7,7 +7,6 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  Twitter,
   Tag,
   Send,
   Loader2,
@@ -89,6 +88,17 @@ const ContactSection = () => {
     </svg>
   );
 
+  const TikTokIcon = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-5 h-5"
+    >
+      <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6s1.18-2.6 2.6-2.6c.76 0 1.44.33 1.93.86V8.66c-1.45-.4-3.02-.25-4.2.46-2.42 1.48-3.02 4.18-1.53 6.61A5.29 5.29 0 0 0 9.4 19.8c2.94 0 5.3-2.39 5.3-5.3V9.65a7.134 7.134 0 0 0 1.9-3.83Z" />
+    </svg>
+  );
+
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
@@ -110,11 +120,20 @@ const ContactSection = () => {
   const socialLinks = [
     {
       name: "Facebook",
+      href: "#",
       icon: <Facebook className="w-5 h-5" />,
     },
-    { name: "Instagram", icon: <Instagram className="w-5 h-5" /> },
-    { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" /> },
-    { name: "Twitter", icon: <Twitter className="w-5 h-5" /> },
+    { name: "Instagram", href: "#", icon: <Instagram className="w-5 h-5" /> },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/moja-realestate-limited-64497339a/",
+      icon: <Linkedin className="w-5 h-5" />,
+    },
+    {
+      name: "TikTok",
+      href: "https://www.tiktok.com/@moja.realestate_ltd1?_r=1&_t=ZS-91r6Kukk1El",
+      icon: <TikTokIcon />,
+    },
   ];
 
   return (
@@ -187,7 +206,9 @@ const ContactSection = () => {
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
-                      href="#"
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-12 h-12 bg-white/5 border border-white/10 hover:border-red-400 rounded-lg flex items-center justify-center text-gray-100 hover:text-red-400 transition-all"
                     >
                       {social.icon}

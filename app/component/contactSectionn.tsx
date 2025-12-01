@@ -1,5 +1,17 @@
 "use client";
 import React, { useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
+import {
+  Mail,
+  Phone,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+  Tag,
+  Send,
+  Loader2,
+} from "lucide-react";
 import Link from "next/link";
 
 const ContactSection = () => {
@@ -12,12 +24,7 @@ const ContactSection = () => {
 
   const [showContactInfo, setShowContactInfo] = useState(false);
   const [showForm, setShowForm] = useState(false);
-
-  const [notification, setNotification] = useState({
-    show: false,
-    message: "",
-    type: "success",
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -30,6 +37,7 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     try {
       const res = await fetch("/api/send-email", {
@@ -41,43 +49,20 @@ const ContactSection = () => {
       const data = await res.json();
 
       if (data.success) {
-        setNotification({
-          show: true,
-          message: "Message sent successfully!",
-          type: "success",
-        });
-
+        toast.success("Message sent successfully!");
         setFormData({
           firstName: "",
           email: "",
           phone: "",
           message: "",
         });
-
-        setTimeout(() => {
-          setNotification({ ...notification, show: false });
-        }, 3000);
       } else {
-        setNotification({
-          show: true,
-          message: "Failed to send message.",
-          type: "error",
-        });
-
-        setTimeout(() => {
-          setNotification({ ...notification, show: false });
-        }, 3000);
+        toast.error("Failed to send message. Please try again.");
       }
     } catch (error) {
-      setNotification({
-        show: true,
-        message: "An error occurred.",
-        type: "error",
-      });
-
-      setTimeout(() => {
-        setNotification({ ...notification, show: false });
-      }, 3000);
+      toast.error("An error occurred. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -91,61 +76,32 @@ const ContactSection = () => {
     }
   };
 
+  const WhatsAppIcon = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-6 h-6"
+    >
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.849 6.067l-1.254 4.587 4.68-1.233z" />
+    </svg>
+  );
+
   const contactInfo = [
     {
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          />
-        </svg>
-      ),
+      icon: <Mail className="w-6 h-6" />,
       title: "Email",
       info: "mojaealestate1@gmail.com",
     },
     {
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-          />
-        </svg>
-      ),
+      icon: <Phone className="w-6 h-6" />,
       title: "Phone",
       info: "+2349168366266",
     },
     {
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-          />
-        </svg>
-      ),
+      icon: <WhatsAppIcon />,
       title: "Whatsapp Number",
       info: "+2349168366266",
     },
@@ -154,50 +110,16 @@ const ContactSection = () => {
   const socialLinks = [
     {
       name: "Facebook",
-      icon: (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M24 12.073c0-6.627-5.373-12-12..." />
-        </svg>
-      ),
+      icon: <Facebook className="w-5 h-5" />,
     },
-    {
-      name: "Instagram",
-      icon: (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0C8.74 0..." />
-        </svg>
-      ),
-    },
-    {
-      name: "LinkedIn",
-      icon: (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452..." />
-        </svg>
-      ),
-    },
-    {
-      name: "Twitter",
-      icon: (
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.953 4.57..." />
-        </svg>
-      ),
-    },
+    { name: "Instagram", icon: <Instagram className="w-5 h-5" /> },
+    { name: "LinkedIn", icon: <Linkedin className="w-5 h-5" /> },
+    { name: "Twitter", icon: <Twitter className="w-5 h-5" /> },
   ];
 
   return (
     <section className="relative w-full bg-[#800517] py-20 md:py-16">
-      {/* Notification Popup */}
-      {notification.show && (
-        <div
-          className={`fixed top-5 right-5 px-6 py-3 rounded-lg shadow-xl text-white 
-          ${notification.type === "success" ? "bg-green-600" : "bg-red-600"}`}
-        >
-          {notification.message}
-        </div>
-      )}
-
+      <Toaster position="top-right" />
       <div className="max-w-[1400px] mx-auto px-10 md:px-10 sm:px-5">
         {/* Action Buttons */}
         <div className="flex justify-center gap-4 mb-8">
@@ -205,19 +127,7 @@ const ContactSection = () => {
             onClick={handleSendEmailClick}
             className="flex-1 bg-white text-[#800517] hover:bg-gray-100 px-8 py-4 rounded-lg text-[16px] font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl max-w-[200px]"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
-            </svg>
+            <Mail className="w-5 h-5" />
             Send Email
           </button>
 
@@ -225,19 +135,7 @@ const ContactSection = () => {
             href="/company/projects"
             className="flex-1 bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg text-[16px] font-semibold transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl max-w-[200px]"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+            <Tag className="w-5 h-5" />
             See Offers
           </Link>
         </div>
@@ -369,22 +267,19 @@ const ContactSection = () => {
 
                     <button
                       type="submit"
-                      className="w-full bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg text-[16px] font-semibold flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all"
+                      disabled={isSubmitting}
+                      className="w-full bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg text-[16px] font-semibold flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all disabled:bg-red-400 disabled:cursor-not-allowed"
                     >
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                        />
-                      </svg>
-                      Submit
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                          Submitting...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-5 h-5" /> Submit
+                        </>
+                      )}
                     </button>
                   </form>
                 </div>

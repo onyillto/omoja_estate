@@ -92,7 +92,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/why-iron-farm"
+                  href="/company/why-choose-moja-realestate"
                   className="text-gray-200 hover:text-white transition-colors"
                 >
                   About Us

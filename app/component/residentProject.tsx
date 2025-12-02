@@ -29,11 +29,12 @@ const ProjectsIndex = () => {
       location: "Aco, ariport road, Abuja, Nigeria",
       description:
         "THE CLOUDS Maisonettes is a luxurious, high-end residential estate featuring modern detached and semi-detached maisonettes. Located in the serene Kuje area of Abuja, it offers residents a blend of contemporary design, premium amenities, and a peaceful living environment.",
-      landArea: "25 Acres",
-      totalPlots: 120,
-      availablePlots: 87,
+      landArea: "7.5 Acres",
+      totalPlots: 0, // No plot allocation yet
+      availablePlots: 0, // No plot allocation yet
       completion: "2026",
-      plotSizes: "700sqm, 1000sqm",
+      plotSizes:
+        "1 bedroom maisonette – 100sqm, 2 bedrooms maisonette – 140sqm",
       priceRange: "₦5.5M - ₦6.0M",
       images: [
         "/cloud-two.jpg",
@@ -44,15 +45,22 @@ const ProjectsIndex = () => {
         "/int-2.jpg",
       ],
       amenities: [
-        "Controlled access gate",
-        "Solar street lights",
-        "Borehole water",
-        "Cabro paved roads",
-        "Electric fence",
-        "Shopping center (planned)",
-        "Kids play area",
-        "Jogging tracks",
-        "Water drainage system",
+        "Gate House",
+        "Board Walk",
+        "Games Arena",
+        "Car Park",
+        "Perimeter Fence",
+        "Clean Water Supply",
+        "Eco-Friendly Green Areas",
+        "Swimming Pool",
+        "Basketball Court",
+        "24/7 Security",
+        "Incredible Ventilation & Natural Light",
+        "Yoga Lounge",
+        "Electricity",
+        "Tarred Internal Road",
+        "Underground Drainage System",
+        "Biometric Access",
       ],
       link: "/cloud-maisonette",
     },
@@ -142,28 +150,12 @@ const ProjectsIndex = () => {
             </div>
             <div className="bg-gray-50 border border-red-200 rounded-lg p-5">
               <span className="text-red-500 text-[13px] uppercase tracking-[2px] block mb-2">
-                Total Plots
-              </span>
-              <span className="text-gray-900 text-[24px] font-bold">
-                {project.totalPlots}
-              </span>
-            </div>
-            <div className="bg-gray-50 border border-red-200 rounded-lg p-5">
-              <span className="text-red-500 text-[13px] uppercase tracking-[2px] block mb-2">
                 Available
               </span>
               <span className="text-gray-900 text-[24px] font-bold">
-                {project.availablePlots} Plots
+                TBD
               </span>
-            </div>
-            <div className="bg-gray-50 border border-red-200 rounded-lg p-5">
-              <span className="text-red-500 text-[13px] uppercase tracking-[2px] block mb-2">
-                Completion
-              </span>
-              <span className="text-gray-900 text-[24px] font-bold">
-                {project.completion}
-              </span>
-            </div>
+            </div> 
           </div>
         </div>
       </div>

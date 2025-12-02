@@ -13,13 +13,22 @@ const ProjectDetails = () => {
   ];
 
   const amenities = [
-    "Paved road",
-    "Perimeter fence",
-    "Drainage system",
-    "Water supply",
+    "Gate House",
+    "Board Walk",
+    "Games Arena",
+    "Car Park",
+    "Perimeter Fence",
+    "Clean Water Supply",
+    "Eco-Friendly Green Areas",
+    "Swimming Pool",
+    "Basketball Court",
+    "24/7 Security",
+    "Incredible Ventilation & Natural Light",
+    "Yoga Lounge",
     "Electricity",
-    "Vet clinic",
-    "Gate house",
+    "Tarred Internal Road",
+    "Underground Drainage System",
+    "Biometric Access",
   ];
 
   return (
@@ -60,11 +69,11 @@ const ProjectDetails = () => {
               <p className="text-gray-700 text-[15px] leading-[26px] max-w-[600px]">
                 <span className="text-[#800517] font-semibold">
                   La-Familia{" "}
-                </span>
-                An exclusive community offering luxury 5-bedroom duplexes with
-                private gardens. La-Familia is designed for modern families who
-                value comfort, security, and a connection to nature, all within
-                a prime urban location.
+                </span>{" "}
+                is an exclusive community designed for modern families who value
+                comfort, security, and a connection to nature, all within a
+                prime urban location. The residence types have not yet been
+                specified.
               </p>
             </div>
 

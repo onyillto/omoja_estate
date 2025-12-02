@@ -29,7 +29,7 @@ const initialProperties: Property[] = [
     location: "chibiri, kuje, FCT Nigeria",
     priceRange: "Price on Request",
     bedrooms: 0, // Not applicable for land
-    type: "700sqm & 1000sqm Farm Plots",
+    type: "Animal husbandry/crop farming (1000 & 700 SQM)",
     image: "/gate.jpg",
     amenities: [],
   },
@@ -39,7 +39,7 @@ const initialProperties: Property[] = [
     location: "chibiri, kuje, FCT Nigeria",
     priceRange: "Price on Request",
     bedrooms: 0, // Not applicable for land
-    type: "700sqm & 1000sqm Farm Plots",
+    type: "Livestock farming (1000SQM)",
     image: "/farm.jpg",
     amenities: [],
   },
@@ -49,7 +49,7 @@ const initialProperties: Property[] = [
     location: "Aco, ariport road, Abuja, Nigeria",
     priceRange: "Price on Request",
     bedrooms: 0, // Not applicable for land
-    type: "100sqm & 140sqm Farm Plots",
+    type: "1 bedroom maisonette – 100sqm, 2 bedrooms maisonette – 140sqm",
     image: "/cloud-two.jpg",
     amenities: [
       // {
@@ -77,7 +77,7 @@ const initialProperties: Property[] = [
     location: "Guzape, Abuja, Nigeria",
     priceRange: "Price on Request",
     bedrooms: 0, // Not applicable for land
-    type: "700sqm & 1000sqm Farm Plots",
+    type: "The type of residence hasn’t been made available to me yet",
     image: "/residential-new-1.jpg",
     amenities: [
       // {
@@ -104,8 +104,8 @@ const initialProperties: Property[] = [
     location: "chibiri, kuje, FCT Nigeria",
     priceRange: "Price on Request",
     bedrooms: 0, // Not applicable for land
-    type: "700sqm & 1000sqm Farm Plots",
-    image: "/extension.jpg",
+    type: "Animal husbandry/crop farming (1000 & 700 SQM)",
+    image: "/far.jpg",
     amenities: [
       // {
       //   icon: <BedSingle className="w-4 h-4 text-gray-800" />,

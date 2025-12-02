@@ -13,13 +13,16 @@ const ProjectDetails = () => {
   ];
 
   const amenities = [
-    "Paved road",
-    "Perimeter fence",
-    "Drainage system",
-    "Water supply",
-    "Electricity",
-    "Vet clinic",
-    "Gate house",
+    "Perimeter Fence with Barb Wires",
+    "Gate House",
+    "24/7 Security",
+    "Full Disinfectant Booth & Fogging Tunnels",
+    "PPE Collection Point",
+    "Dedicated Veterinary Doctors and Vet Office",
+    "Tarred Internal Road Network",
+    "Clean Water Supply",
+    "Proper Waste Management",
+    "Drainages System",
   ];
 
   return (
@@ -78,7 +81,7 @@ const ProjectDetails = () => {
                   Land Area
                 </span>
                 <span className="text-[#800517] text-[24px] font-bold">
-                  25 Acres
+                  10 Acres
                 </span>
               </div>
               {/* <div className="bg-white border-2 border-[#800517]/20 rounded-lg p-5">
@@ -99,10 +102,10 @@ const ProjectDetails = () => {
               </div> */}
               <div className="bg-white border-2 border-[#800517]/20 rounded-lg p-5">
                 <span className="text-[#2d7a6e] text-[13px] uppercase tracking-[2px] block mb-2">
-                  Completion
+                  Plot
                 </span>
                 <span className="text-[#800517] text-[24px] font-bold">
-                  2025
+                  Not Specified
                 </span>
               </div>
             </div>

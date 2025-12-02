@@ -14,15 +14,20 @@ const ProjectTwo = () => {
   ];
 
   const amenities = [
-    "Gated entry with controlled access",
-    "High perimeter fencing and electric barbed wire",
-    "24/7 on-site security personnel",
-    "5 Boreholes (solar & electric powered)",
-    "Engineered drainage systems",
-    "Truck-ready internal roads",
-    "Veterinary clinic",
-    "Farm produce supermarket",
-    "Multipurpose hall for training and value addition",
+    "Perimeter Fence",
+    "Gate House",
+    "24/7 Security",
+    "Rental Apartment",
+    "Feed Mill",
+    "Veterinary Clinic",
+    "General Hall",
+    "Clean Water Supply",
+    "Greenery",
+    "Drainages System",
+    "Boardwalk",
+    "Electricity",
+    "Rental storage units",
+    "Car park",
   ];
 
   return (
@@ -80,7 +85,7 @@ const ProjectTwo = () => {
                   Land Area
                 </span>
                 <span className="text-gray-800 text-[24px] font-bold">
-                  25 Acres
+                  57 Acres
                 </span>
               </div>
               {/* <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
@@ -99,11 +104,9 @@ const ProjectTwo = () => {
               </div> */}
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
                 <span className="text-[#800517] text-[13px] uppercase tracking-[2px] block mb-2">
-                  Completion
+                  Plot
                 </span>
-                <span className="text-gray-800 text-[24px] font-bold">
-                  2026
-                </span>
+                <span className="text-gray-800 text-[24px] font-bold">184</span>
               </div>
             </div>
           </div>

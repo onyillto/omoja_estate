@@ -14,15 +14,14 @@ const farmExtension = () => {
   ];
 
   const amenities = [
-    "Controlled access gate",
-    "Solar street lights",
-    "Borehole water",
-    "Cabro paved roads",
-    "Electric fence",
-    "Shopping center (planned)",
-    "Kids play area",
-    "Jogging tracks",
-    "Water drainage system",
+    "Perimeter Fence",
+    "Gate House",
+    "Drainage System",
+    "Electricity",
+    "Car park",
+    "Clean Water Supply",
+    "Waste management",
+    "Watse management",
   ];
 
   return (
@@ -63,11 +62,11 @@ const farmExtension = () => {
                 </span>
               </div>
               <p className="text-gray-600 text-[15px] leading-[26px] max-w-[600px]">
-                Iron Roots Farm Extensions is an innovative mixed-use agricultural estate
-                in Kuje, Abuja, a region zoned for farming under the Abuja
-                Master Plan. It features curated layouts for crop cultivation
-                and animal husbandry, ensuring operational efficiency and
-                sustainable practices.
+                Iron Roots Farm Extensions is an innovative mixed-use
+                agricultural estate in Kuje, Abuja, a region zoned for farming
+                under the Abuja Master Plan. It features curated layouts for
+                crop cultivation and animal husbandry, ensuring operational
+                efficiency and sustainable practices.
               </p>
             </div>
 
@@ -226,5 +225,6 @@ const farmExtension = () => {
     </section>
   );
 };
+
 
 export default farmExtension;

@@ -129,7 +129,7 @@ const projects: ProjectType[] = [
     id: 4,
     subtitle: "Project 04: Residential",
     title: "La-Familia",
-    location: "Aco, Airport Road, FCT, Abuja.",
+    location: "Aco, Airport Road, FCT, Abuja..",
     description:
       "An exclusive community designed for modern families who value comfort, security, and a connection to nature, all within a prime urban location. The residence types have not yet been specified.",
     stats: {

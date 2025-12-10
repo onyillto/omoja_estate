@@ -66,7 +66,7 @@ const ProjectDetails = () => {
                 </svg>
                 <span className="text-[15px]">
                   Aco, Airport Road, FCT, Abuja.
-                </span>
+            </span>
               </div>
               <p className="text-gray-700 text-[15px] leading-[26px] max-w-[600px]">
                 <span className="text-[#800517] font-semibold">

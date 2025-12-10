@@ -10,7 +10,7 @@ interface ProjectData {
   location: string;
   description: string;
   landArea: string;
-  totalPlots: number;
+  totalPlots: string;
   availablePlots: number;
   completion: string;
   plotSizes: string;
@@ -28,13 +28,13 @@ const ProjectsIndex = () => {
       tag: "Residential Estate",
       location: "Aco, ariport road, Abuja, Nigeria",
       description:
-        "THE CLOUDS Maisonettes is a luxurious, high-end residential estate featuring modern detached and semi-detached maisonettes. Located in the serene Kuje area of Abuja, it offers residents a blend of contemporary design, premium amenities, and a peaceful living environment.",
-      landArea: "7.5 Acres",
-      totalPlots: 0, // No plot allocation yet
+        "The Clouds Maisonettes is a true masterpiece designed for the modern home owner or individuals looking to break into or expand their short-let business. It brings together smart architecture, premium facilities, and delivers a living experience that feels both private, very spacious, and uplifting.",
+      landArea: "9.9 Acres",
+      totalPlots: "31 Units", // No plot allocation yet
       availablePlots: 0, // No plot allocation yet
       completion: "2026",
       plotSizes:
-        "1 bedroom maisonette – 100sqm, 2 bedrooms maisonette – 140sqm",
+        "1 bedroom maisonette – 100sqm, 2 bedrooms maisonette – 150sqm",
       priceRange: "₦5.5M - ₦6.0M",
       images: [
         "/cloud-two.jpg",

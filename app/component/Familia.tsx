@@ -64,7 +64,9 @@ const ProjectDetails = () => {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span className="text-[15px]">Guzape, Abuja, Nigeria</span>
+                <span className="text-[15px]">
+                  Aco, Airport Road, FCT, Abuja.
+                </span>
               </div>
               <p className="text-gray-700 text-[15px] leading-[26px] max-w-[600px]">
                 <span className="text-[#800517] font-semibold">

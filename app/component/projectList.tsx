@@ -97,11 +97,11 @@ const projects: ProjectType[] = [
     title: "THE CLOUDS Maisonettes",
     location: " Aco, ariport road, Abuja, Nigeria", // Changed location
     description:
-      "A premium residential development featuring contemporary three and four-bedroom maisonettes. Located in the fast-developing Lugbe area, THE CLOUDS offers secure, modern living with excellent infrastructure for families seeking a luxurious suburban lifestyle.", // Updated description
+      "The Clouds Maisonettes is a true masterpiece designed for the modern home owner or individuals looking to break into or expand their short-let business. It brings together smart architecture, premium facilities, and delivers a living experience that feels both private, very spacious, and uplifting.", // Updated description
     // price: "₦ 15.5M - 35M", // Removed
     stats: {
-      area: "15 Acres",
-      plots: "120 Units",
+      area: "9.9 Acres",
+      plots: "31 Units",
       available: "87 Plots",
       completion: "2026",
     },
@@ -129,7 +129,7 @@ const projects: ProjectType[] = [
     id: 4,
     subtitle: "Project 04: Residential",
     title: "La-Familia",
-    location: "Guzape, Abuja, Nigeria",
+    location: "Aco, Airport Road, FCT, Abuja.",
     description:
       "An exclusive community designed for modern families who value comfort, security, and a connection to nature, all within a prime urban location. The residence types have not yet been specified.",
     stats: {

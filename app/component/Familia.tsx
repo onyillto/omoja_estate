@@ -66,7 +66,7 @@ const ProjectDetails = () => {
                 </svg>
                 <span className="text-[15px]">
                   Aco, Airport Road, FCT, Abuja.
-            </span>
+                </span>
               </div>
               <p className="text-gray-700 text-[15px] leading-[26px] max-w-[600px]">
                 <span className="text-[#800517] font-semibold">
@@ -86,7 +86,7 @@ const ProjectDetails = () => {
                   Land Area
                 </span>
                 <span className="text-[#800517] text-[24px] font-bold">
-                  25 Acres
+                  2.5 Acres
                 </span>
               </div>
               {/* <div className="bg-white border-2 border-[#800517]/20 rounded-lg p-5">
@@ -110,7 +110,7 @@ const ProjectDetails = () => {
                   Completion
                 </span>
                 <span className="text-[#800517] text-[24px] font-bold">
-                  2025
+                  2026
                 </span>
               </div>
             </div>
@@ -191,7 +191,7 @@ const ProjectDetails = () => {
                 Plot Sizes
               </h3>
               <p className="text-gray-700 text-[15px]">
-                1000 SQM (Suitable for animal husbandry layouts)
+                500 SQM (suitable for 4-bedroom Fully Detached Duplex with BQ)
               </p>
             </div>
 

@@ -35,7 +35,7 @@ const initialProperties: Property[] = [
   },
   {
     id: 2,
-    title: "ROYAL PROTEIN FARMS",
+    title: "Royal Protein Farm",
     location: "chibiri, kuje, FCT Nigeria",
     priceRange: "Price on Request",
     bedrooms: 0, // Not applicable for land
@@ -74,7 +74,7 @@ const initialProperties: Property[] = [
   {
     id: 4,
     title: "La-Familia",
-    location: "Guzape, Abuja, Nigeria",
+    location: "Aco, Airport Road, Abuja",
     priceRange: "Price on Request",
     bedrooms: 0, // Not applicable for land
     type: "The type of residence hasn’t been made available to me yet",

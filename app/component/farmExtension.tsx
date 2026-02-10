@@ -8,9 +8,9 @@ const farmExtension = () => {
     "/self.jpg", // Large Image (Index 0)
     "/gate.jpg", // Top Right Image (Index 1)
     "/suparmaaket.jpg", // Bottom Right Image (Index 2)
-    "/hall.jpg", // Bottom Left Image (Index 3)
-    "/gate-2.jpg", // Bottom Middle Image (Index 4)
-    "/self-2.jpg", // Bottom Right Image (Index 5)
+    "/IMG_7734.JPG", // Bottom Left Image (Index 3)
+    "/IMG_7733.JPG", // Bottom Middle Image (Index 4)
+    "/IMG_7735.JPG", // Bottom Right Image (Index 5)
   ];
 
   const amenities = [
@@ -77,7 +77,7 @@ const farmExtension = () => {
                   Land Area
                 </span>
                 <span className="text-gray-800 text-[24px] font-bold">
-                  25 Acres
+                  20 Acres
                 </span>
               </div>
               {/* <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
@@ -96,10 +96,10 @@ const farmExtension = () => {
               </div> */}
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
                 <span className="text-[#800517] text-[13px] uppercase tracking-[2px] block mb-2">
-                  Completion
+                  Plot
                 </span>
                 <span className="text-gray-800 text-[24px] font-bold">
-                  2026
+                  76
                 </span>
               </div>
             </div>

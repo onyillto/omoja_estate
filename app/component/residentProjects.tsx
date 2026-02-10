@@ -36,7 +36,7 @@ const ProjectDetails = () => {
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div className="flex-1">
               <h1 className="text-[#800517] text-[36px] md:text-[32px] sm:text-[28px] font-bold mb-4">
-                Royal Protein Farms
+                Royal Protein Farm
               </h1>
               <div className="flex items-center gap-2 text-[#800517] mb-6">
                 <svg
@@ -64,7 +64,7 @@ const ProjectDetails = () => {
               </div>
               <p className="text-gray-700 text-[15px] leading-[26px] max-w-[600px]">
                 <span className="text-[#800517] font-semibold">
-                  Royal Protein Farms{" "}
+                  Royal Protein Farm{" "}
                 </span>
                 is an innovative agricultural real estate in Abuja, designed for
                 large-scale animal husbandry. It features curated farm layouts,
@@ -81,7 +81,7 @@ const ProjectDetails = () => {
                   Land Area
                 </span>
                 <span className="text-[#800517] text-[24px] font-bold">
-                  10 Acres
+                  20 Acres
                 </span>
               </div>
               {/* <div className="bg-white border-2 border-[#800517]/20 rounded-lg p-5">

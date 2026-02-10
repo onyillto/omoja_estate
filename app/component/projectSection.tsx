@@ -6,7 +6,7 @@ const ProjectsSectionTailwind = () => {
   const projects = [
     {
       id: 1,
-      title: "ROYAL PROTEIN FARMS",
+      title: "Royal Protein Farm",
       image: "/farm.jpg", // Replace with your actual image path
       alt: "Queen Amina luxury residential towers",
     },
@@ -63,7 +63,7 @@ const ProjectsSectionTailwind = () => {
                   priority
                 />
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-red-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-to-t from-red-800/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               <h3 className="text-gray-800 text-xs lg:text-[13px] font-light tracking-[0.2em] lg:tracking-[0.3em] uppercase mt-6 text-center">

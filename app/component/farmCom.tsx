@@ -23,7 +23,7 @@ const PortfolioHero = () => {
         {/* Portfolio Tag */}
         <div className="mb-8 animate-fadeIn">
           <span className="text-[#800517] text-[14px] md:text-[13px] uppercase tracking-[3px] font-medium">
-            Farm Estate
+            {/* Farm Estate */}
           </span>
         </div>
 

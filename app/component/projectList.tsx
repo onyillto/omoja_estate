@@ -66,7 +66,7 @@ const projects: ProjectType[] = [
   {
     id: 2,
     subtitle: "Project 02: Agricultural Project",
-    title: "Royal Protein Farms",
+    title: "Royal Protein Farm",
     location: "Kuje, Abuja, Nigeria", // Changed location
     description:
       "A specialized mixed-use estate designed for large-scale agricultural investment and protein production (poultry, fishery, livestock). Situated in the Kuje farming zone, this project offers large plots with dedicated water and storage facilities.", // Updated description

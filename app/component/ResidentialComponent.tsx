@@ -22,7 +22,7 @@ const ResidentialProjectsSection = () => {
             {/* Main Image */}
             <div className="relative h-[500px] md:h-[600px] rounded-[2.5rem] overflow-hidden shadow-2xl z-10">
               <Image
-                src="/hall-2.jpg" // Ensure this image exists in public folder
+                src="/IMG_7737.JPG" // Ensure this image exists in public folder
                 alt="Modern Residential Estate"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

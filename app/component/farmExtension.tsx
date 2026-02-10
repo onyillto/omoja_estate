@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const farmExtension = () => {
   const projectImages = [
-    "/self.jpg", // Large Image (Index 0)
+    "/extend.png", // Large Image (Index 0)
     "/gate.jpg", // Top Right Image (Index 1)
     "/suparmaaket.jpg", // Bottom Right Image (Index 2)
     "/IMG_7734.JPG", // Bottom Left Image (Index 3)

@@ -40,7 +40,7 @@ const projects: ProjectType[] = [
       "Iron Roots Farms is an innovative mixed-use agricultural estate in Kuje, Abuja, a region zoned for farming under the Abuja Master Plan. It features curated layouts for crop cultivation and animal husbandry, ensuring operational efficiency and sustainable practices.", // Updated description
     // price: "₦ 40M - 85M", // Removed
     stats: {
-      area: "5 Acres",
+      area: "57 Acres",
       plots: "20 Plots",
       available: "3 Plots",
       completion: "Ready",
@@ -69,7 +69,7 @@ const projects: ProjectType[] = [
     title: "Royal Protein Farm",
     location: "Kuje, Abuja, Nigeria", // Changed location
     description:
-      "A specialized mixed-use estate designed for large-scale agricultural investment and protein production (poultry, fishery, livestock). Situated in the Kuje farming zone, this project offers large plots with dedicated water and storage facilities.", // Updated description
+      "A specialized mixed-use estate designed for large-scale agricultural development and protein production (Poultry & Cattle). Situated in the Kuje's farming zone, this project offers large plots with dedicated water and storage facilities.", // Updated description
     // price: "₦ 6.5M - 18M", // Removed
     stats: {
       area: "50 Acres",
@@ -89,7 +89,7 @@ const projects: ProjectType[] = [
       "Proper Waste Management",
       "Drainages System",
     ],
-    images: ["/farm.jpg", "/farming.jpg", "/farm-road.jpg"],
+    images: ["/IMG_7740.JPG", "/IMG_7738.JPG", "/IMG_7739.JPG"],
   },
   {
     id: 3,
@@ -100,7 +100,7 @@ const projects: ProjectType[] = [
       "The Clouds Maisonettes is a true masterpiece designed for the modern home owner or individuals looking to break into or expand their short-let business. It brings together smart architecture, premium facilities, and delivers a living experience that feels both private, very spacious, and uplifting.", // Updated description
     // price: "₦ 15.5M - 35M", // Removed
     stats: {
-      area: "9.9 Acres",
+      area: "10 Acres",
       plots: "31 Units",
       available: "87 Plots",
       completion: "2026",
@@ -133,7 +133,7 @@ const projects: ProjectType[] = [
     description:
       "An exclusive community designed for modern families who value comfort, security, and a connection to nature, all within a prime urban location. The residence types have not yet been specified.",
     stats: {
-      area: "20 Acres",
+      area: "2.5 Acres",
       plots: "50 Units",
       available: "35 Plots",
       completion: "2026",

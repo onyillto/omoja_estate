@@ -103,7 +103,7 @@ const ContactSection = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      info: "mojaealestate1@gmail.com",
+      info: "mojarealestate1@gmail.com",
     },
     {
       icon: <Phone className="w-6 h-6" />,

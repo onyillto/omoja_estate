@@ -128,10 +128,10 @@ const Footer = () => {
               <li className="flex items-center gap-3 text-gray-200 text-sm">
                 <Mail className="w-5 h-5 text-white flex-shrink-0" />
                 <Link
-                  href="mailto:mojaealestate1@gmail.com"
+                  href="mailto:mojarealestate1@gmail.com"
                   className="hover:text-white transition-colors"
                 >
-                  mojaealestate1@gmail.com
+                  mojarealestate1@gmail.com
                 </Link>
               </li>
               {/* WhatsApp */}

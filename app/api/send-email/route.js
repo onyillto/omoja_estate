@@ -15,7 +15,7 @@ export async function POST(req) {
 
     const mailOptions = {
       from: email,
-      to: "mojaealestate1@gmail.com",
+      to: "mojarealestate1@gmail.com",
       subject: `New Contact Message from ${firstName}`,
       html: `
 <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333333; max-width: 600px; margin: 20px auto; border: 1px solid #dddddd; padding: 0;">
